@@ -16,6 +16,7 @@ A modern digital studio and technology agency web experience built with React 19
 - **Selected Works**: Responsive 2x2 grid featuring detailed project cards with UI mockups across web design, SaaS dashboards, and marketing landing pages.
 - **Client Testimonials**: Carousel highlighting partner reviews, 5-star ratings, and client verification.
 - **Interactive FAQ Accordion**: Clean questions and answers with smooth expand/collapse states and direct action CTA.
+- **Hero-Style Closing CTA**: Visual bookend matching the hero container aesthetic with frosted 3D typography, floating interactive tags, and action button.
 
 ---
 

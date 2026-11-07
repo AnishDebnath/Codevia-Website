@@ -52,6 +52,38 @@
   animation: float-gentle 3.2s ease-in-out infinite;
 }
 
+@keyframes float-left {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-9px) translateX(-3px) rotate(-1.5deg);
+  }
+  66% {
+    transform: translateY(5px) translateX(2px) rotate(1deg);
+  }
+}
+
+@keyframes float-right {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(7px) translateX(3px) rotate(1.5deg);
+  }
+  66% {
+    transform: translateY(-11px) translateX(-2px) rotate(-1deg);
+  }
+}
+
+.animate-float-left {
+  animation: float-left 4.6s ease-in-out infinite;
+}
+
+.animate-float-right {
+  animation: float-right 5.2s ease-in-out infinite;
+}
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0%);
