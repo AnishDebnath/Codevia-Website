@@ -3,6 +3,7 @@ import { Navbar } from './Navbar';
 import { Hero } from './Hero';
 import { Statistics } from './Statistics';
 import { Services } from './Services';
+import { Process } from './Process';
 import { Works } from './Works';
 import { Testimonials } from './Testimonials';
 import { FAQ } from './FAQ';
@@ -20,6 +21,7 @@ export const Home: React.FC = () => {
         <Hero />
         <Statistics />
         <Services />
+        <Process />
         <Works />
         <Testimonials />
         <FAQ />
