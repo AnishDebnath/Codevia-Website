@@ -193,22 +193,6 @@ export const Testimonials: React.FC = () => {
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-r from-[#FAFAFA] to-transparent z-25 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-l from-[#FAFAFA] to-transparent z-25 pointer-events-none" />
 
-        {/* Floating Side Arrows on Track */}
-        <button
-          onClick={onUserPrev}
-          className="absolute left-3 sm:left-6 lg:left-10 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(139,92,246,0.18)] hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all active:scale-95 cursor-pointer group"
-          aria-label="Previous testimonial card"
-        >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
-        </button>
-        <button
-          onClick={onUserNext}
-          className="absolute right-3 sm:right-6 lg:right-10 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(139,92,246,0.18)] hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all active:scale-95 cursor-pointer group"
-          aria-label="Next testimonial card"
-        >
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
-        </button>
-
         {/* Carousel Container Track */}
         <div
           onTransitionEnd={handleTransitionEnd}
