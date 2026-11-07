@@ -1,10 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { PenTool, Monitor, Lightbulb, Code2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { PenTool, Monitor, Lightbulb, Code2, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
+// ponytail: exactly 3 cards fit cleanly within section width on desktop, with generous margin/padding so card shadows are never clipped or hidden
 export const Services: React.FC = () => {
-  // Start with index 1 (UI/UX Design) highlighted, matching the reference screenshot
+  // Start with index 1 (UI/UX Design) highlighted, matching the reference showcase
   const [currentIndex, setCurrentIndex] = useState<number>(1);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
+  const touchStartX = useRef<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const scrollToWorks = () => {
     const el = document.querySelector('#works');
@@ -44,30 +54,12 @@ export const Services: React.FC = () => {
     },
   ];
 
-  const scrollToIndex = (idx: number) => {
-    if (!scrollRef.current) return;
-    const clamped = Math.max(0, Math.min(idx, services.length - 1));
-    setCurrentIndex(clamped);
-
-    const container = scrollRef.current;
-    const cardEl = container.children[clamped] as HTMLElement;
-    if (cardEl) {
-      const containerRect = container.getBoundingClientRect();
-      const cardRect = cardEl.getBoundingClientRect();
-      if (cardRect.left < containerRect.left) {
-        container.scrollBy({ left: cardRect.left - containerRect.left - 12, behavior: 'smooth' });
-      } else if (cardRect.right > containerRect.right) {
-        container.scrollBy({ left: cardRect.right - containerRect.right + 12, behavior: 'smooth' });
-      }
-    }
-  };
-
   const handlePrev = () => {
-    scrollToIndex(currentIndex - 1);
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
   };
 
   const handleNext = () => {
-    scrollToIndex(currentIndex + 1);
+    setCurrentIndex((prev) => Math.min(services.length - 1, prev + 1));
   };
 
   // Keyboard navigation with ArrowLeft / ArrowRight keys
@@ -78,21 +70,60 @@ export const Services: React.FC = () => {
 
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        scrollToIndex(currentIndex - 1);
+        handlePrev();
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        scrollToIndex(currentIndex + 1);
+        handleNext();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex]);
+  }, []);
+
+  // Touch swipe support for mobile
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 45) {
+      handleNext();
+    } else if (diff < -45) {
+      handlePrev();
+    }
+    touchStartX.current = null;
+  };
+
+  // Responsive layout: 3 cards on desktop, 2 on tablet, 1 on mobile
+  const isDesktop = windowWidth >= 1024;
+  const isTablet = windowWidth >= 640 && windowWidth < 1024;
+
+  // On desktop, keep active card centered: cards [0,1,2] for idx 0-1, cards [1,2,3] for idx 2-3
+  const offsetIndex = isDesktop
+    ? currentIndex >= 2
+      ? 1
+      : 0
+    : isTablet
+    ? Math.min(currentIndex, services.length - 2)
+    : currentIndex;
+
+  const getTranslateX = () => {
+    if (isDesktop) {
+      return offsetIndex === 0 ? '0px' : 'calc(-1 * (100% + 24px) / 3)';
+    }
+    if (isTablet) {
+      return offsetIndex === 0 ? '0px' : `calc(-${offsetIndex} * (100% + 24px) / 2)`;
+    }
+    return offsetIndex === 0 ? '0px' : `calc(-${offsetIndex} * (100% + 16px))`;
+  };
 
   return (
     <section id="services" className="py-16 sm:py-20 lg:py-24 relative select-none">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Top Header Section matching image_fa1ecd2b.png */}
+        {/* Top Header Section matching design */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10 sm:mb-12">
           {/* Left Pill Badge */}
           <div className="lg:col-span-3">
@@ -136,11 +167,15 @@ export const Services: React.FC = () => {
 
             {/* Action Row: Start a Project + Arrow Key Navigation Controls */}
             <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
+              {/* Action Button: Start a Project matching Hero button style */}
               <button
                 onClick={scrollToWorks}
-                className="px-6 py-3 text-xs sm:text-[13px] font-semibold text-white bg-[#1F232B] hover:bg-black active:scale-95 transition-all rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.18)] cursor-pointer"
+                className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
               >
-                Start a Project
+                <span>Start a Project</span>
+                <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </span>
               </button>
 
               {/* Arrow Keys Navigation Controls that Move the Highlighted Card */}
@@ -174,25 +209,29 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Carousel / Slider Container: 3 Cards Displayed Cleanly on Desktop, Generous Padding for Unclipped Shadows */}
-        <div className="relative overflow-visible">
+        <div
+          className="relative overflow-hidden pt-6 pb-16 px-4 -mx-4 select-none"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
           <div
-            ref={scrollRef}
-            className="flex items-stretch gap-6 overflow-x-auto pt-6 pb-16 px-3 -mx-3 scroll-smooth scrollbar-none snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex items-stretch gap-4 sm:gap-6 transition-transform duration-500 ease-out"
+            style={{
+              transform: `translateX(${getTranslateX()})`,
+            }}
           >
             {services.map((service, index) => {
               const Icon = service.icon;
-              // Highlight is moved strictly by the buttons/arrow navigation
               const isHighlighted = currentIndex === index;
 
               return (
                 <div
                   key={service.number}
-                  onClick={() => scrollToIndex(index)}
-                  className={`relative w-[85vw] max-w-[340px] sm:w-[calc((100%-24px)/2)] sm:max-w-none lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 snap-start bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-full max-w-[340px] sm:max-w-none sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${
                     isHighlighted
-                      ? 'border-purple-200/90 shadow-[0_20px_45px_rgba(139,92,246,0.14)] -translate-y-1.5 ring-1 ring-purple-100'
-                      : 'border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-gray-200'
+                      ? 'relative z-20 border-purple-200/90 shadow-[0_20px_45px_-10px_rgba(139,92,246,0.22),0_8px_20px_-4px_rgba(0,0,0,0.06)] -translate-y-1.5 ring-1 ring-purple-100'
+                      : 'relative z-10 hover:z-20 border-gray-100 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_35px_-8px_rgba(0,0,0,0.1)] hover:border-gray-200'
                   }`}
                 >
                   {/* Background Giant Watermark Numeral: Perfectly Contained Within Div */}

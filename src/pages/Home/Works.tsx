@@ -120,11 +120,16 @@ export const Works: React.FC = () => {
               {' '}Every one started with a short call.
             </p>
 
+            {/* Action Button: View all work matching Hero button style */}
             <button
-              className="inline-flex items-center gap-3.5 pl-5 pr-1.5 py-1.5 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-900 text-xs sm:text-[13px] font-semibold shadow-2xs hover:shadow-[0_8px_20px_rgba(139,92,246,0.12)] transition-all group cursor-pointer active:scale-95 shrink-0"
+              onClick={() => {
+                const el = document.querySelector('#cta');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-7 py-3.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
             >
               <span>View all work</span>
-              <span className="w-8 h-8 rounded-full bg-[#1F232B] group-hover:bg-gradient-to-r group-hover:from-[#6366F1] group-hover:to-[#A855F7] text-white flex items-center justify-center transition-all shadow-xs">
+              <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-200 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </button>

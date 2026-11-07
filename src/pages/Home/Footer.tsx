@@ -152,13 +152,15 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Right Cell: Back to Top with Vertical Divider */}
-            <div className="md:border-l md:border-gray-200/80 md:pl-8 py-5 flex items-center justify-center md:justify-end">
+            <div className="md:border-l md:border-gray-200/80 md:pl-8 py-3 flex items-center justify-center md:justify-end">
               <button
                 onClick={scrollToTop}
-                className="flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-gray-800 hover:text-purple-600 transition-colors group cursor-pointer"
+                className="px-5 py-2.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
               >
                 <span>Back to Top</span>
-                <ChevronUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-200 transition-colors">
+                  <ChevronUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+                </span>
               </button>
             </div>
           </div>

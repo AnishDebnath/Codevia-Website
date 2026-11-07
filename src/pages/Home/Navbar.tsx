@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 // ponytail: imported directly from assets folder
 import logoImg from '../../assets/logo.png';
 
@@ -113,13 +113,16 @@ export const Navbar: React.FC = () => {
           </nav>
         </div>
 
-        {/* Right Action Button: "Contact Us" */}
+        {/* Right Action Button: "Contact Us" matching Hero button style */}
         <div className="hidden md:flex items-center">
           <button
             onClick={handleContactClick}
-            className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-b from-[#2D323B] to-[#171A20] hover:from-[#1E2228] hover:to-black active:scale-95 transition-all rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.2)] border border-white/10 cursor-pointer"
+            className="px-5 sm:px-6 py-2.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
           >
-            Contact Us
+            <span>Contact Us</span>
+            <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </span>
           </button>
         </div>
 
@@ -160,9 +163,12 @@ export const Navbar: React.FC = () => {
           <div className="pt-2">
             <button
               onClick={handleContactClick}
-              className="w-full py-3 text-center text-sm font-semibold text-white bg-gray-950 rounded-full shadow hover:bg-black"
+              className="w-full py-3 bg-[#1F232B] hover:bg-black text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer group active:scale-95"
             >
-              Contact Us
+              <span>Contact Us</span>
+              <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </span>
             </button>
           </div>
         </div>

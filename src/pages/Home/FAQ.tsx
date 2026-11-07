@@ -78,15 +78,15 @@ export const FAQ: React.FC = () => {
               Everything you need to know about our process, collaboration model, and deliverables.
             </p>
 
-            {/* Action Button styled consistent with site theme */}
+            {/* Action Button styled consistent with Hero button style */}
             <div className="pt-2">
               <button
                 onClick={scrollToContact}
-                className="px-6 py-3 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-[13px] font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 cursor-pointer active:scale-95 group"
+                className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group"
               >
                 <span>Still have questions?</span>
                 <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </button>
             </div>
