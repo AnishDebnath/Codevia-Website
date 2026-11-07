@@ -5,6 +5,7 @@ import { Statistics } from './Statistics';
 import { Services } from './Services';
 import { Works } from './Works';
 import { Testimonials } from './Testimonials';
+import { FAQ } from './FAQ';
 
 export const Home: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ export const Home: React.FC = () => {
         <Services />
         <Works />
         <Testimonials />
+        <FAQ />
       </main>
     </div>
   );

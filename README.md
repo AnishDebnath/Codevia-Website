@@ -15,6 +15,7 @@ A modern digital studio and technology agency web experience built with React 19
 - **Interactive Services Showcase**: Dynamic carousel with keyboard arrow navigation and responsive layout.
 - **Selected Works**: Responsive 2x2 grid featuring detailed project cards with UI mockups across web design, SaaS dashboards, and marketing landing pages.
 - **Client Testimonials**: Carousel highlighting partner reviews, 5-star ratings, and client verification.
+- **Interactive FAQ Accordion**: Clean questions and answers with smooth expand/collapse states and direct action CTA.
 
 ---
 
