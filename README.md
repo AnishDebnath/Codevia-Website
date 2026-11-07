@@ -17,6 +17,7 @@ A modern digital studio and technology agency web experience built with React 19
 - **Client Testimonials**: Carousel highlighting partner reviews, 5-star ratings, and client verification.
 - **Interactive FAQ Accordion**: Clean questions and answers with smooth expand/collapse states and direct action CTA.
 - **Hero-Style Closing CTA**: Visual bookend matching the hero container aesthetic with frosted 3D typography, floating interactive tags, and action button.
+- **Contained Responsive Footer**: 4-column layout with work inquiries, navigation links, social channels, central hairline divider, and smooth Back to Top action.
 
 ---
 

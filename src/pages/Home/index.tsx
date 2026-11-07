@@ -7,6 +7,7 @@ import { Works } from './Works';
 import { Testimonials } from './Testimonials';
 import { FAQ } from './FAQ';
 import { CTA } from './CTA';
+import { Footer } from './Footer';
 
 export const Home: React.FC = () => {
   return (
@@ -24,6 +25,9 @@ export const Home: React.FC = () => {
         <FAQ />
         <CTA />
       </main>
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 };
