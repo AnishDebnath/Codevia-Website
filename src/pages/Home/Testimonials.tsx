@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 
 interface TestimonialItem {
@@ -65,16 +65,75 @@ export const Testimonials: React.FC = () => {
     },
   ];
 
-  // Active index centered on card 2 (Amara Okafor) matching the screenshot showcase
-  const [activeIndex, setActiveIndex] = useState(1);
+  // ponytail: 3x buffer creates seamless infinite loop in both directions with zero 3rd-party slider packages
+  const items = [...testimonials, ...testimonials, ...testimonials];
+  const [currentIndex, setCurrentIndex] = useState(testimonials.length);
+  const [withTransition, setWithTransition] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<number | null>(null);
+
+  // Normalized display index (0..4) for counter indicator
+  const activeRealIndex =
+    ((currentIndex % testimonials.length) + testimonials.length) % testimonials.length;
+
+  // ponytail: unified movement function used for both auto-play loop and arrow navigation
+  const handleNext = () => {
+    setWithTransition(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    setWithTransition(true);
+    setCurrentIndex((prev) => prev - 1);
   };
 
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  const resetTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (!isPaused) {
+      timerRef.current = window.setInterval(handleNext, 3800);
+    }
   };
+
+  const onUserNext = () => {
+    handleNext();
+    resetTimer();
+  };
+
+  const onUserPrev = () => {
+    handlePrev();
+    resetTimer();
+  };
+
+  // ponytail: automatic looping slide with pause-on-hover
+  useEffect(() => {
+    resetTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPaused]);
+
+  // Seamless wrap-around: silent normalization back to center set once transition completes
+  const handleTransitionEnd = () => {
+    if (currentIndex >= testimonials.length * 2 || currentIndex < testimonials.length) {
+      setWithTransition(false);
+      const normalized =
+        (((currentIndex % testimonials.length) + testimonials.length) % testimonials.length) +
+        testimonials.length;
+      setCurrentIndex(normalized);
+    }
+  };
+
+  // Re-enable smooth transition after silent position normalization
+  useEffect(() => {
+    if (!withTransition) {
+      const raf = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setWithTransition(true);
+        });
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [withTransition]);
 
   return (
     <section id="testimonials" className="py-20 sm:py-24 lg:py-28 relative select-none overflow-hidden">
@@ -101,17 +160,17 @@ export const Testimonials: React.FC = () => {
           {/* Carousel Navigation Controls with Counter & Arrows */}
           <div className="flex items-center justify-center gap-3 pt-2">
             <button
-              onClick={handlePrev}
+              onClick={onUserPrev}
               className="w-10 h-10 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
               aria-label="Previous testimonial"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <span className="text-xs font-semibold text-gray-500 font-mono px-2">
-              0{activeIndex + 1} / 0{testimonials.length}
+              0{activeRealIndex + 1} / 0{testimonials.length}
             </span>
             <button
-              onClick={handleNext}
+              onClick={onUserNext}
               className="w-10 h-10 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
               aria-label="Next testimonial"
             >
@@ -122,85 +181,113 @@ export const Testimonials: React.FC = () => {
       </div>
 
       {/* Horizontal Carousel Track with Screen Edge Overflow & Subtle Fades */}
-      <div className="relative w-full overflow-hidden py-4">
-        {/* Left and Right Edge Fade Gradients matching image_44de3ae4.png */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-24 md:w-36 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-24 md:w-36 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10 pointer-events-none" />
+      {/* ponytail: generous vertical padding and explicit stacking contexts prevent card shadow from clipping or hiding under sibling divs */}
+      <div
+        className="relative w-full overflow-hidden pt-6 pb-14 sm:pt-8 sm:pb-16 [--card-w:320px] sm:[--card-w:380px] lg:[--card-w:420px]"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
+        {/* Left and Right Edge Fade Gradients matching aesthetic */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-r from-[#FAFAFA] to-transparent z-25 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-l from-[#FAFAFA] to-transparent z-25 pointer-events-none" />
 
-        {/* Carousel Container */}
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(calc(50% - ${(activeIndex * 400) + 200}px))`,
-            }}
-          >
-            {testimonials.map((item, index) => {
-              const isActive = index === activeIndex;
+        {/* Floating Side Arrows on Track */}
+        <button
+          onClick={onUserPrev}
+          className="absolute left-3 sm:left-6 lg:left-10 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(139,92,246,0.18)] hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all active:scale-95 cursor-pointer group"
+          aria-label="Previous testimonial card"
+        >
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
+        </button>
+        <button
+          onClick={onUserNext}
+          className="absolute right-3 sm:right-6 lg:right-10 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(139,92,246,0.18)] hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all active:scale-95 cursor-pointer group"
+          aria-label="Next testimonial card"
+        >
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+        </button>
 
-              return (
+        {/* Carousel Container Track */}
+        <div
+          onTransitionEnd={handleTransitionEnd}
+          className={`flex ${withTransition ? 'transition-transform duration-500 ease-out' : ''}`}
+          style={{
+            transform: `translateX(calc(50% - (var(--card-w) / 2) - (${currentIndex} * var(--card-w))))`,
+          }}
+        >
+          {items.map((item, index) => {
+            const isCentered = index === currentIndex;
+
+            return (
+              <div
+                key={`${item.id}-${index}`}
+                onClick={() => {
+                  setWithTransition(true);
+                  setCurrentIndex(index);
+                  resetTimer();
+                }}
+                className={`w-[var(--card-w)] shrink-0 px-3 cursor-pointer transition-all duration-300 ${
+                  isCentered ? 'relative z-20' : 'relative z-10 hover:z-20'
+                }`}
+              >
                 <div
-                  key={item.id}
-                  onClick={() => setActiveIndex(index)}
-                  className="w-[320px] sm:w-[380px] lg:w-[400px] shrink-0 px-3 cursor-pointer transition-all duration-300"
+                  className={`h-full rounded-[26px] sm:rounded-[30px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 border ${
+                    isCentered
+                      ? 'bg-[#F9F8F5] border-purple-300/80 shadow-[0_20px_45px_-10px_rgba(139,92,246,0.22),0_8px_16px_-4px_rgba(0,0,0,0.06)] scale-[1.02]'
+                      : 'bg-[#FBFBF9] border-gray-200/70 shadow-[0_4px_16px_rgba(0,0,0,0.04)] opacity-85 hover:opacity-100 hover:border-purple-200/60 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
+                  }`}
                 >
-                  <div
-                    className={`h-full rounded-[26px] sm:rounded-[30px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 border ${
-                      isActive
-                        ? 'bg-[#F9F8F5] border-purple-200/90 shadow-[0_16px_36px_rgba(139,92,246,0.12)] scale-[1.02]'
-                        : 'bg-[#FBFBF9] border-gray-200/70 shadow-[0_4px_20px_rgba(0,0,0,0.02)] opacity-85 hover:opacity-100 hover:border-purple-200/60'
-                    }`}
-                  >
-                    <div>
-                      {/* Top Row: Quotation mark on Left, 5 Stars on Right */}
-                      <div className="flex items-center justify-between mb-6">
-                        <span className="text-3xl sm:text-4xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7] leading-none select-none">
-                          “
-                        </span>
-                        <div className="flex items-center gap-1 text-amber-500">
-                          {Array.from({ length: item.rating }).map((_, i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                          ))}
-                        </div>
+                  <div>
+                    {/* Top Row: Quotation mark on Left, 5 Stars on Right */}
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-3xl sm:text-4xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7] leading-none select-none">
+                        “
+                      </span>
+                      <div className="flex items-center gap-1 text-amber-500">
+                        {Array.from({ length: item.rating }).map((_, i) => (
+                          <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                        ))}
                       </div>
-
-                      {/* Testimonial Quote */}
-                      <p className="text-gray-900 font-medium text-base sm:text-[17px] leading-relaxed font-sans mb-8 min-h-[96px]">
-                        {item.quote}
-                      </p>
                     </div>
 
-                    <div>
-                      {/* Hairline Divider */}
-                      <div className="w-full h-px bg-gray-200/80 mb-5" />
+                    {/* Testimonial Quote */}
+                    <p className="text-gray-900 font-medium text-base sm:text-[17px] leading-relaxed font-sans mb-8 min-h-[96px]">
+                      {item.quote}
+                    </p>
+                  </div>
 
-                      {/* Author Row: Avatar + Name & Company */}
-                      <div className="flex items-center gap-3.5">
-                        <img
-                          src={item.avatar}
-                          alt={item.author}
-                          className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover ring-2 ring-white shadow-2xs"
-                        />
-                        <div>
-                          <h4 className="text-sm sm:text-[15px] font-bold text-gray-950 font-sans tracking-tight">
-                            {item.author}
-                          </h4>
-                          <p className="text-xs sm:text-[13px] text-gray-500 font-medium">
-                            {item.role}, {item.company}
-                          </p>
-                        </div>
+                  <div>
+                    {/* Hairline Divider */}
+                    <div className="w-full h-px bg-gray-200/80 mb-5" />
+
+                    {/* Author Row: Avatar + Name & Company */}
+                    <div className="flex items-center gap-3.5">
+                      <img
+                        src={item.avatar}
+                        alt={item.author}
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover ring-2 ring-white shadow-2xs"
+                      />
+                      <div>
+                        <h4 className="text-sm sm:text-[15px] font-bold text-gray-950 font-sans tracking-tight">
+                          {item.author}
+                        </h4>
+                        <p className="text-xs sm:text-[13px] text-gray-500 font-medium">
+                          {item.role}, {item.company}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Bottom Rating Pill matching image_44de3ae4.png */}
-      <div className="mt-10 sm:mt-12 flex items-center justify-center">
+      {/* Bottom Rating Pill */}
+      <div className="mt-2 sm:mt-4 flex items-center justify-center">
         <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-gray-200/80 shadow-2xs text-xs sm:text-sm text-gray-600 font-medium">
           <div className="flex items-center gap-0.5 text-amber-500">
             {Array.from({ length: 5 }).map((_, i) => (

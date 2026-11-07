@@ -126,7 +126,7 @@ export const Process: React.FC = () => {
                   <div key={w} className="col-span-1 w-full flex flex-col items-center">
                     {/* Top Card with proper proportional width */}
                     <div
-                      className={`w-[148px] sm:w-[162px] bg-white rounded-xl border border-gray-200/90 shadow-2xs hover:shadow-md hover:border-purple-300 transition-all p-3 space-y-1 text-left ${alignmentClass}`}
+                      className={`w-[148px] sm:w-[162px] bg-white rounded-xl border border-gray-200/90 shadow-2xs hover:shadow-md hover:border-purple-300 transition-all p-3 space-y-1 text-left relative z-10 hover:z-20 ${alignmentClass}`}
                     >
                       <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider block font-sans">
                         {milestone.category}
@@ -203,7 +203,7 @@ export const Process: React.FC = () => {
                   <div key={w} className="col-span-1 w-full flex flex-col items-center">
                     {/* Bottom Card with proper proportional width */}
                     <div
-                      className={`w-[148px] sm:w-[162px] rounded-xl transition-all p-3 space-y-1 text-left border ${alignmentClass} ${
+                      className={`w-[148px] sm:w-[162px] rounded-xl transition-all p-3 space-y-1 text-left border relative z-10 hover:z-20 ${alignmentClass} ${
                         isFinal
                           ? 'bg-gradient-to-br from-[#6366F1] via-[#7C3AED] to-[#9333EA] text-white shadow-md shadow-purple-500/20 border-purple-400/40 ring-1 ring-purple-300/30'
                           : 'bg-white border-gray-200/90 shadow-2xs hover:shadow-md hover:border-purple-300 text-gray-900'
