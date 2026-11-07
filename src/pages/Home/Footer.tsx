@@ -1,5 +1,7 @@
 import React from 'react';
 import { Mail, Phone, ChevronUp } from 'lucide-react';
+// ponytail: imported directly from assets folder
+import logoImg from '../../assets/logo.png';
 
 // ponytail: clean, structured footer with zero external dependencies matching design reference & site width
 export const Footer: React.FC = () => {
@@ -56,17 +58,11 @@ export const Footer: React.FC = () => {
                 }}
                 className="inline-flex items-center gap-2.5 group cursor-pointer"
               >
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-b from-[#323842] to-[#1E222A] flex items-center justify-center shadow-sm border border-white/20 group-hover:scale-105 transition-transform">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M7 6V15C7 16.6569 8.34315 18 10 18H17"
-                      stroke="white"
-                      strokeWidth="3.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                <img
+                  src={logoImg}
+                  alt="Codevia Logo"
+                  className="w-9 h-9 rounded-xl object-contain shadow-xs group-hover:scale-105 transition-transform"
+                />
                 <span className="font-extrabold text-[22px] tracking-tight text-gray-950 font-sans">
                   Codevia
                 </span>
