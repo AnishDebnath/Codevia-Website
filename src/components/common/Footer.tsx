@@ -111,16 +111,14 @@ export const Footer: React.FC<FooterProps> = ({
                     scrollToTop();
                   }
                 }}
-                className="inline-flex items-center gap-2.5 group cursor-pointer"
+                className="inline-flex items-center group cursor-pointer"
+                aria-label="Codevia Home"
               >
                 <img
                   src={logoImg}
-                  alt="Codevia Logo"
-                  className="w-9 h-9 rounded-xl object-contain shadow-xs group-hover:scale-105 transition-transform"
+                  alt="Codevia"
+                  className="h-11 sm:h-12 md:h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
                 />
-                <span className="font-extrabold text-[22px] tracking-tight text-gray-950 font-sans">
-                  Codevia
-                </span>
               </a>
 
               <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed font-sans">

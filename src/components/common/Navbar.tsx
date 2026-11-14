@@ -154,23 +154,21 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="w-full relative z-50 py-4 sm:py-5 select-none">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand Lockup: Logo Image + Wordmark */}
+        {/* Brand Lockup: Logo */}
         <a
           href="#"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick('#', 'Home', '');
           }}
-          className="flex items-center gap-2.5 group cursor-pointer"
+          className="flex items-center group cursor-pointer"
+          aria-label="Codevia Home"
         >
           <img
             src={logoImg}
-            alt="Codevia Logo"
-            className="w-9 h-9 rounded-xl object-contain shadow-xs group-hover:scale-105 transition-transform"
+            alt="Codevia"
+            className="h-10 sm:h-11 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
-          <span className="font-extrabold text-[22px] tracking-tight text-gray-950 font-sans">
-            Codevia
-          </span>
         </a>
 
         {/* Center Floating Pill Navigation: Home, About, Services, Projects */}
