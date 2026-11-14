@@ -4,8 +4,9 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'projects';
+  currentPage?: 'home' | 'projects' | 'contact';
   onNavigateProjects?: () => void;
+  onNavigateContact?: () => void;
   onNavigateHome?: (sectionId?: string) => void;
 }
 
@@ -13,10 +14,13 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   currentPage = 'home',
   onNavigateProjects,
+  onNavigateContact,
   onNavigateHome,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(currentPage === 'projects' ? 'Projects' : 'Home');
+  const [activeLink, setActiveLink] = useState(
+    currentPage === 'projects' ? 'Projects' : currentPage === 'contact' ? 'Contact' : 'Home'
+  );
 
   // Center menu items strictly: Home, About, Services, Projects
   const navLinks = [
@@ -30,6 +34,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   useEffect(() => {
     if (currentPage === 'projects') {
       setActiveLink('Projects');
+      return;
+    }
+    if (currentPage === 'contact') {
+      setActiveLink('Contact');
       return;
     }
 
@@ -66,9 +74,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     setActiveLink(label);
     setMobileMenuOpen(false);
 
-    if (currentPage === 'projects') {
+    if (currentPage === 'projects' || currentPage === 'contact') {
       if (label === 'Projects') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (currentPage === 'projects') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (onNavigateProjects) {
+          onNavigateProjects();
+        } else {
+          window.history.pushState({}, '', '/projects');
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }
         return;
       }
       if (onNavigateHome) {
@@ -96,10 +111,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const handleContactClick = () => {
     setMobileMenuOpen(false);
-    const element = document.querySelector('#cta') || document.querySelector('#works');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (currentPage === 'contact') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
+    if (onNavigateContact) {
+      onNavigateContact();
+      return;
+    }
+    window.history.pushState({}, '', '/contact');
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   return (

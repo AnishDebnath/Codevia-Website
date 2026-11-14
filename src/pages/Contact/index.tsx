@@ -1,0 +1,56 @@
+import React from 'react';
+import { Navbar, Footer, FAQ } from '../../components';
+import { Hero } from './Hero';
+import { Form } from './Form';
+
+// ponytail: Contact page cleanly structured same as Home and Projects pages
+interface ContactPageProps {
+  onNavigate?: (path: string) => void;
+}
+
+export const Contact: React.FC<ContactPageProps> = ({ onNavigate }) => {
+  const handleNavigate = (path: string, sectionId?: string) => {
+    if (onNavigate) {
+      onNavigate(path);
+      if (sectionId) {
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.location.href = sectionId ? `${path}#${sectionId}` : path;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FAFAFA] text-gray-900 selection:bg-indigo-500 selection:text-white font-sans antialiased">
+      {/* Navigation Bar */}
+      <Navbar
+        currentPage="contact"
+        onNavigateHome={(sectionId) => handleNavigate('/', sectionId)}
+        onNavigateProjects={() => handleNavigate('/projects')}
+      />
+
+      {/* Main Content Sections */}
+      <main>
+        {/* Contact Hero */}
+        <Hero />
+
+        {/* Project Enquiry Form and Details Stack */}
+        <Form />
+
+        {/* FAQ Section */}
+        <FAQ />
+      </main>
+
+      {/* Footer Section */}
+      <Footer
+        onNavigateHome={(sectionId) => handleNavigate('/', sectionId)}
+        onNavigateProjects={() => handleNavigate('/projects')}
+      />
+    </div>
+  );
+};
+
+export default Contact;

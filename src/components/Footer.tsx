@@ -5,11 +5,12 @@ import logoImg from '../assets/logo.png';
 
 interface FooterProps {
   onNavigateProjects?: () => void;
+  onNavigateContact?: () => void;
   onNavigateHome?: (sectionId?: string) => void;
 }
 
 // ponytail: clean, structured footer with zero external dependencies matching design reference & site width
-export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateHome }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateContact, onNavigateHome }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -20,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateHo
     { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#works' },
     { label: 'FAQ', href: '#faq' },
-    { label: 'Contact Us', href: '#works' },
+    { label: 'Contact Us', href: '/contact' },
   ];
 
   const socialLinks = [
@@ -30,9 +31,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateHo
   ];
 
   const handleNavClick = (href: string, label: string) => {
+    if (label === 'Contact Us') {
+      if (onNavigateContact) {
+        onNavigateContact();
+      } else {
+        window.history.pushState({}, '', '/contact');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
+      return;
+    }
+
     if (onNavigateHome) {
       if (label === 'Projects') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (onNavigateProjects) {
+          onNavigateProjects();
+        } else {
+          window.history.pushState({}, '', '/projects');
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }
         return;
       }
       const sectionId = href.replace('#', '');
@@ -103,18 +119,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateHo
               </h4>
               <div className="space-y-2.5 text-sm sm:text-[15px] text-gray-800 font-medium">
                 <a
-                  href="mailto:hello@codevia.agency"
+                  href="mailto:codeviaaiofficial@gmail.com"
                   className="flex items-center gap-2.5 hover:text-purple-600 transition-colors group"
                 >
                   <Mail className="w-4 h-4 text-gray-700 group-hover:text-purple-600 transition-colors shrink-0" />
-                  <span>hello@codevia.agency</span>
+                  <span>codeviaaiofficial@gmail.com</span>
                 </a>
                 <a
-                  href="tel:+123456789100"
+                  href="tel:+919382322241"
                   className="flex items-center gap-2.5 hover:text-purple-600 transition-colors group"
                 >
                   <Phone className="w-4 h-4 text-gray-700 group-hover:text-purple-600 transition-colors shrink-0" />
-                  <span>(+1) 234 5678-9100</span>
+                  <span>+91 93823 22241</span>
                 </a>
               </div>
             </div>

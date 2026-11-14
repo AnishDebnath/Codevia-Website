@@ -21,10 +21,22 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     }
   };
 
+  const handleNavigateContact = () => {
+    if (onNavigate) {
+      onNavigate('/contact');
+    } else {
+      window.history.pushState({}, '', '/contact');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-gray-900 selection:bg-indigo-500 selection:text-white font-sans antialiased">
       {/* Navigation Bar */}
-      <Navbar onNavigateProjects={handleNavigateProjects} />
+      <Navbar
+        onNavigateProjects={handleNavigateProjects}
+        onNavigateContact={handleNavigateContact}
+      />
 
       {/* Main Page Sections */}
       <main>
@@ -39,7 +51,10 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       </main>
 
       {/* Footer Section */}
-      <Footer onNavigateProjects={handleNavigateProjects} />
+      <Footer
+        onNavigateProjects={handleNavigateProjects}
+        onNavigateContact={handleNavigateContact}
+      />
     </div>
   );
 };

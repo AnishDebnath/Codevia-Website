@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
+import { Contact } from './pages/Contact';
 
 // ponytail: lightweight, dependency-free router supporting both path and hash navigation
 export default function App() {
@@ -10,6 +11,9 @@ export default function App() {
       const hash = window.location.hash.toLowerCase();
       if (path === '/projects' || hash === '#/projects' || hash === '#projects-page') {
         return '/projects';
+      }
+      if (path === '/contact' || hash === '#/contact' || hash === '#contact-page') {
+        return '/contact';
       }
     }
     return '/';
@@ -21,6 +25,8 @@ export default function App() {
       const hash = window.location.hash.toLowerCase();
       if (path === '/projects' || hash === '#/projects' || hash === '#projects-page') {
         setCurrentPath('/projects');
+      } else if (path === '/contact' || hash === '#/contact' || hash === '#contact-page') {
+        setCurrentPath('/contact');
       } else {
         setCurrentPath('/');
       }
@@ -39,6 +45,9 @@ export default function App() {
     if (to === '/projects') {
       window.history.pushState({}, '', '/projects');
       setCurrentPath('/projects');
+    } else if (to === '/contact') {
+      window.history.pushState({}, '', '/contact');
+      setCurrentPath('/contact');
     } else {
       window.history.pushState({}, '', '/');
       setCurrentPath('/');
@@ -49,6 +58,8 @@ export default function App() {
     <>
       {currentPath === '/projects' ? (
         <Projects onNavigate={navigate} />
+      ) : currentPath === '/contact' ? (
+        <Contact onNavigate={navigate} />
       ) : (
         <Home onNavigate={navigate} />
       )}

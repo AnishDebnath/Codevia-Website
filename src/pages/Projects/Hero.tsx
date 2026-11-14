@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                Selected Work / 2024—2026
+                Selected Work
               </span>
             </div>
           </div>
