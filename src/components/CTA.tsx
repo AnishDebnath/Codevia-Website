@@ -1,12 +1,23 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
+interface CTAProps {
+  onNavigateContact?: () => void;
+}
+
 // ponytail: self-contained CTA matching Hero box container aesthetic with zero extraneous dependencies
-export const CTA: React.FC = () => {
-  const scrollToContact = () => {
-    const el = document.querySelector('#works');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
+  const handleClick = () => {
+    if (onNavigateContact) {
+      onNavigateContact();
+    } else {
+      const el = document.querySelector('#contact') || document.querySelector('#works');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.history.pushState({}, '', '/contact');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
     }
   };
 
@@ -104,7 +115,7 @@ export const CTA: React.FC = () => {
           {/* Centered Action Button: "Start a Project" matching Hero button style */}
           <div className="pt-4 sm:pt-6">
             <button
-              onClick={scrollToContact}
+              onClick={handleClick}
               className="px-7 sm:px-8 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group"
             >
               <span>Start a Project</span>

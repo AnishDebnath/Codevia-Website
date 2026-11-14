@@ -4,9 +4,10 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'projects' | 'contact';
+  currentPage?: 'home' | 'projects' | 'contact' | 'about';
   onNavigateProjects?: () => void;
   onNavigateContact?: () => void;
+  onNavigateAbout?: () => void;
   onNavigateHome?: (sectionId?: string) => void;
 }
 
@@ -15,11 +16,18 @@ export const Navbar: React.FC<NavbarProps> = ({
   currentPage = 'home',
   onNavigateProjects,
   onNavigateContact,
+  onNavigateAbout,
   onNavigateHome,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(
-    currentPage === 'projects' ? 'Projects' : currentPage === 'contact' ? 'Contact' : 'Home'
+    currentPage === 'projects'
+      ? 'Projects'
+      : currentPage === 'contact'
+      ? 'Contact'
+      : currentPage === 'about'
+      ? 'About'
+      : 'Home'
   );
 
   // Center menu items strictly: Home, About, Services, Projects
@@ -38,6 +46,10 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
     if (currentPage === 'contact') {
       setActiveLink('Contact');
+      return;
+    }
+    if (currentPage === 'about') {
+      setActiveLink('About');
       return;
     }
 
@@ -74,7 +86,18 @@ export const Navbar: React.FC<NavbarProps> = ({
     setActiveLink(label);
     setMobileMenuOpen(false);
 
-    if (currentPage === 'projects' || currentPage === 'contact') {
+    if (currentPage !== 'home') {
+      if (label === 'About') {
+        if (currentPage === 'about') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (onNavigateAbout) {
+          onNavigateAbout();
+        } else {
+          window.history.pushState({}, '', '/about');
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }
+        return;
+      }
       if (label === 'Projects') {
         if (currentPage === 'projects') {
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -91,6 +114,11 @@ export const Navbar: React.FC<NavbarProps> = ({
       } else {
         window.location.href = sectionId ? `/#${sectionId}` : '/';
       }
+      return;
+    }
+
+    if (label === 'About' && onNavigateAbout) {
+      onNavigateAbout();
       return;
     }
 

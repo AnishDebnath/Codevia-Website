@@ -30,12 +30,22 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     }
   };
 
+  const handleNavigateAbout = () => {
+    if (onNavigate) {
+      onNavigate('/about');
+    } else {
+      window.history.pushState({}, '', '/about');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-gray-900 selection:bg-indigo-500 selection:text-white font-sans antialiased">
       {/* Navigation Bar */}
       <Navbar
         onNavigateProjects={handleNavigateProjects}
         onNavigateContact={handleNavigateContact}
+        onNavigateAbout={handleNavigateAbout}
       />
 
       {/* Main Page Sections */}
@@ -54,6 +64,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <Footer
         onNavigateProjects={handleNavigateProjects}
         onNavigateContact={handleNavigateContact}
+        onNavigateAbout={handleNavigateAbout}
       />
     </div>
   );

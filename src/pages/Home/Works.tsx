@@ -150,8 +150,8 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           <div
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Gradient Showcase Frame matching logo spectrum */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            {/* Gradient Showcase Frame - smoothed for an elegant, easy-on-the-eyes presentation */}
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-br from-[#EEF2FF] via-[#F3E8FF] to-[#FCE7F3] border border-indigo-100/70 pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden transition-all duration-300 group-hover:brightness-[1.02]">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Center Ambient Radial Glow */}
@@ -252,8 +252,8 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           <div
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Gradient Showcase Frame */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#6E0CF8] via-[#FD4918] to-[#FFC802] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            {/* Gradient Showcase Frame - smoothed for elegant presentation */}
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-br from-[#F3E8FF] via-[#FFE4E6] to-[#FEF3C7] border border-purple-100/70 pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden transition-all duration-300 group-hover:brightness-[1.02]">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Browser Nav Bar */}
@@ -325,8 +325,8 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           <div
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Gradient Showcase Frame */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FD4918] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            {/* Gradient Showcase Frame - smoothed for elegant presentation */}
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-br from-[#EEF2FF] via-[#EDE9FE] to-[#FFEDD5] border border-blue-100/70 pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden transition-all duration-300 group-hover:brightness-[1.02]">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Header Bar */}
@@ -398,8 +398,8 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           <div
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Gradient Showcase Frame */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#FFC802] via-[#FD4918] to-[#6E0CF8] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            {/* Gradient Showcase Frame - smoothed for elegant presentation */}
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-br from-[#FEF3C7] via-[#FFE4E6] to-[#F3E8FF] border border-amber-100/70 pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden transition-all duration-300 group-hover:brightness-[1.02]">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Header Bar */}

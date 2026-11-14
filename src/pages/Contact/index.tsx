@@ -30,6 +30,7 @@ export const Contact: React.FC<ContactPageProps> = ({ onNavigate }) => {
         currentPage="contact"
         onNavigateHome={(sectionId) => handleNavigate('/', sectionId)}
         onNavigateProjects={() => handleNavigate('/projects')}
+        onNavigateAbout={() => handleNavigate('/about')}
       />
 
       {/* Main Content Sections */}
@@ -48,6 +49,7 @@ export const Contact: React.FC<ContactPageProps> = ({ onNavigate }) => {
       <Footer
         onNavigateHome={(sectionId) => handleNavigate('/', sectionId)}
         onNavigateProjects={() => handleNavigate('/projects')}
+        onNavigateAbout={() => handleNavigate('/about')}
       />
     </div>
   );

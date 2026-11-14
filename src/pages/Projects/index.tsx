@@ -42,6 +42,15 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
     }
   };
 
+  const handleNavigateAbout = () => {
+    if (onNavigate) {
+      onNavigate('/about');
+    } else {
+      window.history.pushState({}, '', '/about');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-gray-900 selection:bg-indigo-500 selection:text-white font-sans antialiased">
       {/* Navigation Bar */}
@@ -49,6 +58,7 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
         currentPage="projects"
         onNavigateHome={handleNavigateHome}
         onNavigateContact={handleNavigateContact}
+        onNavigateAbout={handleNavigateAbout}
       />
 
       {/* Main Content Sections */}
@@ -70,6 +80,7 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       <Footer
         onNavigateHome={handleNavigateHome}
         onNavigateContact={handleNavigateContact}
+        onNavigateAbout={handleNavigateAbout}
       />
     </div>
   );

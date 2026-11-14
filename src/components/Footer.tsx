@@ -6,18 +6,24 @@ import logoImg from '../assets/logo.png';
 interface FooterProps {
   onNavigateProjects?: () => void;
   onNavigateContact?: () => void;
+  onNavigateAbout?: () => void;
   onNavigateHome?: (sectionId?: string) => void;
 }
 
 // ponytail: clean, structured footer with zero external dependencies matching design reference & site width
-export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateContact, onNavigateHome }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onNavigateProjects,
+  onNavigateContact,
+  onNavigateAbout,
+  onNavigateHome,
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navLinks = [
     { label: 'Home', href: '#' },
-    { label: 'About', href: '#services' },
+    { label: 'About', href: '/about' },
     { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#works' },
     { label: 'FAQ', href: '#faq' },
@@ -31,6 +37,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateCo
   ];
 
   const handleNavClick = (href: string, label: string) => {
+    if (label === 'About') {
+      if (onNavigateAbout) {
+        onNavigateAbout();
+      } else {
+        window.history.pushState({}, '', '/about');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
+      return;
+    }
+
     if (label === 'Contact Us') {
       if (onNavigateContact) {
         onNavigateContact();

@@ -18,7 +18,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Tech agency website',
     category: 'Digital Experience',
     subcategories: ['Digital Experience', 'Web design'],
-    gradientFrame: 'from-[#0127F2] via-[#6E0CF8] to-[#FF0485]',
+    gradientFrame: 'from-[#EEF2FF] via-[#F3E8FF] to-[#FCE7F3] border border-indigo-100/70',
     type: 'agency',
   },
   {
@@ -26,7 +26,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Web developer portfolio',
     category: 'Product Design',
     subcategories: ['Product Design', 'Web design'],
-    gradientFrame: 'from-[#6E0CF8] via-[#FD4918] to-[#FFC802]',
+    gradientFrame: 'from-[#F3E8FF] via-[#FFE4E6] to-[#FEF3C7] border border-purple-100/70',
     type: 'portfolio',
   },
   {
@@ -34,7 +34,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Dashboard design',
     category: 'Product Design',
     subcategories: ['Product Design', 'UI/UX design'],
-    gradientFrame: 'from-[#0127F2] via-[#6E0CF8] to-[#FD4918]',
+    gradientFrame: 'from-[#EEF2FF] via-[#EDE9FE] to-[#FFEDD5] border border-blue-100/70',
     type: 'dashboard',
   },
   {
@@ -42,7 +42,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Marketing landing page',
     category: 'Campaigns',
     subcategories: ['Campaigns', 'Web dev'],
-    gradientFrame: 'from-[#FFC802] via-[#FD4918] to-[#6E0CF8]',
+    gradientFrame: 'from-[#FEF3C7] via-[#FFE4E6] to-[#F3E8FF] border border-amber-100/70',
     type: 'marketing',
   },
   {
@@ -50,7 +50,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Aura luxury retail',
     category: 'E-commerce',
     subcategories: ['E-commerce', 'Digital Experience'],
-    gradientFrame: 'from-[#6E0CF8] via-[#FD4918] to-[#FFC802]',
+    gradientFrame: 'from-[#F3E8FF] via-[#FFE4E6] to-[#FEF3C7] border border-purple-100/70',
     type: 'ecommerce',
   },
   {
@@ -58,7 +58,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Pulse health telemetry',
     category: 'Product Design',
     subcategories: ['Product Design', 'Digital Experience'],
-    gradientFrame: 'from-[#0127F2] via-[#6E0CF8] to-[#FD4918]',
+    gradientFrame: 'from-[#EFF6FF] via-[#EEF2FF] to-[#FCE7F3] border border-blue-100/70',
     type: 'health',
   },
   {
@@ -66,7 +66,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Verve creative studio',
     category: 'Branding',
     subcategories: ['Branding', 'Campaigns'],
-    gradientFrame: 'from-[#0127F2] via-[#C001F6] to-[#FF0485]',
+    gradientFrame: 'from-[#EEF2FF] via-[#F3E8FF] to-[#FCE7F3] border border-purple-100/70',
     type: 'branding',
   },
   {
@@ -74,7 +74,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Kora fintech platform',
     category: 'Digital Experience',
     subcategories: ['Digital Experience', 'Product Design'],
-    gradientFrame: 'from-[#0127F2] via-[#6E0CF8] to-[#FF0485]',
+    gradientFrame: 'from-[#EFF6FF] via-[#EEF2FF] to-[#EDE9FE] border border-indigo-100/70',
     type: 'fintech',
   },
   {
@@ -82,7 +82,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Solstice architecture',
     category: 'Branding',
     subcategories: ['Branding', 'Digital Experience'],
-    gradientFrame: 'from-[#6E0CF8] via-[#FF0485] to-[#FFC802]',
+    gradientFrame: 'from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC] border border-slate-200/70',
     type: 'architecture',
   },
   {
@@ -90,7 +90,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Omni designer collective',
     category: 'E-commerce',
     subcategories: ['E-commerce', 'Branding'],
-    gradientFrame: 'from-[#FD4918] via-[#FF0485] to-[#0127F2]',
+    gradientFrame: 'from-[#FFF1F2] via-[#FDF2F8] to-[#EEF2FF] border border-pink-100/70',
     type: 'ecommerce',
   },
   {
@@ -98,7 +98,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Vertex AI canvas',
     category: 'Product Design',
     subcategories: ['Product Design', 'Digital Experience'],
-    gradientFrame: 'from-[#0127F2] via-[#6E0CF8] to-[#FF0485]',
+    gradientFrame: 'from-[#EEF2FF] via-[#F3E8FF] to-[#EFF6FF] border border-indigo-100/70',
     type: 'dashboard',
   },
   {
@@ -106,7 +106,7 @@ export const allProjects: ProjectItem[] = [
     title: 'Nova spatial audio',
     category: 'Campaigns',
     subcategories: ['Campaigns', 'Branding'],
-    gradientFrame: 'from-[#FF0485] via-[#FD4918] to-[#FFC802]',
+    gradientFrame: 'from-[#F3E8FF] via-[#FCE7F3] to-[#FEF3C7] border border-violet-100/70',
     type: 'audio',
   },
 ];
@@ -516,9 +516,9 @@ export const Works: React.FC<WorksProps> = ({ selectedCategory }) => {
               key={project.id}
               className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
             >
-              {/* Gradient Showcase Frame matching logo spectrum */}
+              {/* Gradient Showcase Frame - smoothed for elegant presentation */}
               <div
-                className={`relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r ${project.gradientFrame} pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden`}
+                className={`relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-br ${project.gradientFrame} pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden transition-all duration-300 group-hover:brightness-[1.02]`}
               >
                 {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
                 <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
