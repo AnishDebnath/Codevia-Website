@@ -3,15 +3,15 @@ import React from 'react';
 export const Statistics: React.FC = () => {
   const stats = [
     {
-      value: '40+',
+      value: '12+',
       label: 'Projects shaped',
     },
     {
-      value: '12',
+      value: '6',
       label: 'Industries explored',
     },
     {
-      value: '9',
+      value: '4',
       label: 'Countries collaborated across',
     },
     {

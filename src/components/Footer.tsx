@@ -1,10 +1,15 @@
 import React from 'react';
 import { Mail, Phone, ChevronUp } from 'lucide-react';
 // ponytail: imported directly from assets folder
-import logoImg from '../../assets/logo.png';
+import logoImg from '../assets/logo.png';
+
+interface FooterProps {
+  onNavigateProjects?: () => void;
+  onNavigateHome?: (sectionId?: string) => void;
+}
 
 // ponytail: clean, structured footer with zero external dependencies matching design reference & site width
-export const Footer: React.FC = () => {
+export const Footer: React.FC<FooterProps> = ({ onNavigateProjects, onNavigateHome }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -24,7 +29,21 @@ export const Footer: React.FC = () => {
     { label: 'LinkedIn', href: 'https://linkedin.com' },
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, label: string) => {
+    if (onNavigateHome) {
+      if (label === 'Projects') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      const sectionId = href.replace('#', '');
+      onNavigateHome(sectionId);
+      return;
+    }
+
+    if (label === 'Projects' && onNavigateProjects) {
+      onNavigateProjects();
+      return;
+    }
     if (href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -39,7 +58,7 @@ export const Footer: React.FC = () => {
     <footer className="w-full flex justify-center pb-8 sm:pb-12 pt-4 select-none">
       {/* Outer Background Container following vw property & matching other section div border radius */}
       <div
-        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-gray-200/90 bg-[#F4F5F8] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden"
+        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.04)] overflow-hidden"
         style={{ width: 'min(95vw, 1440px)' }}
       >
         {/* Subtle bottom ambient gradient matching logo spectrum */}
@@ -54,7 +73,11 @@ export const Footer: React.FC = () => {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToTop();
+                  if (onNavigateHome) {
+                    onNavigateHome();
+                  } else {
+                    scrollToTop();
+                  }
                 }}
                 className="inline-flex items-center gap-2.5 group cursor-pointer"
               >
@@ -105,7 +128,7 @@ export const Footer: React.FC = () => {
                 {navLinks.map((link) => (
                   <li key={link.label}>
                     <button
-                      onClick={() => handleNavClick(link.href)}
+                      onClick={() => handleNavClick(link.href, link.label)}
                       className="hover:text-purple-600 transition-colors cursor-pointer text-left"
                     >
                       {link.label}
@@ -169,4 +192,3 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
-

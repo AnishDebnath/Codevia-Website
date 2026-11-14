@@ -1,23 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 // ponytail: imported directly from assets folder
-import logoImg from '../../assets/logo.png';
+import logoImg from '../assets/logo.png';
+
+interface NavbarProps {
+  currentPage?: 'home' | 'projects';
+  onNavigateProjects?: () => void;
+  onNavigateHome?: (sectionId?: string) => void;
+}
 
 // ponytail: lightweight active state & scroll-spy navigation with zero external dependencies
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<NavbarProps> = ({
+  currentPage = 'home',
+  onNavigateProjects,
+  onNavigateHome,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('Home');
+  const [activeLink, setActiveLink] = useState(currentPage === 'projects' ? 'Projects' : 'Home');
 
   // Center menu items strictly: Home, About, Services, Projects
   const navLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#process' },
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#works' },
+    { label: 'Home', href: '#', sectionId: '' },
+    { label: 'About', href: '#process', sectionId: 'process' },
+    { label: 'Services', href: '#services', sectionId: 'services' },
+    { label: 'Projects', href: '#works', sectionId: 'works' },
   ];
 
-  // Scroll spy to dynamically select current section menu item
+  // Scroll spy to dynamically select current section menu item on Home page
   useEffect(() => {
+    if (currentPage === 'projects') {
+      setActiveLink('Projects');
+      return;
+    }
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (scrollY < 260) {
@@ -45,11 +60,30 @@ export const Navbar: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPage]);
 
-  const handleNavClick = (href: string, label: string) => {
+  const handleNavClick = (href: string, label: string, sectionId?: string) => {
     setActiveLink(label);
     setMobileMenuOpen(false);
+
+    if (currentPage === 'projects') {
+      if (label === 'Projects') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      if (onNavigateHome) {
+        onNavigateHome(sectionId);
+      } else {
+        window.location.href = sectionId ? `/#${sectionId}` : '/';
+      }
+      return;
+    }
+
+    if (label === 'Projects' && onNavigateProjects) {
+      onNavigateProjects();
+      return;
+    }
+
     if (href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -76,7 +110,7 @@ export const Navbar: React.FC = () => {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            handleNavClick('#', 'Home');
+            handleNavClick('#', 'Home', '');
           }}
           className="flex items-center gap-2.5 group cursor-pointer"
         >
@@ -99,7 +133,7 @@ export const Navbar: React.FC = () => {
               return (
                 <button
                   key={link.label}
-                  onClick={() => handleNavClick(link.href, link.label)}
+                  onClick={() => handleNavClick(link.href, link.label, link.sectionId)}
                   className={`px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap ${
                     isSelected
                       ? 'bg-[#1F232B] text-white shadow-xs'
@@ -148,7 +182,7 @@ export const Navbar: React.FC = () => {
               return (
                 <button
                   key={link.label}
-                  onClick={() => handleNavClick(link.href, link.label)}
+                  onClick={() => handleNavClick(link.href, link.label, link.sectionId)}
                   className={`text-left text-base font-semibold transition-all py-2 px-3 rounded-xl ${
                     isSelected
                       ? 'bg-gradient-to-r from-blue-50 to-pink-50 text-indigo-700 font-bold'

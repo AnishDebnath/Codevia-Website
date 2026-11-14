@@ -16,7 +16,11 @@ export interface ProjectData {
   category: string;
 }
 
-export const Works: React.FC = () => {
+interface WorksProps {
+  onNavigateProjects?: () => void;
+}
+
+export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
   const projects: ProjectData[] = [
     {
       id: 'tech-agency',
@@ -120,11 +124,15 @@ export const Works: React.FC = () => {
               {' '}Every one started with a short call.
             </p>
 
-            {/* Action Button: View all work matching website other buttons */}
+            {/* Action Button: View all work linking directly to the dedicated Projects page */}
             <button
               onClick={() => {
-                const el = document.querySelector('#cta');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                if (onNavigateProjects) {
+                  onNavigateProjects();
+                } else {
+                  window.history.pushState({}, '', '/projects');
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+                }
               }}
               className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
             >

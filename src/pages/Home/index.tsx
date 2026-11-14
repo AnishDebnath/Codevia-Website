@@ -1,20 +1,30 @@
 import React from 'react';
-import { Navbar } from './Navbar';
+import { Navbar, Footer, FAQ, CTA } from '../../components';
 import { Hero } from './Hero';
 import { Statistics } from './Statistics';
 import { Services } from './Services';
 import { Process } from './Process';
 import { Works } from './Works';
 import { Testimonials } from './Testimonials';
-import { FAQ } from './FAQ';
-import { CTA } from './CTA';
-import { Footer } from './Footer';
 
-export const Home: React.FC = () => {
+interface HomeProps {
+  onNavigate?: (path: string) => void;
+}
+
+export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+  const handleNavigateProjects = () => {
+    if (onNavigate) {
+      onNavigate('/projects');
+    } else {
+      window.history.pushState({}, '', '/projects');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-gray-900 selection:bg-indigo-500 selection:text-white font-sans antialiased">
       {/* Navigation Bar */}
-      <Navbar />
+      <Navbar onNavigateProjects={handleNavigateProjects} />
 
       {/* Main Page Sections */}
       <main>
@@ -22,14 +32,14 @@ export const Home: React.FC = () => {
         <Statistics />
         <Services />
         <Process />
-        <Works />
+        <Works onNavigateProjects={handleNavigateProjects} />
         <Testimonials />
         <FAQ />
         <CTA />
       </main>
 
       {/* Footer Section */}
-      <Footer />
+      <Footer onNavigateProjects={handleNavigateProjects} />
     </div>
   );
 };
