@@ -90,9 +90,9 @@ export const Works: React.FC = () => {
 
   return (
     <section id="works" className="py-20 sm:py-24 lg:py-28 relative select-none">
-      {/* Background ambient lighting matching Hero palette */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[350px] bg-purple-200/20 blur-[130px] pointer-events-none rounded-full -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-indigo-200/15 blur-[120px] pointer-events-none rounded-full -z-10" />
+      {/* Background ambient lighting matching theme */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Top Header Section: Section Tag & Heading on Left, Sub-heading & Button on Right */}
@@ -100,13 +100,13 @@ export const Works: React.FC = () => {
           {/* Left Side: Tag Line + Section Heading */}
           <div className="space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-purple-600" />
+              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide">Selected Work</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
               Selected{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 work
               </span>
             </h2>
@@ -120,16 +120,16 @@ export const Works: React.FC = () => {
               {' '}Every one started with a short call.
             </p>
 
-            {/* Action Button: View all work matching Hero button style */}
+            {/* Action Button: View all work matching website other buttons */}
             <button
               onClick={() => {
                 const el = document.querySelector('#cta');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-7 py-3.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
+              className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
             >
               <span>View all work</span>
-              <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-200 transition-colors">
+              <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </button>
@@ -142,8 +142,8 @@ export const Works: React.FC = () => {
           <div
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Gradient Showcase Frame matching image_5836e630.png styled with Hero signature purple/indigo palette */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#4F46E5] via-[#7C3AED] to-[#A855F7] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            {/* Gradient Showcase Frame matching logo spectrum */}
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Center Ambient Radial Glow */}
@@ -245,7 +245,7 @@ export const Works: React.FC = () => {
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
             {/* Gradient Showcase Frame */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#C084FC] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#6E0CF8] via-[#FD4918] to-[#FFC802] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Browser Nav Bar */}
@@ -318,7 +318,7 @@ export const Works: React.FC = () => {
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
             {/* Gradient Showcase Frame */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#4338CA] via-[#6366F1] to-[#8B5CF6] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FD4918] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Header Bar */}
@@ -391,7 +391,7 @@ export const Works: React.FC = () => {
             className="group bg-white rounded-[26px] sm:rounded-[30px] p-3 sm:p-3.5 border border-purple-100/70 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(139,92,246,0.14)] hover:border-purple-300 transition-all duration-300 flex flex-col justify-between"
           >
             {/* Gradient Showcase Frame */}
-            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#7C3AED] via-[#9333EA] to-[#C084FC] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
+            <div className="relative aspect-[16/11] rounded-[20px] sm:rounded-[22px] bg-gradient-to-r from-[#FFC802] via-[#FD4918] to-[#6E0CF8] pt-3 px-3 sm:pt-4.5 sm:px-4.5 flex items-end justify-center overflow-hidden">
               {/* Internal Mockup Window Card Bleeding to Bottom Edge */}
               <div className="w-full h-[95%] bg-white rounded-t-xl sm:rounded-t-2xl shadow-[0_6px_25px_rgba(0,0,0,0.12)] border-t border-x border-white/95 p-2.5 sm:p-3.5 flex flex-col justify-between overflow-hidden relative">
                 {/* Header Bar */}

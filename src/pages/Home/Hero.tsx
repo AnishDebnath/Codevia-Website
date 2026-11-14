@@ -15,19 +15,19 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="pt-2 pb-14 md:pb-20 w-full flex justify-center select-none">
-      {/* Contained Hero Box Container using vw property according to screen size */}
+      {/* Contained Hero Box Container with background based on website color theme */}
       <div
-        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-gray-200/90 bg-[#F4F5F8] shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-8 sm:py-12 lg:py-16 overflow-hidden min-h-[640px] sm:min-h-[720px] lg:min-h-[780px] flex flex-col justify-between"
+        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-8 sm:py-12 lg:py-16 overflow-hidden min-h-[640px] sm:min-h-[720px] lg:min-h-[780px] flex flex-col justify-between"
         style={{ width: 'min(95vw, 1440px)' }}
       >
-        {/* Full-width bottom purple/lavender gradient spreading across the whole hero box */}
-        <div className="absolute inset-x-0 bottom-0 h-[420px] sm:h-[500px] bg-gradient-to-t from-[#C4B5FD]/50 via-[#E9D5FF]/20 to-transparent pointer-events-none rounded-b-[28px] sm:rounded-b-[36px] lg:rounded-b-[44px]" />
+        {/* Full-width bottom logo-spectrum ambient gradient spreading across the whole hero box */}
+        <div className="absolute inset-x-0 bottom-0 h-[420px] sm:h-[500px] bg-gradient-to-t from-purple-200/30 via-pink-100/20 to-transparent pointer-events-none rounded-b-[28px] sm:rounded-b-[36px] lg:rounded-b-[44px]" />
 
-        {/* Right-side glowing purple radiant aura */}
-        <div className="absolute -bottom-16 -right-16 w-[750px] h-[550px] bg-gradient-to-tl from-[#A855F7]/40 via-[#C084FC]/30 to-transparent blur-3xl pointer-events-none rounded-full" />
+        {/* Right-side glowing golden-yellow/coral/magenta radiant aura from logo */}
+        <div className="absolute -bottom-16 -right-16 w-[750px] h-[550px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
-        {/* Left-side ambient glow */}
-        <div className="absolute -bottom-10 left-10 w-[600px] h-[380px] bg-gradient-to-tr from-[#E0E7FF]/40 via-[#EDE9FE]/25 to-transparent blur-3xl pointer-events-none rounded-full" />
+        {/* Left-side electric blue ambient glow from logo */}
+        <div className="absolute -bottom-10 left-10 w-[600px] h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* =========================================================================
             BACKGROUND TYPOGRAPHY: "Codevia" at bottom-left inside the rounded box
@@ -61,19 +61,19 @@ export const Hero: React.FC = () => {
                 Building Better
               </h1>
 
-              {/* Tilted Bounding Box around "Products" */}
+              {/* Tilted Bounding Box around "Products" styled with logo gradient */}
               <div className="relative inline-block transform -rotate-[2deg] origin-top-left">
-                {/* Outer Blue Selection Wireframe Box */}
-                <div className="relative p-2 border-[1.5px] border-[#3B82F6] rounded-sm">
-                  {/* 4 Corner Blue Square Handles */}
-                  <div className="w-2.5 h-2.5 bg-[#3B82F6] border border-white absolute -top-1.5 -left-1.5 shadow-xs" />
-                  <div className="w-2.5 h-2.5 bg-[#3B82F6] border border-white absolute -top-1.5 -right-1.5 shadow-xs" />
-                  <div className="w-2.5 h-2.5 bg-[#3B82F6] border border-white absolute -bottom-1.5 -left-1.5 shadow-xs" />
-                  <div className="w-2.5 h-2.5 bg-[#3B82F6] border border-white absolute -bottom-1.5 -right-1.5 shadow-xs" />
+                {/* Outer Electric Blue Selection Wireframe Box */}
+                <div className="relative p-2 border-[1.5px] border-[#0127F2] rounded-sm">
+                  {/* 4 Corner Square Handles */}
+                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -top-1.5 -left-1.5 shadow-xs" />
+                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -top-1.5 -right-1.5 shadow-xs" />
+                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -bottom-1.5 -left-1.5 shadow-xs" />
+                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -bottom-1.5 -right-1.5 shadow-xs" />
 
                   {/* Inner 3D Clay / Frosted Card */}
                   <div className="bg-white/95 backdrop-blur-md rounded-[28px] px-8 py-3.5 sm:px-12 sm:py-5 shadow-[0_16px_36px_rgba(0,0,0,0.06),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.03)] border border-white/80">
-                    <span className="text-6xl sm:text-7xl lg:text-[86px] xl:text-[92px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7] block leading-none py-1">
+                    <span className="text-6xl sm:text-7xl lg:text-[86px] xl:text-[92px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] block leading-none py-1">
                       {selectedWord}
                     </span>
                   </div>
@@ -81,16 +81,16 @@ export const Hero: React.FC = () => {
                   {/* FLOATING CREATIVE TAG & MOUSE ARROW */}
                   <div className="absolute -bottom-1 -right-1 z-30 pointer-events-none animate-float">
                     <div className="relative">
-                      {/* Purple Cursor Arrow tip pointing directly at the bottom-right blue handle */}
+                      {/* Brand Purple Cursor Arrow pointing directly at bottom-right handle */}
                       <svg
-                        className="w-5 h-5 sm:w-6 sm:h-6 fill-[#8B5CF6] drop-shadow-[0_2px_8px_rgba(139,92,246,0.6)] transform -translate-x-1 -translate-y-1"
+                        className="w-5 h-5 sm:w-6 sm:h-6 fill-[#6E0CF8] drop-shadow-[0_2px_8px_rgba(110,12,248,0.55)] transform -translate-x-1 -translate-y-1"
                         viewBox="0 0 24 24"
                       >
                         <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                       </svg>
 
-                      {/* Glowing "Creative" Pill Tag anchored beside the cursor */}
-                      <div className="absolute top-3 left-4 bg-gradient-to-r from-[#8B5CF6] to-[#A855F7] text-white text-xs font-semibold px-3.5 py-1 rounded-full shadow-[0_4px_16px_rgba(139,92,246,0.5)] border border-white/70 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
+                      {/* Glowing "Creative" Pill Tag anchored beside the cursor (No yellow) */}
+                      <div className="absolute top-3 left-4 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] text-white text-xs font-semibold px-3.5 py-1 rounded-full shadow-[0_4px_16px_rgba(110,12,248,0.45)] border border-white/70 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
                         Creative
                       </div>
                     </div>

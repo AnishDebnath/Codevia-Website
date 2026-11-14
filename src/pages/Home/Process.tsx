@@ -62,19 +62,19 @@ export const Process: React.FC = () => {
   return (
     <section
       id="process"
-      className="w-full bg-gradient-to-br from-[#F5F3FF] via-[#EEF2FF] to-[#FAF5FF] py-14 sm:py-18 lg:py-20 relative select-none border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)] overflow-hidden"
+      className="w-full bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] py-14 sm:py-18 lg:py-20 relative select-none border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)] overflow-hidden"
     >
       {/* Subtle geometric dot grid pattern for depth & texture */}
       <div className="absolute inset-0 bg-[radial-gradient(#C4B5FD_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
-      {/* Top-Right Glowing Purple Aura */}
-      <div className="absolute -top-12 -right-12 w-[650px] h-[450px] bg-gradient-to-bl from-[#8B5CF6]/20 via-[#C084FC]/15 to-transparent blur-3xl pointer-events-none rounded-full" />
+      {/* Top-Right Glowing Coral/Pink Aura from logo */}
+      <div className="absolute -top-12 -right-12 w-[650px] h-[450px] bg-gradient-to-bl from-[#FD4918]/15 via-[#FF0485]/15 to-transparent blur-3xl pointer-events-none rounded-full" />
 
-      {/* Bottom-Left Ambient Indigo Glow */}
-      <div className="absolute -bottom-12 -left-12 w-[650px] h-[450px] bg-gradient-to-tr from-[#6366F1]/20 via-[#A855F7]/15 to-transparent blur-3xl pointer-events-none rounded-full" />
+      {/* Bottom-Left Ambient Electric Blue/Violet Glow from logo */}
+      <div className="absolute -bottom-12 -left-12 w-[650px] h-[450px] bg-gradient-to-tr from-[#0127F2]/15 via-[#6E0CF8]/15 to-transparent blur-3xl pointer-events-none rounded-full" />
 
       {/* Center Soft Radial Bloom */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[380px] bg-gradient-to-r from-purple-200/25 via-indigo-200/20 to-violet-200/20 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/20 to-pink-200/20 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Top Header Section: Section Tag & Heading on Left, 8 Weeks Stat on Right */}
@@ -82,13 +82,13 @@ export const Process: React.FC = () => {
           {/* Left Side: Tag Line, Heading, Sub-heading */}
           <div className="space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-purple-600" />
+              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Our Process</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
               Eight weeks,{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 six sign-offs
               </span>
             </h2>
@@ -100,7 +100,7 @@ export const Process: React.FC = () => {
 
           {/* Right Side: Big 8 Weeks Stat matching Statistics.tsx typography */}
           <div className="flex flex-col lg:items-end space-y-1">
-            <div className="text-5xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7] font-sans leading-none tabular-nums py-1">
+            <div className="text-5xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-sans leading-none tabular-nums py-1">
               8 weeks
             </div>
             <p className="text-xs sm:text-sm text-gray-600 font-medium font-sans">
@@ -205,7 +205,7 @@ export const Process: React.FC = () => {
                     <div
                       className={`w-[148px] sm:w-[162px] rounded-xl transition-all p-3 space-y-1 text-left border relative z-10 hover:z-20 ${alignmentClass} ${
                         isFinal
-                          ? 'bg-gradient-to-br from-[#6366F1] via-[#7C3AED] to-[#9333EA] text-white shadow-md shadow-purple-500/20 border-purple-400/40 ring-1 ring-purple-300/30'
+                          ? 'bg-gradient-to-br from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] text-white shadow-md shadow-pink-500/20 border-pink-400/40 ring-1 ring-amber-300/30'
                           : 'bg-white border-gray-200/90 shadow-2xs hover:shadow-md hover:border-purple-300 text-gray-900'
                       }`}
                     >

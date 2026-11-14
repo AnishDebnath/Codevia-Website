@@ -136,23 +136,26 @@ export const Testimonials: React.FC = () => {
   }, [withTransition]);
 
   return (
-    <section id="testimonials" className="py-20 sm:py-24 lg:py-28 relative select-none overflow-hidden">
+    <section
+      id="testimonials"
+      className="py-20 sm:py-24 lg:py-28 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
+    >
       {/* Background ambient lighting matching Hero palette */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-purple-200/15 blur-[140px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/25 to-pink-200/20 blur-[140px] pointer-events-none rounded-full -z-10" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Centered Section Header matching previous sections font style */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16">
           {/* Section Tag */}
           <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-purple-600" />
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
             <span className="text-sm font-semibold text-gray-800 tracking-wide">Client Perspective</span>
           </div>
 
           {/* Section Heading with clean sans-serif font style matching previous sections */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.15] font-sans">
             Trusted by teams{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
               who care about the details.
             </span>
           </h2>
@@ -189,9 +192,9 @@ export const Testimonials: React.FC = () => {
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
       >
-        {/* Left and Right Edge Fade Gradients matching aesthetic */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-r from-[#FAFAFA] to-transparent z-25 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-l from-[#FAFAFA] to-transparent z-25 pointer-events-none" />
+        {/* Left and Right Edge Fade Gradients matching section theme background */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-r from-[#F0F5FF] to-transparent z-25 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-l from-[#FFF5F2] to-transparent z-25 pointer-events-none" />
 
         {/* Carousel Container Track */}
         <div
@@ -226,7 +229,7 @@ export const Testimonials: React.FC = () => {
                   <div>
                     {/* Top Row: Quotation mark on Left, 5 Stars on Right */}
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-3xl sm:text-4xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#A855F7] leading-none select-none">
+                      <span className="text-3xl sm:text-4xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802] leading-none select-none">
                         “
                       </span>
                       <div className="flex items-center gap-1 text-amber-500">

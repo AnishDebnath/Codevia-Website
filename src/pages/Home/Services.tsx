@@ -122,13 +122,16 @@ export const Services: React.FC = () => {
 
   return (
     <section id="services" className="py-16 sm:py-20 lg:py-24 relative select-none">
+      {/* Background ambient lighting matching theme */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
+
       <div className="max-w-6xl mx-auto px-6">
         {/* Top Header Section matching design */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10 sm:mb-12">
           {/* Left Pill Badge */}
           <div className="lg:col-span-3">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-purple-600" />
+              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide">Our Services</span>
             </div>
           </div>
@@ -162,7 +165,9 @@ export const Services: React.FC = () => {
               </span>{' '}
               that
               <br className="hidden sm:inline" />
-              make an impact.
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
+                make an impact.
+              </span>
             </h2>
 
             {/* Action Row: Start a Project + Arrow Key Navigation Controls */}
@@ -230,7 +235,7 @@ export const Services: React.FC = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-full max-w-[340px] sm:max-w-none sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${
                     isHighlighted
-                      ? 'relative z-20 border-purple-200/90 shadow-[0_20px_45px_-10px_rgba(139,92,246,0.22),0_8px_20px_-4px_rgba(0,0,0,0.06)] -translate-y-1.5 ring-1 ring-purple-100'
+                      ? 'relative z-20 border-purple-200/90 shadow-[0_20px_45px_-10px_rgba(124,58,237,0.22),0_8px_20px_-4px_rgba(253,73,24,0.08)] -translate-y-1.5 ring-1 ring-purple-100'
                       : 'relative z-10 hover:z-20 border-gray-100 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_35px_-8px_rgba(0,0,0,0.1)] hover:border-gray-200'
                   }`}
                 >
@@ -248,7 +253,7 @@ export const Services: React.FC = () => {
                     <div
                       className={`w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 ${
                         isHighlighted
-                          ? 'bg-gradient-to-br from-[#8B5CF6] to-[#6366F1] text-white shadow-lg shadow-purple-500/25 border border-purple-400/40'
+                          ? 'bg-gradient-to-br from-[#0127F2] via-[#FF0485] to-[#FFC802] text-white shadow-lg shadow-purple-500/25 border border-purple-400/40'
                           : 'bg-gradient-to-b from-gray-50 to-gray-200/80 text-gray-700 border border-gray-200/50 shadow-[0_4px_14px_rgba(0,0,0,0.05),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                       }`}
                     >
@@ -266,7 +271,7 @@ export const Services: React.FC = () => {
                     <h3
                       className={`text-2xl sm:text-[27px] lg:text-[30px] font-bold tracking-tight leading-[1.18] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${
                         isHighlighted
-                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7]'
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]'
                           : 'text-gray-950'
                       }`}
                     >

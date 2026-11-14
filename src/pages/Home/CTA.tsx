@@ -12,19 +12,19 @@ export const CTA: React.FC = () => {
 
   return (
     <section id="cta" className="py-12 sm:py-16 lg:py-20 w-full flex justify-center select-none">
-      {/* Contained Hero-like Box Container with reduced width */}
+      {/* Contained Hero-like Box Container with background based on website color theme */}
       <div
-        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-gray-200/90 bg-[#F4F5F8] shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-14 sm:py-20 lg:py-24 overflow-hidden min-h-[500px] sm:min-h-[550px] lg:min-h-[600px] flex flex-col items-center justify-center text-center"
+        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-14 sm:py-20 lg:py-24 overflow-hidden min-h-[500px] sm:min-h-[550px] lg:min-h-[600px] flex flex-col items-center justify-center text-center"
         style={{ width: 'min(92vw, 1080px)' }}
       >
-        {/* Full-width bottom purple/lavender gradient spreading across the whole box */}
-        <div className="absolute inset-x-0 bottom-0 h-[380px] sm:h-[450px] bg-gradient-to-t from-[#C4B5FD]/50 via-[#E9D5FF]/20 to-transparent pointer-events-none rounded-b-[28px] sm:rounded-b-[36px] lg:rounded-b-[44px]" />
+        {/* Full-width bottom logo-spectrum ambient gradient spreading across the whole box */}
+        <div className="absolute inset-x-0 bottom-0 h-[380px] sm:h-[450px] bg-gradient-to-t from-purple-200/30 via-pink-100/20 to-transparent pointer-events-none rounded-b-[28px] sm:rounded-b-[36px] lg:rounded-b-[44px]" />
 
-        {/* Right-side glowing purple radiant aura */}
-        <div className="absolute -bottom-16 -right-16 w-[700px] h-[500px] bg-gradient-to-tl from-[#A855F7]/40 via-[#C084FC]/30 to-transparent blur-3xl pointer-events-none rounded-full" />
+        {/* Right-side glowing golden-yellow/coral/magenta radiant aura from logo */}
+        <div className="absolute -bottom-16 -right-16 w-[700px] h-[500px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
-        {/* Left-side ambient glow */}
-        <div className="absolute -bottom-10 left-10 w-[600px] h-[350px] bg-gradient-to-tr from-[#E0E7FF]/40 via-[#EDE9FE]/25 to-transparent blur-3xl pointer-events-none rounded-full" />
+        {/* Left-side ambient electric blue glow from logo */}
+        <div className="absolute -bottom-10 left-10 w-[600px] h-[350px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* Background 3D Typography: Centered "Codevia" along the bottom */}
         <div className="absolute -bottom-4 sm:-bottom-8 lg:-bottom-10 left-1/2 -translate-x-1/2 select-none pointer-events-none z-0">
@@ -55,7 +55,7 @@ export const CTA: React.FC = () => {
           <div className="relative inline-block transform -rotate-[1.5deg] my-2">
             {/* The Frosted 3D Capsule */}
             <div className="bg-white/95 backdrop-blur-md rounded-[28px] sm:rounded-[36px] px-7 py-3.5 sm:px-12 sm:py-5 shadow-[0_20px_45px_rgba(0,0,0,0.07),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.03)] border border-white/80">
-              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7] block leading-none py-1 font-sans">
+              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] block leading-none py-1 font-sans">
                 Visual Impact
               </span>
             </div>
@@ -64,15 +64,15 @@ export const CTA: React.FC = () => {
             <div className="absolute -bottom-4 sm:-bottom-5 -left-10 sm:-left-16 md:-left-20 z-30 pointer-events-none animate-float-left">
               <div className="relative flex items-center gap-2 sm:gap-2.5">
                 {/* 3D soft levitation ambient shadow underneath */}
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-3 bg-purple-500/20 blur-md rounded-full pointer-events-none" />
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-3 bg-blue-500/20 blur-md rounded-full pointer-events-none" />
 
                 {/* Glowing "Impactful" Tag */}
-                <div className="relative bg-gradient-to-r from-[#8B5CF6] via-[#9333EA] to-[#A855F7] text-white text-xs sm:text-sm md:text-[15px] font-bold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-[0_6px_20px_rgba(139,92,246,0.5)] border-[1.5px] border-white/80 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
+                <div className="relative bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#C001F6] text-white text-xs sm:text-sm md:text-[15px] font-bold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-[0_6px_20px_rgba(1,39,242,0.45)] border-[1.5px] border-white/80 ring-2 ring-blue-300/40 tracking-wide select-none whitespace-nowrap">
                   Impactful
                 </div>
-                {/* Larger Purple Cursor pointing up-right directly at Visual Impact */}
+                {/* Larger Electric Blue Cursor pointing up-right directly at Visual Impact */}
                 <svg
-                  className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 fill-[#8B5CF6] drop-shadow-[0_3px_10px_rgba(139,92,246,0.65)] transform rotate-[80deg] shrink-0"
+                  className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 fill-[#0127F2] drop-shadow-[0_3px_10px_rgba(1,39,242,0.6)] transform rotate-[80deg] shrink-0"
                   viewBox="0 0 24 24"
                 >
                   <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
@@ -80,21 +80,21 @@ export const CTA: React.FC = () => {
               </div>
             </div>
 
-            {/* FLOATING INDICATOR 2 (Right): Mouse pointer pointing towards "Visual Impact" + Larger "Creative" tag */}
+            {/* FLOATING INDICATOR 2 (Right): Mouse pointer pointing towards "Visual Impact" + Larger "Creative" tag (No yellow) */}
             <div className="absolute -top-4 sm:-top-5 -right-10 sm:-right-16 md:-right-20 z-30 pointer-events-none animate-float-right">
               <div className="relative flex items-center gap-2 sm:gap-2.5">
                 {/* 3D soft levitation ambient shadow underneath */}
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-3 bg-purple-500/20 blur-md rounded-full pointer-events-none" />
 
-                {/* Larger Purple Cursor pointing down-left directly at Visual Impact */}
+                {/* Brand Purple Cursor pointing down-left directly at Visual Impact */}
                 <svg
-                  className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 fill-[#8B5CF6] drop-shadow-[0_3px_10px_rgba(139,92,246,0.65)] transform -rotate-[75deg] shrink-0"
+                  className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 fill-[#6E0CF8] drop-shadow-[0_3px_10px_rgba(110,12,248,0.55)] transform -rotate-[75deg] shrink-0"
                   viewBox="0 0 24 24"
                 >
                   <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                 </svg>
-                {/* Glowing "Creative" Tag */}
-                <div className="relative bg-gradient-to-r from-[#8B5CF6] via-[#9333EA] to-[#A855F7] text-white text-xs sm:text-sm md:text-[15px] font-bold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-[0_6px_20px_rgba(139,92,246,0.5)] border-[1.5px] border-white/80 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
+                {/* Glowing "Creative" Tag in Logo Blue-Purple-Pink (No yellow) */}
+                <div className="relative bg-gradient-to-r from-[#6E0CF8] via-[#C001F6] to-[#FF0485] text-white text-xs sm:text-sm md:text-[15px] font-bold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-[0_6px_20px_rgba(110,12,248,0.45)] border-[1.5px] border-white/80 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
                   Creative
                 </div>
               </div>

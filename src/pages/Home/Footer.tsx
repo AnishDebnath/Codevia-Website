@@ -42,8 +42,8 @@ export const Footer: React.FC = () => {
         className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-gray-200/90 bg-[#F4F5F8] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden"
         style={{ width: 'min(95vw, 1440px)' }}
       >
-        {/* Subtle bottom ambient gradient matching site theme */}
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-purple-100/40 via-transparent to-transparent pointer-events-none" />
+        {/* Subtle bottom ambient gradient matching logo spectrum */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-amber-100/25 via-pink-100/20 via-blue-100/15 to-transparent pointer-events-none" />
 
         {/* Top Area: Content placed at other section width (max-w-6xl) */}
         <div className="max-w-6xl mx-auto px-6 sm:px-8 pt-12 sm:pt-16 pb-12 sm:pb-16 relative z-10">

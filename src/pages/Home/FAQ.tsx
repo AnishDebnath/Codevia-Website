@@ -53,7 +53,7 @@ export const FAQ: React.FC = () => {
   return (
     <section id="faq" className="py-20 sm:py-24 lg:py-28 relative select-none">
       {/* Background ambient lighting matching theme */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[350px] bg-purple-200/15 blur-[130px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -61,14 +61,14 @@ export const FAQ: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col items-start space-y-4 sm:space-y-5 lg:sticky lg:top-28">
             {/* Section Tag matching Services, Works & Testimonials */}
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-purple-600" />
+              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide">FAQ</span>
             </div>
 
             {/* Section Heading matching Works & Testimonials font style & gradient accent */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
               Questions /{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#A855F7]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 Answers
               </span>
             </h2>
@@ -114,7 +114,7 @@ export const FAQ: React.FC = () => {
                     <span
                       className={`text-base sm:text-[17px] font-bold tracking-tight font-sans transition-colors ${
                         isOpen
-                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#8B5CF6]'
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485]'
                           : 'text-gray-900 hover:text-black'
                       }`}
                     >
@@ -124,7 +124,7 @@ export const FAQ: React.FC = () => {
                     <span
                       className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isOpen
-                          ? 'bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white shadow-xs rotate-90'
+                          ? 'bg-[#1F232B] hover:bg-black text-white shadow-xs rotate-90'
                           : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
                       }`}
                     >

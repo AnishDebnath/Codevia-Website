@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleNavClick(link.href, link.label)}
                   className={`text-left text-base font-semibold transition-all py-2 px-3 rounded-xl ${
                     isSelected
-                      ? 'bg-purple-50 text-purple-700 font-bold'
+                      ? 'bg-gradient-to-r from-blue-50 to-pink-50 text-indigo-700 font-bold'
                       : 'text-gray-800 hover:bg-gray-50 hover:text-indigo-600'
                   }`}
                 >

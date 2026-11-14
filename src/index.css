@@ -16,33 +16,48 @@
   border: 1px solid rgba(229, 231, 235, 0.8);
 }
 
-.text-gradient-purple {
-  background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 50%, #2563EB 100%);
+/* Logo gradient themes: Exact stops extracted from logo.png ribbon:
+   #0127F2 (Electric Blue) -> #6E0CF8 (Purple) -> #C001F6 (Fuchsia) -> #FF0485 (Hot Pink) -> #FD4918 (Coral Orange) -> #FFC802 (Golden Yellow) */
+.text-gradient-logo {
+  background: linear-gradient(135deg, #0127F2 0%, #6E0CF8 22%, #C001F6 45%, #FF0485 65%, #FD4918 85%, #FFC802 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.text-gradient-purple {
+  background: linear-gradient(135deg, #0127F2 0%, #6E0CF8 22%, #C001F6 45%, #FF0485 65%, #FD4918 85%, #FFC802 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-logo {
+  box-shadow: 0 0 80px -10px rgba(110, 12, 248, 0.25), 0 0 50px -10px rgba(255, 200, 2, 0.25);
+}
+
 .glow-purple {
-  box-shadow: 0 0 80px -10px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 80px -10px rgba(110, 12, 248, 0.25);
 }
 
 .glow-purple-intense {
-  box-shadow: 0 0 120px 20px rgba(147, 51, 234, 0.2);
+  box-shadow: 0 0 120px 20px rgba(255, 4, 133, 0.18), 0 0 100px 10px rgba(1, 39, 242, 0.18);
 }
 
 /* Selection bounding box handles */
 .handle-point {
   width: 7px;
   height: 7px;
-  background-color: #6366F1;
+  background-color: #0127F2;
   border: 1px solid #FFFFFF;
   position: absolute;
 }
 
 @keyframes float-gentle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-8px) rotate(1deg);
   }
@@ -53,24 +68,32 @@
 }
 
 @keyframes float-left {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) translateX(0px) rotate(0deg);
   }
+
   33% {
     transform: translateY(-9px) translateX(-3px) rotate(-1.5deg);
   }
+
   66% {
     transform: translateY(5px) translateX(2px) rotate(1deg);
   }
 }
 
 @keyframes float-right {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) translateX(0px) rotate(0deg);
   }
+
   33% {
     transform: translateY(7px) translateX(3px) rotate(1.5deg);
   }
+
   66% {
     transform: translateY(-11px) translateX(-2px) rotate(-1deg);
   }
@@ -88,6 +111,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -102,4 +126,3 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
