@@ -1,1 +1,1 @@
-export { Statistics } from '../../components/Statistics';
+export { Statistics } from '../../components/layout/Statistics';

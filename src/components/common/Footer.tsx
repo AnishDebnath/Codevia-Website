@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Phone, ChevronUp } from 'lucide-react';
 // ponytail: imported directly from assets folder
-import logoImg from '../assets/logo.png';
+import logoImg from '../../assets/logo.png';
 
 interface FooterProps {
   onNavigateProjects?: () => void;

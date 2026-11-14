@@ -1,1 +1,1 @@
-export { Testimonials } from '../../components/Testimonials';
+export { Testimonials } from '../../components/layout/Testimonials';

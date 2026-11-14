@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Navbar, Footer, CTA } from '../../components';
+import { Navbar, Footer } from '../../components/common';
+import { CTA } from '../../components/layout';
 import { Hero } from './Hero';
 import { Works, allProjects } from './Works';
 

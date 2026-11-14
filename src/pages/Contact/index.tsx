@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Footer, FAQ } from '../../components';
+import { Navbar, Footer } from '../../components/common';
+import { FAQ } from '../../components/layout';
 import { Hero } from './Hero';
 import { Form } from './Form';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 // ponytail: imported directly from assets folder
-import logoImg from '../assets/logo.png';
+import logoImg from '../../assets/logo.png';
 
 interface NavbarProps {
   currentPage?: 'home' | 'projects' | 'contact' | 'about';
