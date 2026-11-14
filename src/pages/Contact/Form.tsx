@@ -124,18 +124,24 @@ export const Form: React.FC = () => {
 
           {/* Right Column: 4 Info Cards Stack */}
           <div className="lg:col-span-4 flex flex-col justify-between gap-4 h-full">
-            {/* Box 1: Start A Project Card with Website Theme Gradient */}
-            <div className="bg-gradient-to-br from-[#0127F2] via-[#6E0CF8] to-[#FF0485] rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 text-white shadow-lg space-y-2.5 relative overflow-hidden flex-1 flex flex-col justify-center">
-              <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-white/90 font-sans">
-                <span className="w-2 h-2 rounded-full bg-[#FFC802] animate-pulse" />
+            {/* Box 1: Start A Project Card styled with smooth website theme container gradient */}
+            <div className="bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-purple-200/80 shadow-[0_8px_30px_rgba(110,12,248,0.06)] space-y-2.5 relative overflow-hidden flex-1 flex flex-col justify-center group text-left">
+              {/* Subtle ambient light glow */}
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-gradient-to-tl from-purple-200/40 via-pink-200/30 to-transparent blur-2xl pointer-events-none rounded-full" />
+              <div className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-200/30 via-indigo-200/20 to-transparent blur-2xl pointer-events-none rounded-full" />
+
+              <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-purple-900/80 font-sans relative z-10">
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802] shadow-xs" />
                 START A PROJECT
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold leading-snug font-sans tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold leading-snug font-sans tracking-tight text-gray-950 relative z-10">
                 Have an idea?
                 <br />
-                Let's talk.
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
+                  Let's talk.
+                </span>
               </h3>
-              <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans relative z-10 font-normal">
                 Tell us what you're building, what you're trying to achieve, or simply what you're imagining.
               </p>
             </div>

@@ -157,7 +157,7 @@ export const Hero: React.FC = () => {
                       ))}
                     </div>
                     <p className="text-[10px] font-bold tracking-wider text-gray-500 uppercase mt-0.5 font-sans">
-                      BASED ON 230 REVIEWS
+                      BASED ON REVIEWS
                     </p>
                   </div>
                 </div>
