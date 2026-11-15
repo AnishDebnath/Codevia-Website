@@ -1,22 +1,14 @@
 import React from 'react';
-import { Card, allProjects } from '../../components/product';
-export type { ProjectItem } from '../../components/product';
-export { allProjects };
+import { ProjectCard } from './ProjectCard';
+import { ProjectDetail } from '../../data/projectsData';
 
 interface WorksProps {
-  selectedCategory: string;
+  projects: ProjectDetail[];
+  onNavigateContact?: () => void;
 }
 
-// ponytail: Projects grid using shared product Card component
-export const Works: React.FC<WorksProps> = ({ selectedCategory }) => {
-  const filteredProjects = allProjects.filter((project) => {
-    if (selectedCategory === 'All Work') return true;
-    return (
-      project.category === selectedCategory ||
-      (project.subcategories && project.subcategories.includes(selectedCategory))
-    );
-  });
-
+// ponytail: Responsive Grid for PDF projects, styled to seamlessly match Codevia aesthetic
+export const Works: React.FC<WorksProps> = ({ projects, onNavigateContact }) => {
   return (
     <section className="pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-20 relative select-none">
       {/* Background ambient lighting matching theme */}
@@ -24,10 +16,14 @@ export const Works: React.FC<WorksProps> = ({ selectedCategory }) => {
       <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />
 
       <div className="max-w-6xl mx-auto px-6">
-        {/* 2-Column Responsive Showcase Grid using shared Card component */}
+        {/* Projects Grid: 2 columns on tablet and desktop, 1 on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8 lg:gap-9">
-          {filteredProjects.map((project) => (
-            <Card key={project.id} project={project} />
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onNavigateContact={onNavigateContact}
+            />
           ))}
         </div>
       </div>

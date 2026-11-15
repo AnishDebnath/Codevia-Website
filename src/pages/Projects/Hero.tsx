@@ -1,24 +1,26 @@
 import React from 'react';
+import { projectCategories, ProjectCategory, codeviaProjects } from '../../data/projectsData';
 
-// ponytail: Hero section for Projects page with styling matching Home section headers
 interface HeroProps {
   selectedCategory: string;
   onSelectCategory: (category: string) => void;
+  totalCount: number;
 }
-
-export const categories = [
-  'All Work',
-  'Branding',
-  'Digital Experience',
-  'E-commerce',
-  'Product Design',
-  'Campaigns',
-];
 
 export const Hero: React.FC<HeroProps> = ({
   selectedCategory,
   onSelectCategory,
 }) => {
+  // Compute count of cards for each category
+  const getCategoryCount = (category: string) => {
+    if (category === 'All Projects') {
+      return codeviaProjects.length;
+    }
+    return codeviaProjects.filter(
+      (p) => p.category === category || (p.subcategories && p.subcategories.includes(category))
+    ).length;
+  };
+
   return (
     <section className="pt-6 sm:pt-10 lg:pt-12 pb-4 sm:pb-6 w-full relative select-none">
       {/* Background ambient lighting matching website color theme */}
@@ -32,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                Our Experience
+                Project Experience &bull; Capabilities in Production
               </span>
             </div>
           </div>
@@ -41,31 +43,42 @@ export const Hero: React.FC<HeroProps> = ({
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
             Built across{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-              industries.
+              technologies &amp; industries.
             </span>
           </h1>
 
-          {/* Sub-heading supporting text matching website info */}
+          {/* Sub-heading supporting text taken from PDF overview */}
           <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-2xl font-sans pt-0.5">
-            Different industries. Different challenges. One consistent approach — technology that works for the people and businesses behind it.
+            Explore 11 production and prototype systems engineered by Codevia — spanning high-volume web platforms, real-time collaboration engines, LLM knowledge assistants, time-series forecasting, and computer vision automation.
           </p>
 
-          {/* Filter Pills */}
+          {/* Filter Pills with dynamic card counts */}
           <div className="pt-2 sm:pt-4">
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-              {categories.map((category) => {
+              {projectCategories.map((category) => {
                 const isActive = selectedCategory === category;
+                const count = getCategoryCount(category);
+
                 return (
                   <button
                     key={category}
                     onClick={() => onSelectCategory(category)}
-                    className={`px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
+                    className={`inline-flex items-center gap-2 px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
                       isActive
                         ? 'bg-[#1F232B] hover:bg-black text-white shadow-md'
                         : 'bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-700 hover:text-black shadow-2xs hover:shadow-xs'
                     }`}
                   >
                     <span>{category}</span>
+                    <span
+                      className={`inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-[11px] font-bold transition-colors ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
+                      }`}
+                    >
+                      {count}
+                    </span>
                   </button>
                 );
               })}

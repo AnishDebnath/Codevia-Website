@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import { Navbar, Footer } from '../../components/common';
 import { CTA } from '../../components/layout';
 import { Hero } from './Hero';
-import { Works, allProjects } from './Works';
+import { Works } from './Works';
+import { codeviaProjects, ProjectCategory } from '../../data/projectsData';
 
-// ponytail: Projects page cleanly structured same as Home page folder structure
 interface ProjectsPageProps {
   onNavigate?: (path: string) => void;
 }
 
 export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All Work');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All Projects');
 
-  const filteredCount = allProjects.filter((project) => {
-    if (selectedCategory === 'All Work') return true;
+  const filteredProjects = codeviaProjects.filter((project) => {
+    if (selectedCategory === 'All Projects') return true;
     return (
       project.category === selectedCategory ||
       project.subcategories.includes(selectedCategory)
     );
-  }).length;
+  });
 
   const handleNavigateHome = (sectionId?: string) => {
     const targetUrl = sectionId === 'services' ? '/services' : '/';
@@ -66,14 +66,18 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
 
       {/* Main Content Sections */}
       <main>
-        {/* Hero section */}
+        {/* Projects Hero with Dynamic Technology Categories Filter */}
         <Hero
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
+          totalCount={filteredProjects.length}
         />
 
-        {/* Dynamic Project Showcase Works Grid */}
-        <Works selectedCategory={selectedCategory} />
+        {/* Real Projects Grid Sourced Directly from the PDF */}
+        <Works
+          projects={filteredProjects}
+          onNavigateContact={handleNavigateContact}
+        />
 
         {/* Call to Action Section */}
         <CTA onNavigateContact={handleNavigateContact} />
@@ -81,9 +85,9 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
 
       {/* Footer Section */}
       <Footer
-        onNavigateHome={handleNavigateHome}
         onNavigateContact={handleNavigateContact}
         onNavigateAbout={handleNavigateAbout}
+        onNavigateHome={handleNavigateHome}
       />
     </div>
   );
