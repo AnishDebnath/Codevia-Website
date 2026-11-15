@@ -27,7 +27,7 @@ export const Form: React.FC = () => {
           {/* Left Column: Project Enquiry Form (height matches right side boxes) */}
           <div className="lg:col-span-8 bg-white rounded-[26px] sm:rounded-[32px] p-6 sm:p-9 lg:p-11 border border-purple-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-col justify-between h-full">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 font-sans tracking-tight mb-6 sm:mb-8">
-              Project enquiry
+              Tell us about it.
             </h2>
 
             {submitted ? (
@@ -35,9 +35,9 @@ export const Form: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-950 font-sans">Thank you for reaching out!</h3>
+                <h3 className="text-2xl font-bold text-gray-950 font-sans">Your message has been sent successfully.</h3>
                 <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed font-sans">
-                  We have received your message. A member of the Codevia team will review your inquiry and get back to you within two business days.
+                  We'll get back to you soon.
                 </p>
                 <button
                   type="button"
@@ -59,7 +59,7 @@ export const Form: React.FC = () => {
                       <input
                         type="text"
                         required
-                        placeholder="Jordan Lee"
+                        placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200/90 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-hidden focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all font-sans"
@@ -74,7 +74,7 @@ export const Form: React.FC = () => {
                       <input
                         type="email"
                         required
-                        placeholder="jordan@company.com"
+                        placeholder="john@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200/90 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-hidden focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all font-sans"
@@ -89,7 +89,7 @@ export const Form: React.FC = () => {
                     </label>
                     <textarea
                       required
-                      placeholder="Goals, audience, challenges and anything else we should know."
+                      placeholder="What are you looking to build?"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full flex-1 min-h-[140px] px-4 py-3.5 rounded-xl bg-white border border-gray-200/90 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-hidden focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all font-sans resize-none"
@@ -104,7 +104,7 @@ export const Form: React.FC = () => {
                       type="submit"
                       className="px-7 sm:px-8 py-3.5 sm:py-4 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer active:scale-95 group"
                     >
-                      <span>Send Project Enquiry</span>
+                      <span>Send Message</span>
                       <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802] group-hover:scale-125 transition-transform" />
                     </button>
                   </div>
@@ -135,14 +135,14 @@ export const Form: React.FC = () => {
                 START A PROJECT
               </div>
               <h3 className="text-xl sm:text-2xl font-bold leading-snug font-sans tracking-tight text-gray-950 relative z-10">
-                Have an idea?
+                Let's build
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-                  Let's talk.
+                  something remarkable.
                 </span>
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans relative z-10 font-normal">
-                Tell us what you're building, what you're trying to achieve, or simply what you're imagining.
+                Let's turn your ideas into something meaningful, modern and built to make an impact.
               </p>
             </div>
 

@@ -32,22 +32,22 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                Featured Projects
+                Our Experience
               </span>
             </div>
           </div>
 
-          {/* Section Heading matching Home page font style */}
+          {/* Section Heading matching website info */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
-            Good work gets{' '}
+            Built across{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-              remembered.
+              industries.
             </span>
           </h1>
 
-          {/* Sub-heading supporting text matching Home section typography */}
+          {/* Sub-heading supporting text matching website info */}
           <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-2xl font-sans pt-0.5">
-            From emerging businesses to established organisations, we've worked alongside teams building what matters. Explore our recent digital products, web platforms, and mobile apps.
+            Different industries. Different challenges. One consistent approach — technology that works for the people and businesses behind it.
           </p>
 
           {/* Filter Pills */}

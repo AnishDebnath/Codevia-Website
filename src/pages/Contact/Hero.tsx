@@ -15,23 +15,22 @@ export const Hero: React.FC = () => {
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                Contact Us
+                Get in Touch
               </span>
             </div>
           </div>
 
           {/* Section Heading matching Home and Projects font style (Plus Jakarta Sans, bold, tracking-tight, no serif/italic) */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
-            Tell us what{' '}
+            Have an idea?{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-              you are imagining.
+              Let's talk.
             </span>
           </h1>
 
           {/* Sub-heading supporting text matching Home section typography */}
           <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-2xl font-sans pt-0.5">
-            A new brand, a better website or a digital product that needs a clearer direction — we
-            would love to hear about it. Share a little context and we will take it from there.
+            Tell us what you're building, what you're trying to achieve, or simply what you're imagining.
           </p>
         </div>
       </div>
