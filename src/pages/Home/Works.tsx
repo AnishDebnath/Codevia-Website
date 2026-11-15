@@ -24,23 +24,21 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           <div className="space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Selected Work</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Featured Projects</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
-              Selected{' '}
+              Good work gets{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-                work
+                remembered.
               </span>
             </h2>
           </div>
 
           {/* Right Side: Sub-heading + Button */}
           <div className="flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-end gap-4 sm:gap-5">
-            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-md lg:text-right">
-              A few recent projects across brand, web and product.
-              <br className="hidden sm:inline" />
-              {' '}Every one started with a short call.
+            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-md lg:text-right font-sans">
+              From emerging businesses to established organisations, we've worked alongside teams building what matters.
             </p>
 
             {/* Action Button: View all work linking directly to the dedicated Projects page */}

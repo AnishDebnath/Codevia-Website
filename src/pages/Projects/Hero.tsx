@@ -32,23 +32,22 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                Selected Work
+                Featured Projects
               </span>
             </div>
           </div>
 
           {/* Section Heading matching Home page font style */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
-            A collection of ideas{' '}
+            Good work gets{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-              put into motion.
+              remembered.
             </span>
           </h1>
 
           {/* Sub-heading supporting text matching Home section typography */}
           <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-2xl font-sans pt-0.5">
-            Explore a selection of brand identities, digital products and campaigns built to solve
-            real challenges and create meaningful connections.
+            From emerging businesses to established organisations, we've worked alongside teams building what matters. Explore our recent digital products, web platforms, and mobile apps.
           </p>
 
           {/* Filter Pills */}
