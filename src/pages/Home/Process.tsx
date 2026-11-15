@@ -62,7 +62,7 @@ export const Process: React.FC = () => {
   return (
     <section
       id="process"
-      className="w-full bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] py-14 sm:py-18 lg:py-20 relative select-none border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)] overflow-hidden"
+      className="w-full bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] py-12 sm:py-16 lg:py-20 relative select-none border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)] overflow-hidden"
     >
       {/* Subtle geometric dot grid pattern for depth & texture */}
       <div className="absolute inset-0 bg-[radial-gradient(#C4B5FD_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 pointer-events-none" />

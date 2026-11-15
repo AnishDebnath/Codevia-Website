@@ -127,7 +127,7 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24 relative select-none">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 relative select-none">
       {/* Background ambient lighting matching theme */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
 

@@ -22,7 +22,7 @@ export const Statistics: React.FC = () => {
   ];
 
   return (
-    <section id="stats" className="relative w-full py-10 sm:py-14 lg:py-16 select-none">
+    <section id="stats" className="relative w-full py-10 sm:py-12 lg:py-14 select-none">
       {/* Subtle ambient glow in background matching the logo spectrum lighting */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[220px] bg-gradient-to-r from-blue-200/20 via-purple-200/20 to-pink-200/20 blur-3xl pointer-events-none -z-10" />
 

@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="pt-2 pb-14 md:pb-20 w-full flex justify-center select-none">
+    <section className="pt-2 sm:pt-4 pb-8 sm:pb-12 lg:pb-14 w-full flex justify-center select-none">
       {/* Contained Hero Box Container with background based on website color theme */}
       <div
         className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-8 sm:py-12 lg:py-16 overflow-hidden min-h-[640px] sm:min-h-[720px] lg:min-h-[780px] flex flex-col justify-between"

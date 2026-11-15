@@ -3,7 +3,7 @@ import React from 'react';
 // ponytail: Contact page Hero section with typography, badge, and gradient accent matching all site section headers
 export const Hero: React.FC = () => {
   return (
-    <section className="pt-6 sm:pt-10 lg:pt-12 pb-6 sm:pb-8 w-full relative select-none">
+    <section className="pt-6 sm:pt-10 lg:pt-12 pb-4 sm:pb-6 w-full relative select-none">
       {/* Background ambient lighting matching website color theme */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-blue-100/25 via-purple-100/30 to-pink-100/20 blur-[140px] pointer-events-none rounded-full -z-10" />
       <div className="absolute top-1/3 right-10 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/20 to-transparent blur-[130px] pointer-events-none rounded-full -z-10" />

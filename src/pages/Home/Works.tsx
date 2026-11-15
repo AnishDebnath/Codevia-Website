@@ -12,7 +12,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
   const homeProjects = allProjects.slice(0, 4);
 
   return (
-    <section id="works" className="py-20 sm:py-24 lg:py-28 relative select-none">
+    <section id="works" className="py-12 sm:py-16 lg:py-20 relative select-none">
       {/* Background ambient lighting matching theme */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />

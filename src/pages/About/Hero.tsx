@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="pt-6 sm:pt-10 lg:pt-12 pb-16 sm:pb-20 lg:pb-24 w-full relative select-none">
+    <section className="pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12 lg:pb-14 w-full relative select-none">
       {/* Background ambient lighting matching website color theme */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[140px] pointer-events-none rounded-full -z-10" />
 

@@ -22,7 +22,7 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
   };
 
   return (
-    <section id="cta" className="py-12 sm:py-16 lg:py-20 w-full flex justify-center select-none">
+    <section id="cta" className="pt-12 sm:pt-16 lg:pt-20 pb-4 sm:pb-6 lg:pb-8 w-full flex justify-center select-none">
       {/* Contained Hero-like Box Container with background based on website color theme */}
       <div
         className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-14 sm:py-20 lg:py-24 overflow-hidden min-h-[500px] sm:min-h-[550px] lg:min-h-[600px] flex flex-col items-center justify-center text-center"

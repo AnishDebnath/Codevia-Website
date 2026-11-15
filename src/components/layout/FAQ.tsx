@@ -56,7 +56,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-24 lg:py-28 relative select-none">
+    <section id="faq" className="py-12 sm:py-16 lg:py-20 relative select-none">
       {/* Background ambient lighting matching theme */}
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
 

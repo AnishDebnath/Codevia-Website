@@ -119,7 +119,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 sm:py-24 lg:py-28 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
+      className="py-12 sm:py-16 lg:py-20 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
     >
       {/* Background ambient lighting matching Hero palette */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/25 to-pink-200/20 blur-[140px] pointer-events-none rounded-full -z-10" />

@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="w-full flex justify-center pb-8 sm:pb-12 pt-4 select-none">
+    <footer className="w-full flex justify-center pt-2 sm:pt-3 lg:pt-4 pb-4 sm:pb-6 lg:pb-8 select-none">
       {/* Outer Background Container following vw property & matching other section div border radius */}
       <div
         className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.04)] overflow-hidden"
