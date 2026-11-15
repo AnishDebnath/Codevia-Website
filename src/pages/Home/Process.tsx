@@ -3,7 +3,7 @@ import React from 'react';
 // ponytail: proper sizing, strictly contained within div boundaries, zero horizontal overflow on desktop
 interface Milestone {
   week: number;
-  category: 'Strategy' | 'Design' | 'Build';
+  category: string;
   title: string;
   position: 'top' | 'bottom';
   isFinal?: boolean;
@@ -14,43 +14,43 @@ export const Process: React.FC = () => {
   const milestones: Milestone[] = [
     {
       week: 1,
-      category: 'Strategy',
-      title: 'Kickoff workshop',
+      category: 'Discover',
+      title: 'Kickoff & Research',
       position: 'top',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces',
     },
     {
       week: 2,
-      category: 'Strategy',
-      title: 'Sitemap signed off',
+      category: 'Define',
+      title: 'Roadmap & Scope',
       position: 'bottom',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces',
     },
     {
       week: 3,
       category: 'Design',
-      title: 'Wireframes approved',
+      title: 'UI/UX Prototypes',
       position: 'top',
       avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=faces',
     },
     {
       week: 5,
-      category: 'Design',
-      title: 'Visual design approved',
+      category: 'Build',
+      title: 'Engineering & Code',
       position: 'bottom',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces',
     },
     {
       week: 7,
       category: 'Build',
-      title: 'Build ready for review',
+      title: 'QA & Final Review',
       position: 'top',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces',
     },
     {
       week: 8,
-      category: 'Build',
-      title: 'Launch',
+      category: 'Scale',
+      title: 'Launch & Scale',
       position: 'bottom',
       isFinal: true,
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces',
@@ -80,21 +80,21 @@ export const Process: React.FC = () => {
         {/* Top Header Section: Section Tag & Heading on Left, 8 Weeks Stat on Right */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
           {/* Left Side: Tag Line, Heading, Sub-heading */}
-          <div className="space-y-4 max-w-xl">
+          <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Our Process</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">How We Work</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
-              Eight weeks,{' '}
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-gray-950 leading-[1.14] font-sans sm:whitespace-nowrap">
+              From first idea{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-                six sign-offs
+                to real impact.
               </span>
             </h2>
 
             <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-md font-sans">
-              You approve each milestone before we move on, so nothing is a surprise on launch day.
+              A transparent, milestone-driven roadmap from first discovery to launch and ongoing scale — so nothing is a surprise.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export const Process: React.FC = () => {
               8 weeks
             </div>
             <p className="text-xs sm:text-sm text-gray-600 font-medium font-sans">
-              Typical website, kickoff to launch
+              Kickoff to launch &amp; scale
             </p>
           </div>
         </div>
