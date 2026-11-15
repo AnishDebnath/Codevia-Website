@@ -15,27 +15,32 @@ export const FAQ: React.FC = () => {
     {
       question: 'How long does a typical project take?',
       answer:
-        'Most projects take around 2–4 weeks from start to launch. It depends on the size and complexity, but we always aim to keep things moving smoothly with clear milestones.',
+        'Depending on scope and complexity, typical projects range from 4 to 8 weeks from kickoff to launch. We work in structured sprints across our 4-stage framework (Discover, Define, Build, Scale) with regular milestone sign-offs so there are never any surprises.',
     },
     {
-      question: 'Do you offer ongoing support after launch?',
+      question: 'What services does Codevia provide?',
       answer:
-        'Yes, we provide ongoing maintenance, continuous feature enhancements, and proactive performance monitoring to ensure your digital product operates seamlessly.',
+        'We deliver end-to-end digital solutions across 5 core pillars: Website Design & Development, Mobile App Development (iOS & Android), UI / UX Design, Artificial Intelligence integrations, and Digital Strategy.',
     },
     {
-      question: 'Can you help with content creation and copywriting?',
+      question: 'What technology stack do you build with?',
       answer:
-        'Absolutely. We craft strategic copy, brand narratives, and value-focused messaging designed to align with your aesthetic and convert visitors into clients.',
+        'We choose technology based on the problem, not the trend. Our primary stack includes React, Next.js, TypeScript, Node.js, Python for AI & Data, AWS Cloud infrastructure, and modern databases like PostgreSQL and MongoDB.',
     },
     {
-      question: 'What platforms do you specialize in?',
+      question: 'How do you integrate Artificial Intelligence into products?',
       answer:
-        'We specialize in modern web architectures including React, Next.js, TypeScript, Tailwind CSS, and headless content solutions engineered for peak velocity and scale.',
+        'We develop practical AI solutions that automate workflows, generate intelligent insights, and unlock new efficiencies for your business—from custom LLM integrations and automated agents to smart search and recommendation engines.',
     },
     {
-      question: 'How do you handle SEO during development?',
+      question: 'Do you provide ongoing support after launch?',
       answer:
-        'Technical SEO is built in from day one—incorporating structured metadata, semantic HTML, lightweight asset delivery, and responsive accessibility.',
+        'Yes. In our Scale phase, we provide continuous monitoring, performance optimization, security updates, and iterative feature development to ensure your product operates smoothly as your business grows.',
+    },
+    {
+      question: 'How does the collaboration process work?',
+      answer:
+        'We partner closely with your team from day one. You get direct access to our leads, weekly sprint demos, clear milestone approvals, and transparent communication throughout the entire journey.',
     },
   ];
 
@@ -44,7 +49,7 @@ export const FAQ: React.FC = () => {
   };
 
   const scrollToContact = () => {
-    const el = document.querySelector('#works');
+    const el = document.querySelector('#contact');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -57,25 +62,25 @@ export const FAQ: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Left Column: Section Tag, Heading, Supporting Description, and Button (same style as other section headers) */}
+          {/* Left Column: Section Tag, Heading, Supporting Description, and Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-4 sm:space-y-5 lg:sticky lg:top-28">
-            {/* Section Tag matching Services, Works & Testimonials */}
+            {/* Section Tag */}
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">FAQ</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Common Questions</span>
             </div>
 
-            {/* Section Heading matching Works & Testimonials font style & gradient accent */}
+            {/* Section Heading matching website style */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
-              Questions /{' '}
+              Frequently asked{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-                Answers
+                questions.
               </span>
             </h2>
 
-            {/* Sub-heading supporting text matching Works section */}
-            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-sm pt-0.5">
-              Everything you need to know about our process, collaboration model, and deliverables.
+            {/* Sub-heading supporting text */}
+            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-sm pt-0.5 font-sans">
+              Everything you need to know about how Codevia designs, builds, and scales digital products.
             </p>
 
             {/* Action Button styled consistent with Hero button style */}
