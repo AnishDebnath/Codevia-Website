@@ -24,9 +24,9 @@ export const Footer: React.FC<FooterProps> = ({
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    { label: 'Services', href: '#services' },
+    { label: 'Services', href: '/services' },
     { label: 'Projects', href: '/projects' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'FAQ', href: '/' },
     { label: 'Contact Us', href: '/contact' },
   ];
 
@@ -37,68 +37,97 @@ export const Footer: React.FC<FooterProps> = ({
 
   const handleNavClick = (href: string, label: string) => {
     if (label === 'Home') {
+      window.history.pushState({}, '', '/');
       if (window.location.pathname === '/' || window.location.pathname === '') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (onNavigateHome) {
         onNavigateHome('');
       } else {
-        window.history.pushState({}, '', '/');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
     if (label === 'About') {
+      window.history.pushState({}, '', '/about');
       if (onNavigateAbout) {
         onNavigateAbout();
       } else {
-        window.history.pushState({}, '', '/about');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
     if (label === 'Projects') {
+      window.history.pushState({}, '', '/projects');
       if (onNavigateProjects) {
         onNavigateProjects();
       } else {
-        window.history.pushState({}, '', '/projects');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
     if (label === 'Contact Us') {
+      window.history.pushState({}, '', '/contact');
       if (onNavigateContact) {
         onNavigateContact();
       } else {
-        window.history.pushState({}, '', '/contact');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
-    // Anchor sections (Services, FAQ):
-    // First, check if the anchor element exists on the CURRENT page!
-    if (href.startsWith('#')) {
-      const el = document.querySelector(href);
+    if (label === 'Services') {
+      window.history.pushState({}, '', '/services');
+      const el = document.querySelector('#services');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
         return;
       }
-      const sectionId = href.replace('#', '');
       if (onNavigateHome) {
-        onNavigateHome(sectionId);
+        onNavigateHome('services');
       } else {
-        window.history.pushState({}, '', `/#${sectionId}`);
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
-    if (href === '#' || !href) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (label === 'FAQ') {
+      const el = document.querySelector('#faq');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        if (window.location.pathname === '/services') {
+          window.history.replaceState(null, '', '/');
+        }
+        return;
+      }
+      if (onNavigateHome) {
+        onNavigateHome('faq');
+      } else {
+        window.history.pushState({}, '', '/');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+        setTimeout(() => {
+          document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
       return;
+    }
+
+    // Anchor sections:
+    const targetAnchor = href.includes('#') ? `#${href.split('#')[1]}` : href;
+    const el = document.querySelector(targetAnchor);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    const sectionId = href.split('#')[1] || '';
+    if (onNavigateHome) {
+      onNavigateHome(sectionId);
+    } else {
+      window.history.pushState({}, '', '/');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
@@ -177,12 +206,16 @@ export const Footer: React.FC<FooterProps> = ({
               <ul className="space-y-2 text-sm sm:text-[15px] text-gray-800 font-medium">
                 {navLinks.map((link) => (
                   <li key={link.label}>
-                    <button
-                      onClick={() => handleNavClick(link.href, link.label)}
-                      className="hover:text-purple-600 transition-colors cursor-pointer text-left"
+                    <a
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(link.href, link.label);
+                      }}
+                      className="hover:text-purple-600 transition-colors cursor-pointer text-left inline-block"
                     >
                       {link.label}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>

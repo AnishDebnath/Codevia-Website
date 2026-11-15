@@ -53,6 +53,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
   };
 
   const handleContactClick = () => {
+    window.history.pushState({}, '', '/contact');
     if (onNavigateContact) {
       onNavigateContact();
       return;
@@ -61,7 +62,6 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.history.pushState({}, '', '/contact');
       window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
@@ -96,15 +96,19 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
 
             {/* Action Button styled consistent with Hero button style */}
             <div className="pt-2">
-              <button
-                onClick={handleContactClick}
-                className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group"
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleContactClick();
+                }}
+                className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group inline-flex"
               >
                 <span>Still have questions?</span>
                 <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
-              </button>
+              </a>
             </div>
           </div>
 

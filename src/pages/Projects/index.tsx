@@ -21,16 +21,18 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
   }).length;
 
   const handleNavigateHome = (sectionId?: string) => {
+    const targetUrl = sectionId === 'services' ? '/services' : '/';
     if (onNavigate) {
-      onNavigate('/');
-      if (sectionId) {
-        setTimeout(() => {
-          const el = document.getElementById(sectionId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      onNavigate(targetUrl);
     } else {
-      window.location.href = sectionId ? `/#${sectionId}` : '/';
+      window.history.pushState({}, '', targetUrl);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+    if (sectionId) {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   };
 

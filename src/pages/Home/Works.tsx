@@ -42,12 +42,14 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
             </p>
 
             {/* Action Button: View all work linking directly to the dedicated Projects page */}
-            <button
-              onClick={() => {
+            <a
+              href="/projects"
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState({}, '', '/projects');
                 if (onNavigateProjects) {
                   onNavigateProjects();
                 } else {
-                  window.history.pushState({}, '', '/projects');
                   window.dispatchEvent(new PopStateEvent('popstate'));
                 }
               }}
@@ -57,7 +59,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
               <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
-            </button>
+            </a>
           </div>
         </div>
 

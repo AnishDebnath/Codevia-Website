@@ -12,10 +12,10 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
   const [selectedWord, setSelectedWord] = useState('Products');
 
   const handleStartProject = () => {
+    window.history.pushState({}, '', '/contact');
     if (onNavigateContact) {
       onNavigateContact();
     } else {
-      window.history.pushState({}, '', '/contact');
       window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
@@ -124,25 +124,33 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3.5">
-                <button
-                  onClick={handleStartProject}
+                <a
+                  href="/contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleStartProject();
+                  }}
                   className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
                 >
                   <span>Start a Project</span>
                   <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
-                </button>
+                </a>
 
-                <button
-                  onClick={handleExploreWork}
+                <a
+                  href="/projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleExploreWork();
+                  }}
                   className="px-7 py-3.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
                 >
                   <span>Explore Selected Work</span>
                   <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-200 transition-colors">
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </span>
-                </button>
+                </a>
               </div>
             </div>
 

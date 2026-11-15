@@ -11,16 +11,18 @@ interface ContactPageProps {
 
 export const Contact: React.FC<ContactPageProps> = ({ onNavigate }) => {
   const handleNavigate = (path: string, sectionId?: string) => {
+    const targetUrl = sectionId === 'services' ? '/services' : path;
     if (onNavigate) {
-      onNavigate(path);
-      if (sectionId) {
-        setTimeout(() => {
-          const el = document.getElementById(sectionId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      onNavigate(targetUrl);
     } else {
-      window.location.href = sectionId ? `${path}#${sectionId}` : path;
+      window.history.pushState({}, '', targetUrl);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+    if (sectionId) {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   };
 

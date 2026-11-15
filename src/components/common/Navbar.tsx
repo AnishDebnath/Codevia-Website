@@ -34,11 +34,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { label: 'Home', href: '/', sectionId: '' },
     { label: 'About', href: '/about', sectionId: '' },
-    { label: 'Services', href: '#services', sectionId: 'services' },
+    { label: 'Services', href: '/services', sectionId: 'services' },
     { label: 'Projects', href: '/projects', sectionId: 'works' },
   ];
 
-  // Scroll spy to dynamically select current section menu item on Home page
+  // Scroll spy to dynamically manage URL & active link on Home/Services page:
+  // When in service section, then only show service url (/services), otherwise home url (/)
+  // Completely free of '#' hashes
   useEffect(() => {
     if (currentPage === 'projects') {
       setActiveLink('Projects');
@@ -54,30 +56,30 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY < 260) {
-        setActiveLink('Home');
-        return;
+      const servicesEl = document.getElementById('services');
+      if (servicesEl) {
+        const rect = servicesEl.getBoundingClientRect();
+        // In Services section when top is within upper viewport and bottom hasn't scrolled past top
+        const inService = rect.top <= 200 && rect.bottom >= 150;
+
+        if (inService) {
+          setActiveLink('Services');
+          if (window.location.pathname !== '/services') {
+            window.history.replaceState(null, '', '/services');
+          }
+          return;
+        }
       }
 
-      const sections = [
-        { id: 'works', label: 'Projects' },
-        { id: 'services', label: 'Services' },
-      ];
-
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 240) {
-            setActiveLink(section.label);
-            return;
-          }
-        }
+      // Otherwise in any other section on the Home page (Hero, Stats, Process, Works, Testimonials, FAQ, CTA, Footer)
+      setActiveLink('Home');
+      if (window.location.pathname === '/services' || (window.location.hash && window.location.hash !== '')) {
+        window.history.replaceState(null, '', '/');
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [currentPage]);
 
@@ -86,42 +88,43 @@ export const Navbar: React.FC<NavbarProps> = ({
     setMobileMenuOpen(false);
 
     if (label === 'Home') {
+      window.history.pushState({}, '', '/');
       if (currentPage === 'home') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (onNavigateHome) {
         onNavigateHome('');
       } else {
-        window.history.pushState({}, '', '/');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
     if (label === 'About') {
+      window.history.pushState({}, '', '/about');
       if (currentPage === 'about') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (onNavigateAbout) {
         onNavigateAbout();
       } else {
-        window.history.pushState({}, '', '/about');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
     if (label === 'Projects') {
+      window.history.pushState({}, '', '/projects');
       if (currentPage === 'projects') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (onNavigateProjects) {
         onNavigateProjects();
       } else {
-        window.history.pushState({}, '', '/projects');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
     if (label === 'Services') {
+      window.history.pushState({}, '', '/services');
       if (currentPage === 'home') {
         const element = document.querySelector('#services');
         if (element) {
@@ -130,7 +133,6 @@ export const Navbar: React.FC<NavbarProps> = ({
       } else if (onNavigateHome) {
         onNavigateHome('services');
       } else {
-        window.history.pushState({}, '', '/#services');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
@@ -141,18 +143,21 @@ export const Navbar: React.FC<NavbarProps> = ({
       return;
     }
 
-    const element = document.querySelector(href);
+    const cleanHref = href.startsWith('/#') ? href.replace('/#', '#') : href;
+    const element = document.querySelector(cleanHref);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     } else if (onNavigateHome) {
       onNavigateHome(sectionId);
     } else {
-      window.location.href = sectionId ? `/#${sectionId}` : '/';
+      window.history.pushState({}, '', '/');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
   const handleContactClick = () => {
     setMobileMenuOpen(false);
+    window.history.pushState({}, '', '/contact');
     if (currentPage === 'contact') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -161,7 +166,6 @@ export const Navbar: React.FC<NavbarProps> = ({
       onNavigateContact();
       return;
     }
-    window.history.pushState({}, '', '/contact');
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
@@ -170,10 +174,10 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Lockup: Logo */}
         <a
-          href="#"
+          href="/"
           onClick={(e) => {
             e.preventDefault();
-            handleNavClick('#', 'Home', '');
+            handleNavClick('/', 'Home', '');
           }}
           className="flex items-center group cursor-pointer"
           aria-label="Codevia Home"
@@ -192,9 +196,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               const isSelected = activeLink === link.label;
 
               return (
-                <button
+                <a
                   key={link.label}
-                  onClick={() => handleNavClick(link.href, link.label, link.sectionId)}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href, link.label, link.sectionId);
+                  }}
                   className={`px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap ${
                     isSelected
                       ? 'bg-[#1F232B] text-white shadow-xs'
@@ -202,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   }`}
                 >
                   {link.label}
-                </button>
+                </a>
               );
             })}
           </nav>
@@ -210,15 +218,19 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Action Button: "Contact Us" matching Hero button style */}
         <div className="hidden md:flex items-center">
-          <button
-            onClick={handleContactClick}
+          <a
+            href="/contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleContactClick();
+            }}
             className="px-5 sm:px-6 py-2.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
           >
             <span>Contact Us</span>
             <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </span>
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -241,30 +253,38 @@ export const Navbar: React.FC<NavbarProps> = ({
               const isSelected = activeLink === link.label;
 
               return (
-                <button
+                <a
                   key={link.label}
-                  onClick={() => handleNavClick(link.href, link.label, link.sectionId)}
-                  className={`text-left text-base font-semibold transition-all py-2 px-3 rounded-xl ${
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href, link.label, link.sectionId);
+                  }}
+                  className={`text-left text-base font-semibold transition-all py-2 px-3 rounded-xl block ${
                     isSelected
                       ? 'bg-gradient-to-r from-blue-50 to-pink-50 text-indigo-700 font-bold'
                       : 'text-gray-800 hover:bg-gray-50 hover:text-indigo-600'
                   }`}
                 >
                   {link.label}
-                </button>
+                </a>
               );
             })}
           </div>
           <div className="pt-2">
-            <button
-              onClick={handleContactClick}
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleContactClick();
+              }}
               className="w-full py-3 bg-[#1F232B] hover:bg-black text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer group active:scale-95"
             >
               <span>Contact Us</span>
               <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </span>
-            </button>
+            </a>
           </div>
         </div>
       )}
