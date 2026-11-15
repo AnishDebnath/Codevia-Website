@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, ChevronUp } from 'lucide-react';
+import { Mail, Phone, MapPin, ChevronUp } from 'lucide-react';
 // ponytail: imported directly from assets folder
 import logoImg from '../../assets/logo.png';
 
@@ -31,9 +31,8 @@ export const Footer: React.FC<FooterProps> = ({
   ];
 
   const socialLinks = [
-    { label: 'Facebook', href: 'https://facebook.com' },
-    { label: 'Instagram', href: 'https://instagram.com' },
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/codeviaai/' },
+    { label: 'Instagram', href: 'https://www.instagram.com/codevia.ai?igsi=d25pb2J3YWFtd2Zy' },
   ];
 
   const handleNavClick = (href: string, label: string) => {
@@ -122,14 +121,14 @@ export const Footer: React.FC<FooterProps> = ({
               </a>
 
               <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed font-sans">
-                Technology with Purpose. Transforming ambitious ideas into scalable, high-performing digital products.
+                We transform ambitious ideas into beautiful, scalable and high-performing digital products that help businesses grow.
               </p>
             </div>
 
-            {/* Column 2: Work Inquiries */}
+            {/* Column 2: Contact Info */}
             <div className="space-y-3.5 shrink-0">
               <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider font-sans">
-                Work Inquiries
+                Contact
               </h4>
               <div className="space-y-2.5 text-sm sm:text-[15px] text-gray-800 font-medium">
                 <a
@@ -146,6 +145,10 @@ export const Footer: React.FC<FooterProps> = ({
                   <Phone className="w-4 h-4 text-gray-700 group-hover:text-purple-600 transition-colors shrink-0" />
                   <span>+91 93823 22241</span>
                 </a>
+                <div className="flex items-start gap-2.5 text-gray-600">
+                  <MapPin className="w-4 h-4 text-gray-700 shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm font-normal">Salt Lake, Kolkata, India</span>
+                </div>
               </div>
             </div>
 
@@ -196,16 +199,26 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Bottom Bar: aligned with the content width */}
         <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-            {/* Left Cell: Copyright & Credits */}
-            <div className="py-5 text-xs sm:text-[13px] text-gray-500 font-sans flex flex-wrap items-center gap-2 justify-center md:justify-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 py-5">
+            {/* Left Cell: Copyright & Legal Links */}
+            <div className="text-xs sm:text-[13px] text-gray-500 font-sans flex flex-wrap items-center gap-2.5 justify-center md:justify-start">
               <span>© {new Date().getFullYear()} Codevia. All rights reserved.</span>
               <span className="hidden sm:inline text-gray-300">•</span>
-              <span className="text-gray-600">Designed &amp; developed by Anish Debnath</span>
+              <span className="text-gray-600">
+                Designed &amp; developed by{' '}
+                <a
+                  href="https://www.linkedin.com/in/anish-debnath/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-purple-600 transition-colors underline underline-offset-2"
+                >
+                  Anish Debnath
+                </a>
+              </span>
             </div>
 
             {/* Right Cell: Back to Top with Vertical Divider */}
-            <div className="md:border-l md:border-gray-200/80 md:pl-8 py-3 flex items-center justify-center md:justify-end">
+            <div className="md:border-l md:border-gray-200/80 md:pl-8 flex items-center justify-center md:justify-end">
               <button
                 onClick={scrollToTop}
                 className="px-5 py-2.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
