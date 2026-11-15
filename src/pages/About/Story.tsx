@@ -12,7 +12,7 @@ export const Story: React.FC = () => {
       <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-purple-100/15 via-pink-100/15 to-amber-100/15 blur-[130px] pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-6 space-y-16 sm:space-y-24 lg:space-y-28">
-        {/* Section 1: Our Company (Text Left, Image Right) */}
+        {/* Section 1: Our Story (Text Left, Image Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Content Column */}
           <div className="space-y-5 max-w-xl">
@@ -21,22 +21,22 @@ export const Story: React.FC = () => {
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-purple-200/90 bg-white shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
                 <span className="text-xs sm:text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                  Our company
+                  Our story
                 </span>
               </div>
             </div>
 
             {/* Heading with brand gradient accent */}
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-gray-950 font-sans leading-[1.2]">
-              We love to{' '}
+              Technology should{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-                collaborate
+                adapt to you.
               </span>
             </h2>
 
-            {/* Paragraph matching design text */}
+            {/* Paragraph matching codeviaai.com */}
             <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed font-sans">
-              We believe great websites come from a mix of thoughtful design, smart strategy, and reliable development. That's why we work closely with you to understand your goals, your audience, and what makes your brand unique. Whether you're just starting out or refreshing an existing site, we help turn ideas into digital experiences that feel effortless and intuitive.
+              No two businesses are the same. That’s why we don’t believe in technology that comes off a shelf. Codevia was built around a simple idea: technology works best when it is designed around the people, processes and ambitions of the business using it. We help businesses discover, build, operate and grow through digital products that make a lasting impact.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export const Story: React.FC = () => {
           <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden border border-purple-100/80 shadow-[0_14px_40px_rgba(0,0,0,0.06)] bg-gray-100 aspect-[4/3] sm:aspect-[14/10] group">
             <img
               src={collaborateImg}
-              alt="Team collaborating around conference table"
+              alt="Codevia team and technology collaborating"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             />
             {/* Subtle light vignette overlay */}
@@ -52,13 +52,13 @@ export const Story: React.FC = () => {
           </div>
         </div>
 
-        {/* Section 2: Our Values (Image Left, Text Right) */}
+        {/* Section 2: Our Philosophy (Image Left, Text Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Image Showcase Column (Order 2 on mobile, Order 1 on desktop) */}
           <div className="order-2 lg:order-1 relative rounded-[24px] sm:rounded-[32px] overflow-hidden border border-purple-100/80 shadow-[0_14px_40px_rgba(0,0,0,0.06)] bg-gray-100 aspect-[4/3] sm:aspect-[14/10] group">
             <img
               src={valuesImg}
-              alt="Creative designer working with focus on laptop"
+              alt="Codevia engineer and designer focused on product excellence"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             />
             {/* Subtle light vignette overlay */}
@@ -72,22 +72,22 @@ export const Story: React.FC = () => {
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-purple-200/90 bg-white shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
                 <span className="text-xs sm:text-sm font-semibold text-gray-800 tracking-wide font-sans">
-                  Our values
+                  Our philosophy
                 </span>
               </div>
             </div>
 
             {/* Heading with brand gradient accent */}
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-gray-950 font-sans leading-[1.2]">
-              Simplicity &{' '}
+              We build{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-                Clarity
+                business advantage.
               </span>
             </h2>
 
-            {/* Paragraph matching design text */}
+            {/* Paragraph matching codeviaai.com */}
             <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed font-sans">
-              We value simplicity, clarity, and doing things the right way. That means putting users first, communicating honestly, and caring about the details — from pixel to performance. We're here to make the web a better, more usable place, one project at a time.
+              We don’t just build software — we build measurable business advantage. Across multiple industries and markets, our experiences have shaped the way we work: practical, thoughtful, scalable and deeply connected to business outcomes where creativity, engineering discipline, and commercial strategy work together.
             </p>
           </div>
         </div>

@@ -30,17 +30,16 @@ export const Hero: React.FC = () => {
 
           {/* Heading with website brand gradient accent */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-950 font-sans leading-[1.12]">
-            About{' '}
+            Building digital{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
-              us
-            </span>
+              experiences
+            </span>{' '}
+            that move business.
           </h1>
 
           {/* Supporting paragraph matching reference text */}
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-normal leading-relaxed max-w-2xl mx-auto font-sans">
-            We're a small, flexible team that designs and builds websites that just make sense for
-            your business and your users. From landing pages to full websites, we focus on clean
-            design, smooth interactions, and solid development.
+            We partner with ambitious businesses to turn complex ideas into simple, scalable and meaningful digital products.
           </p>
 
           {/* Social Proof Row: Larger Avatars on Left, Stars on Top with Reviews Link Below */}
@@ -93,8 +92,6 @@ export const Hero: React.FC = () => {
             alt="Codevia creative workspace desk"
             className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500"
           />
-          {/* Subtle gradient vignette overlay at the bottom border */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
         </div>
       </div>
     </section>
