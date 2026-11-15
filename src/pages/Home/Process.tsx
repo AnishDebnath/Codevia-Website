@@ -137,7 +137,7 @@ export const Process: React.FC = () => {
                       <div className="flex items-center gap-1.5 pt-0.5">
                         <img
                           src={milestone.avatar}
-                          alt="Lead"
+                          alt={`${milestone.title} milestone lead`}
                           className="w-4 h-4 rounded-full object-cover ring-1 ring-white"
                         />
                         <span className="text-xs text-gray-500 font-medium font-sans">
@@ -226,7 +226,7 @@ export const Process: React.FC = () => {
                       <div className="flex items-center gap-1.5 pt-0.5">
                         <img
                           src={milestone.avatar}
-                          alt="Lead"
+                          alt={`${milestone.title} milestone lead`}
                           className="w-4 h-4 rounded-full object-cover ring-1 ring-white"
                         />
                         <span

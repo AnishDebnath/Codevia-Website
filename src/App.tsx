@@ -40,16 +40,44 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (currentPath === '/projects') {
-      document.title = 'Projects — Codevia';
-    } else if (currentPath === '/contact') {
-      document.title = 'Contact Us — Codevia';
-    } else if (currentPath === '/about') {
-      document.title = 'About Us — Codevia';
-    } else if (currentPath === '/services') {
-      document.title = 'Services — Codevia';
-    } else {
-      document.title = 'Codevia — Technology with Purpose';
+    const metaDescriptions: Record<string, string> = {
+      '/': 'Codevia engineers scalable cloud systems, custom software, UI/UX design, and AI-driven digital products that accelerate modern business growth.',
+      '/services': 'Explore Codevia digital services: Custom Software Development, Cloud Architecture, UI/UX Design, and AI & Automation solutions.',
+      '/projects': 'Browse Codevia featured projects across AI systems, SaaS platforms, finTech applications, and high-performance web products.',
+      '/about': 'Learn about Codevia — our mission, leadership, core engineering values, and our commitment to building purposeful technology.',
+      '/contact': 'Get in touch with the Codevia team to discuss your next software, cloud, or design project. Request a proposal today.',
+    };
+
+    const titles: Record<string, string> = {
+      '/projects': 'Projects — Codevia',
+      '/contact': 'Contact Us — Codevia',
+      '/about': 'About Us — Codevia',
+      '/services': 'Services — Codevia',
+      '/': 'Codevia — Technology with Purpose',
+    };
+
+    const currentTitle = titles[currentPath] || titles['/'];
+    const currentDesc = metaDescriptions[currentPath] || metaDescriptions['/'];
+
+    document.title = currentTitle;
+
+    // Dynamically synchronize meta description, OG tags & canonical link
+    let metaDescEl = document.querySelector('meta[name="description"]');
+    if (metaDescEl) {
+      metaDescEl.setAttribute('content', currentDesc);
+    }
+    let ogTitleEl = document.querySelector('meta[property="og:title"]');
+    if (ogTitleEl) {
+      ogTitleEl.setAttribute('content', currentTitle);
+    }
+    let ogDescEl = document.querySelector('meta[property="og:description"]');
+    if (ogDescEl) {
+      ogDescEl.setAttribute('content', currentDesc);
+    }
+    let canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) {
+      const canonicalUrl = `https://codevia.ai${currentPath === '/' ? '' : currentPath}`;
+      canonicalEl.setAttribute('href', canonicalUrl);
     }
 
     if (currentPath === '/services') {
