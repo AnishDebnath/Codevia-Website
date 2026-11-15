@@ -51,14 +51,17 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
       {/* Main Page Sections */}
       <main>
-        <Hero />
+        <Hero
+          onNavigateContact={handleNavigateContact}
+          onNavigateProjects={handleNavigateProjects}
+        />
         <Statistics />
-        <Services />
+        <Services onNavigateContact={handleNavigateContact} />
         <Process />
         <Works onNavigateProjects={handleNavigateProjects} />
         <Testimonials />
-        <FAQ />
-        <CTA />
+        <FAQ onNavigateContact={handleNavigateContact} />
+        <CTA onNavigateContact={handleNavigateContact} />
       </main>
 
       {/* Footer Section */}

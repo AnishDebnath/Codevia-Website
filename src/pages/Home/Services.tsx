@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Code2, Smartphone, PenTool, Sparkles, Lightbulb, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
+interface ServicesProps {
+  onNavigateContact?: () => void;
+}
+
 // ponytail: exactly 3 cards fit cleanly within section width on desktop, with generous margin/padding so card shadows are never clipped or hidden
-export const Services: React.FC = () => {
+export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
   // Start with index 1 (Mobile App Development) highlighted, matching the showcase
   const [currentIndex, setCurrentIndex] = useState<number>(1);
   const [windowWidth, setWindowWidth] = useState<number>(
@@ -16,10 +20,12 @@ export const Services: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const scrollToWorks = () => {
-    const el = document.querySelector('#works');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  const handleStartProject = () => {
+    if (onNavigateContact) {
+      onNavigateContact();
+    } else {
+      window.history.pushState({}, '', '/contact');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
@@ -186,7 +192,7 @@ export const Services: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
               {/* Action Button: Start a Project matching Hero button style */}
               <button
-                onClick={scrollToWorks}
+                onClick={handleStartProject}
                 className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
               >
                 <span>Start a Project</span>

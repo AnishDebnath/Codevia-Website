@@ -46,8 +46,21 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (window.location.hash && !window.location.hash.startsWith('#/')) {
+      const id = window.location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPath]);
+
   const navigate = (to: string) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!to.includes('#')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     if (to === '/projects') {
       window.history.pushState({}, '', '/projects');
       setCurrentPath('/projects');
@@ -57,6 +70,14 @@ export default function App() {
     } else if (to === '/about') {
       window.history.pushState({}, '', '/about');
       setCurrentPath('/about');
+    } else if (to.startsWith('/#')) {
+      const id = to.replace('/#', '');
+      window.history.pushState({}, '', to);
+      setCurrentPath('/');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     } else {
       window.history.pushState({}, '', '/');
       setCurrentPath('/');

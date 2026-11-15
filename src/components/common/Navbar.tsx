@@ -32,10 +32,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   // Center menu items strictly: Home, About, Services, Projects
   const navLinks = [
-    { label: 'Home', href: '#', sectionId: '' },
-    { label: 'About', href: '#process', sectionId: 'process' },
+    { label: 'Home', href: '/', sectionId: '' },
+    { label: 'About', href: '/about', sectionId: '' },
     { label: 'Services', href: '#services', sectionId: 'services' },
-    { label: 'Projects', href: '#works', sectionId: 'works' },
+    { label: 'Projects', href: '/projects', sectionId: 'works' },
   ];
 
   // Scroll spy to dynamically select current section menu item on Home page
@@ -62,7 +62,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       const sections = [
         { id: 'works', label: 'Projects' },
-        { id: 'process', label: 'About' },
         { id: 'services', label: 'Services' },
       ];
 
@@ -86,54 +85,69 @@ export const Navbar: React.FC<NavbarProps> = ({
     setActiveLink(label);
     setMobileMenuOpen(false);
 
-    if (currentPage !== 'home') {
-      if (label === 'About') {
-        if (currentPage === 'about') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else if (onNavigateAbout) {
-          onNavigateAbout();
-        } else {
-          window.history.pushState({}, '', '/about');
-          window.dispatchEvent(new PopStateEvent('popstate'));
-        }
-        return;
-      }
-      if (label === 'Projects') {
-        if (currentPage === 'projects') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else if (onNavigateProjects) {
-          onNavigateProjects();
-        } else {
-          window.history.pushState({}, '', '/projects');
-          window.dispatchEvent(new PopStateEvent('popstate'));
-        }
-        return;
-      }
-      if (onNavigateHome) {
-        onNavigateHome(sectionId);
+    if (label === 'Home') {
+      if (currentPage === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (onNavigateHome) {
+        onNavigateHome('');
       } else {
-        window.location.href = sectionId ? `/#${sectionId}` : '/';
+        window.history.pushState({}, '', '/');
+        window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
     }
 
-    if (label === 'About' && onNavigateAbout) {
-      onNavigateAbout();
+    if (label === 'About') {
+      if (currentPage === 'about') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (onNavigateAbout) {
+        onNavigateAbout();
+      } else {
+        window.history.pushState({}, '', '/about');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
       return;
     }
 
-    if (label === 'Projects' && onNavigateProjects) {
-      onNavigateProjects();
+    if (label === 'Projects') {
+      if (currentPage === 'projects') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (onNavigateProjects) {
+        onNavigateProjects();
+      } else {
+        window.history.pushState({}, '', '/projects');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
       return;
     }
 
-    if (href === '#') {
+    if (label === 'Services') {
+      if (currentPage === 'home') {
+        const element = document.querySelector('#services');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (onNavigateHome) {
+        onNavigateHome('services');
+      } else {
+        window.history.pushState({}, '', '/#services');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
+      return;
+    }
+
+    if (href === '#' || !href) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else if (onNavigateHome) {
+      onNavigateHome(sectionId);
+    } else {
+      window.location.href = sectionId ? `/#${sectionId}` : '/';
     }
   };
 

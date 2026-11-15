@@ -22,10 +22,10 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   const navLinks = [
-    { label: 'Home', href: '#' },
+    { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#works' },
+    { label: 'Projects', href: '/projects' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contact Us', href: '/contact' },
   ];
@@ -36,11 +36,33 @@ export const Footer: React.FC<FooterProps> = ({
   ];
 
   const handleNavClick = (href: string, label: string) => {
+    if (label === 'Home') {
+      if (window.location.pathname === '/' || window.location.pathname === '') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (onNavigateHome) {
+        onNavigateHome('');
+      } else {
+        window.history.pushState({}, '', '/');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
+      return;
+    }
+
     if (label === 'About') {
       if (onNavigateAbout) {
         onNavigateAbout();
       } else {
         window.history.pushState({}, '', '/about');
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
+      return;
+    }
+
+    if (label === 'Projects') {
+      if (onNavigateProjects) {
+        onNavigateProjects();
+      } else {
+        window.history.pushState({}, '', '/projects');
         window.dispatchEvent(new PopStateEvent('popstate'));
       }
       return;
@@ -56,32 +78,27 @@ export const Footer: React.FC<FooterProps> = ({
       return;
     }
 
-    if (onNavigateHome) {
-      if (label === 'Projects') {
-        if (onNavigateProjects) {
-          onNavigateProjects();
-        } else {
-          window.history.pushState({}, '', '/projects');
-          window.dispatchEvent(new PopStateEvent('popstate'));
-        }
+    // Anchor sections (Services, FAQ):
+    // First, check if the anchor element exists on the CURRENT page!
+    if (href.startsWith('#')) {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
         return;
       }
       const sectionId = href.replace('#', '');
-      onNavigateHome(sectionId);
+      if (onNavigateHome) {
+        onNavigateHome(sectionId);
+      } else {
+        window.history.pushState({}, '', `/#${sectionId}`);
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
       return;
     }
 
-    if (label === 'Projects' && onNavigateProjects) {
-      onNavigateProjects();
-      return;
-    }
-    if (href === '#') {
+    if (href === '#' || !href) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
-    }
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

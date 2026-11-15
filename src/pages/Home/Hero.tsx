@@ -3,13 +3,32 @@ import { Star, ArrowRight, ArrowUpRight } from 'lucide-react';
 // ponytail: imported directly from assets folder for bundled asset optimization
 import agencyModernPortfolio from '../../assets/images/agency_modern_portfolio_1794011098022.jpg';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigateContact?: () => void;
+  onNavigateProjects?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProjects }) => {
   const [selectedWord, setSelectedWord] = useState('Products');
 
-  const scrollToWorks = () => {
+  const handleStartProject = () => {
+    if (onNavigateContact) {
+      onNavigateContact();
+    } else {
+      window.history.pushState({}, '', '/contact');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
+
+  const handleExploreWork = () => {
     const el = document.querySelector('#works');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+    } else if (onNavigateProjects) {
+      onNavigateProjects();
+    } else {
+      window.history.pushState({}, '', '/projects');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
@@ -106,7 +125,7 @@ export const Hero: React.FC = () => {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3.5">
                 <button
-                  onClick={scrollToWorks}
+                  onClick={handleStartProject}
                   className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
                 >
                   <span>Start a Project</span>
@@ -116,7 +135,7 @@ export const Hero: React.FC = () => {
                 </button>
 
                 <button
-                  onClick={scrollToWorks}
+                  onClick={handleExploreWork}
                   className="px-7 py-3.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
                 >
                   <span>Explore Selected Work</span>

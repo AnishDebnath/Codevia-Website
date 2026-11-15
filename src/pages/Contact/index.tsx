@@ -43,7 +43,16 @@ export const Contact: React.FC<ContactPageProps> = ({ onNavigate }) => {
         <Form />
 
         {/* FAQ Section */}
-        <FAQ />
+        <FAQ
+          onNavigateContact={() => {
+            const el = document.querySelector('form');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        />
       </main>
 
       {/* Footer Section */}

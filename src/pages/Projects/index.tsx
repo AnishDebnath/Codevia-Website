@@ -74,7 +74,7 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
         <Works selectedCategory={selectedCategory} />
 
         {/* Call to Action Section */}
-        <CTA />
+        <CTA onNavigateContact={handleNavigateContact} />
       </main>
 
       {/* Footer Section */}

@@ -67,7 +67,14 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
             <Card
               key={project.id}
               project={project}
-              onClick={onNavigateProjects}
+              onClick={() => {
+                if (onNavigateProjects) {
+                  onNavigateProjects();
+                } else {
+                  window.history.pushState({}, '', '/projects');
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+                }
+              }}
             />
           ))}
         </div>

@@ -50,7 +50,7 @@ export const About: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <Testimonials />
 
         {/* Frequently Asked Questions Section */}
-        <FAQ />
+        <FAQ onNavigateContact={() => handleNavigate('/contact')} />
 
         {/* Call to Action Section */}
         <CTA onNavigateContact={() => handleNavigate('/contact')} />

@@ -7,7 +7,11 @@ interface FAQItem {
   answer: string;
 }
 
-export const FAQ: React.FC = () => {
+interface FAQProps {
+  onNavigateContact?: () => void;
+}
+
+export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
   // First item open by default, matching the design reference
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -48,10 +52,17 @@ export const FAQ: React.FC = () => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
-  const scrollToContact = () => {
-    const el = document.querySelector('#contact');
+  const handleContactClick = () => {
+    if (onNavigateContact) {
+      onNavigateContact();
+      return;
+    }
+    const el = document.querySelector('#contact') || document.querySelector('form');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.history.pushState({}, '', '/contact');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
@@ -86,7 +97,7 @@ export const FAQ: React.FC = () => {
             {/* Action Button styled consistent with Hero button style */}
             <div className="pt-2">
               <button
-                onClick={scrollToContact}
+                onClick={handleContactClick}
                 className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group"
               >
                 <span>Still have questions?</span>

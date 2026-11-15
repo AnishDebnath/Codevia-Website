@@ -11,7 +11,7 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
     if (onNavigateContact) {
       onNavigateContact();
     } else {
-      const el = document.querySelector('#contact') || document.querySelector('#works');
+      const el = document.querySelector('#contact');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       } else {
