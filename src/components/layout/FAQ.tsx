@@ -72,9 +72,9 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
       <div className="absolute top-1/3 left-1/4 w-[300px] md:w-[600px] h-[200px] md:h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-8 lg:gap-14 items-start">
           {/* Left Column: Section Tag, Heading, Supporting Description, and Button */}
-          <div className="lg:col-span-5 flex flex-col items-start space-y-3.5 md:space-y-4 sm:space-y-5 lg:sticky lg:top-28">
+          <div className="md:col-span-5 lg:col-span-5 flex flex-col items-start space-y-3.5 md:space-y-4 sm:space-y-5 md:sticky md:top-24 lg:top-28">
             {/* Section Tag */}
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
@@ -82,7 +82,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
             </div>
 
             {/* Section Heading matching website style */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans">
               Frequently asked{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 questions.
@@ -113,7 +113,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
           </div>
 
           {/* Right Column: Accordion Questions & Answers */}
-          <div className="lg:col-span-7 space-y-3 md:space-y-3.5 sm:space-y-4">
+          <div className="md:col-span-7 lg:col-span-7 space-y-3 md:space-y-3.5 sm:space-y-4">
             {faqData.map((item, idx) => {
               const isOpen = openIndex === idx;
 

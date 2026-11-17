@@ -55,7 +55,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Top Header Section: Section Tag & Heading on Left, Sub-heading & Button on Right */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-14">
           {/* Left Side: Tag Line + Section Heading */}
           <div className="space-y-3 md:space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
@@ -72,8 +72,8 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           </div>
 
           {/* Right Side: Sub-heading + Button */}
-          <div className="flex flex-col items-start sm:flex-row sm:items-center lg:flex-col lg:items-end gap-3 md:gap-4 lg:gap-5">
-            <p className="text-sm md:text-base text-gray-600 font-normal leading-relaxed max-w-md lg:text-right font-sans">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center md:flex-col md:items-end gap-3 md:gap-4 lg:gap-5">
+            <p className="text-sm md:text-sm lg:text-base text-gray-600 font-normal leading-relaxed max-w-sm lg:max-w-md md:text-right font-sans">
               Explore highlight engineering systems delivered across enterprise platforms, AI assistants, and predictive workflows.
             </p>
 

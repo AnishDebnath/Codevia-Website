@@ -111,7 +111,7 @@ export const Process: React.FC = () => {
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20 relative z-10">
         {/* Top Header Section: Section Tag & Heading on Left, 8 Weeks Stat on Right */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 md:mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10">
           {/* Left Side: Tag Line, Heading, Sub-heading */}
           <div className="space-y-3 md:space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
@@ -119,7 +119,7 @@ export const Process: React.FC = () => {
               <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">How We Work</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans sm:whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans sm:whitespace-nowrap">
               From first idea{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 to real impact.
@@ -132,8 +132,8 @@ export const Process: React.FC = () => {
           </div>
 
           {/* Right Side: Big 8 Weeks Stat matching Statistics.tsx typography */}
-          <div className="flex flex-col lg:items-end space-y-1">
-            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-sans leading-none tabular-nums py-1">
+          <div className="flex flex-col md:items-end space-y-1 shrink-0">
+            <div className="text-4xl sm:text-5xl md:text-5xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-sans leading-none tabular-nums py-1">
               8 weeks
             </div>
             <p className="text-xs md:text-sm text-gray-600 font-medium font-sans">

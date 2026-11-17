@@ -247,7 +247,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="w-full h-px bg-gray-200/80 relative z-10" />
 
         {/* Bottom Bar: aligned with the content width */}
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+        <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 py-5">
             {/* Left Cell: Copyright & Legal Links */}
             <div className="text-xs sm:text-[13px] text-gray-500 font-sans flex flex-wrap items-center gap-2.5 justify-center md:justify-start">

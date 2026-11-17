@@ -144,9 +144,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Top Header Section matching design */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start mb-8 md:mb-10 lg:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start mb-8 md:mb-10 lg:mb-12">
           {/* Left Pill Badge */}
-          <div className="lg:col-span-3">
+          <div className="md:col-span-4 lg:col-span-3">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
               <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide">Our Services</span>
@@ -154,9 +154,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
           </div>
 
           {/* Right Heading with Inline Images sized to fill text size & Actions */}
-          <div className="lg:col-span-9 space-y-4 md:space-y-6">
+          <div className="md:col-span-8 lg:col-span-9 space-y-4 md:space-y-6">
             <div className="space-y-2 md:space-y-3">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] font-bold tracking-tight text-[#000534] leading-[1.2] md:leading-[1.24] font-sans">
+              <h2 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[38px] xl:text-[42px] font-bold tracking-tight text-[#000534] leading-[1.2] md:leading-[1.24] font-sans">
                 <span className="block">We transform ideas into digital products</span>
                 <span className="block mt-1 sm:mt-1.5">
                   &amp; experiences{' '}
@@ -291,9 +291,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                   </div>
 
                   {/* Title */}
-                  <div className="relative z-10 mt-5 sm:mt-6 md:mt-7 text-left max-w-full">
+                  <div className="relative z-10 mt-4 sm:mt-5 md:mt-5 text-left max-w-full">
                     <h3
-                      className={`text-2xl sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[34px] font-bold tracking-tight leading-[1.16] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
+                      className={`text-xl sm:text-[22px] md:text-[23px] lg:text-[26px] xl:text-[28px] font-bold tracking-tight leading-[1.18] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]'
                         : 'text-[#000534]'
                         }`}

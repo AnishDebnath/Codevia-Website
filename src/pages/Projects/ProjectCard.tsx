@@ -61,7 +61,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <article
-      className="group relative rounded-[28px] sm:rounded-[32px] bg-white border border-gray-200/90 shadow-[0_6px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(110,12,248,0.1)] hover:border-purple-300 transition-all duration-300 overflow-hidden p-6 sm:p-8 lg:p-9 flex flex-col justify-between"
+      className="group relative rounded-[28px] sm:rounded-[32px] bg-white border border-gray-200/90 shadow-[0_6px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(110,12,248,0.1)] hover:border-purple-300 transition-all duration-300 overflow-hidden p-6 sm:p-7 md:p-6 lg:p-8 xl:p-9 flex flex-col justify-between"
     >
       {/* Top accent logo-gradient border line that illuminates on the card */}
       <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] opacity-75 group-hover:opacity-100 transition-opacity" />
