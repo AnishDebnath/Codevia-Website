@@ -3,7 +3,7 @@ import { Navbar, Footer } from '../../components/common';
 import { CTA } from '../../components/layout';
 import { Hero } from './Hero';
 import { Works } from './Works';
-import { codeviaProjects, ProjectCategory } from '../../data/projectsData';
+import { codeviaProjects, ProjectCategory } from '../../data/projects';
 
 interface ProjectsPageProps {
   onNavigate?: (path: string) => void;
@@ -70,14 +70,10 @@ export const Projects: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
         <Hero
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
-          totalCount={filteredProjects.length}
         />
 
         {/* Real Projects Grid Sourced Directly from the PDF */}
-        <Works
-          projects={filteredProjects}
-          onNavigateContact={handleNavigateContact}
-        />
+        <Works projects={filteredProjects} />
 
         {/* Call to Action Section */}
         <CTA onNavigateContact={handleNavigateContact} />

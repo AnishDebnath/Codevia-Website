@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Code, Search, Bot, BarChart3, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { codeviaProjects, ProjectDetail } from '../../data/projectsData';
+import { codeviaProjects, ProjectDetail } from '../../data/projects';
 
 interface WorksProps {
   onNavigateProjects?: () => void;

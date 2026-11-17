@@ -1,23 +1,3 @@
-import React, { useState } from 'react';
-import {
-  Code,
-  Layers,
-  Cpu,
-  Brain,
-  Database,
-  BarChart3,
-  Bot,
-  Eye,
-  Sparkles,
-  Search,
-  CheckCircle2,
-  ExternalLink,
-  ChevronRight,
-  ShieldCheck,
-  Server,
-  Zap,
-} from 'lucide-react';
-
 export interface ProjectDetail {
   id: string;
   number: string;

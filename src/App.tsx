@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home } from './pages/Home';
-import { Projects } from './pages/Projects';
-import { Contact } from './pages/Contact';
-import { About } from './pages/About';
+import { Home, Projects, Contact, About } from './pages';
 import { WhatsAppButton } from './components/common';
 
 // ponytail: lightweight, clean router supporting clean path navigation without hashes

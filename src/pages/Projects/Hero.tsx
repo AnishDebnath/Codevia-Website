@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react';
-import { projectCategories, ProjectCategory, codeviaProjects } from '../../data/projectsData';
+import { projectCategories, codeviaProjects } from '../../data/projects';
 
 interface HeroProps {
   selectedCategory: string;
   onSelectCategory: (category: string) => void;
-  totalCount: number;
 }
 
 export const Hero: React.FC<HeroProps> = ({

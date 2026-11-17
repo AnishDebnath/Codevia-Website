@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
-import { ProjectDetail } from '../../data/projectsData';
+import { ProjectDetail } from '../../data/projects';
 
 interface WorksProps {
   projects: ProjectDetail[];
-  onNavigateContact?: () => void;
 }
 
 // ponytail: Responsive Grid for PDF projects, styled to seamlessly match Codevia aesthetic
-export const Works: React.FC<WorksProps> = ({ projects, onNavigateContact }) => {
+export const Works: React.FC<WorksProps> = ({ projects }) => {
   return (
     <section className="pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-20 relative">
       {/* Background ambient lighting matching theme */}
@@ -27,10 +26,7 @@ export const Works: React.FC<WorksProps> = ({ projects, onNavigateContact }) => 
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: 'easeOut' }}
             >
-              <ProjectCard
-                project={project}
-                onNavigateContact={onNavigateContact}
-              />
+              <ProjectCard project={project} />
             </motion.div>
           ))}
         </div>

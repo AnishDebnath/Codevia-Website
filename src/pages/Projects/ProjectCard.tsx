@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import {
   Code,
-  Layers,
   Cpu,
-  Brain,
-  Database,
   BarChart3,
   Bot,
   Eye,
   Sparkles,
   Search,
-  CheckCircle2,
   ChevronDown,
   ChevronUp,
   Zap,
@@ -19,11 +15,10 @@ import {
   Users,
   FileText,
 } from 'lucide-react';
-import { ProjectDetail } from '../../data/projectsData';
+import { ProjectDetail } from '../../data/projects';
 
 interface ProjectCardProps {
   project: ProjectDetail;
-  onNavigateContact?: () => void;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {

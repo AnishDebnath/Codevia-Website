@@ -1,12 +1,10 @@
 import React from 'react';
 import { Navbar, Footer } from '../../components/common';
-import { FAQ, CTA } from '../../components/layout';
+import { FAQ, CTA, Statistics, Testimonials } from '../../components/layout';
 import { Hero } from './Hero';
-import { Statistics } from './Statistics';
 import { Services } from './Services';
 import { Process } from './Process';
 import { Works } from './Works';
-import { Testimonials } from './Testimonials';
 
 interface HomeProps {
   onNavigate?: (path: string) => void;
