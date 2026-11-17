@@ -51,6 +51,8 @@ export const Hero: React.FC = () => {
                   key={i}
                   src={url}
                   alt={`Team member / client ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-white object-cover shadow-sm -ml-3 first:ml-0 ring-1 ring-black/5"
                 />
               ))}
@@ -90,6 +92,8 @@ export const Hero: React.FC = () => {
           <img
             src={aboutWorkspace}
             alt="Codevia modern technology studio and digital workspace"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500"
           />
         </div>

@@ -200,16 +200,22 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                     <img
                       src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&q=80"
                       alt="Verified client review"
+                      loading="lazy"
+                      decoding="async"
                       className="w-7 h-7 md:w-7 md:h-7 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                     <img
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80"
                       alt="Verified client review"
+                      loading="lazy"
+                      decoding="async"
                       className="w-7 h-7 md:w-7 md:h-7 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                     <img
                       src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=faces&q=80"
                       alt="Verified client review"
+                      loading="lazy"
+                      decoding="async"
                       className="w-7 h-7 md:w-7 md:h-7 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                   </div>
@@ -242,6 +248,8 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                 <img
                   src={agencyModernPortfolio}
                   alt="Modern digital product engineering and enterprise analytics platform"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover rounded-2xl md:rounded-3xl transform group-hover:scale-103 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 rounded-2xl md:rounded-3xl ring-1 ring-inset ring-black/5 pointer-events-none" />

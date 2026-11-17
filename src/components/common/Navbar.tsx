@@ -197,6 +197,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           <img
             src={logoImg}
             alt="Codevia"
+            loading="eager"
+            fetchPriority="high"
             className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
         </a>

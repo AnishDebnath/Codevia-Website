@@ -45,6 +45,8 @@ export const Story: React.FC = () => {
             <img
               src={collaborateImg}
               alt="Collaborative digital product UX design and architecture planning"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             />
             {/* Subtle light vignette overlay */}
@@ -59,6 +61,8 @@ export const Story: React.FC = () => {
             <img
               src={valuesImg}
               alt="Measurable business advantage analytics, digital strategy, and software metrics"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             />
             {/* Subtle light vignette overlay */}

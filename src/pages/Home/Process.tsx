@@ -203,6 +203,8 @@ export const Process: React.FC = () => {
                         <img
                           src={milestone.avatar}
                           alt={`${milestone.title} milestone lead`}
+                          loading="lazy"
+                          decoding="async"
                           className="w-4 h-4 rounded-full object-cover ring-1 ring-white"
                         />
                         <span className="text-xs text-gray-500 font-medium font-sans">
@@ -292,6 +294,8 @@ export const Process: React.FC = () => {
                         <img
                           src={milestone.avatar}
                           alt={`${milestone.title} milestone lead`}
+                          loading="lazy"
+                          decoding="async"
                           className="w-4 h-4 rounded-full object-cover ring-1 ring-white"
                         />
                         <span

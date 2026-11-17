@@ -161,6 +161,8 @@ export const Footer: React.FC<FooterProps> = ({
                 <img
                   src={logoImg}
                   alt="Codevia"
+                  loading="lazy"
+                  decoding="async"
                   className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
                 />
               </a>

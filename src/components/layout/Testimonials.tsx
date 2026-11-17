@@ -250,6 +250,8 @@ export const Testimonials: React.FC = () => {
                       <img
                         src={item.avatar}
                         alt={item.author}
+                        loading="lazy"
+                        decoding="async"
                         className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover ring-2 ring-white shadow-2xs"
                       />
                       <div>

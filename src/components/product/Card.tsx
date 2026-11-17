@@ -184,6 +184,8 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
                 <img
                   src={agencyModernPortfolio}
                   alt="Tech agency showcase"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
