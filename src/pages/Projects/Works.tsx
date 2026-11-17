@@ -15,7 +15,7 @@ export const Works: React.FC<WorksProps> = ({ projects, onNavigateContact }) => 
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Projects Grid: 2 columns on tablet and desktop, 1 on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8 lg:gap-9">
           {projects.map((project) => (

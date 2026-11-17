@@ -72,19 +72,19 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           </div>
 
           {/* Right Side: Sub-heading + Button */}
-          <div className="flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-end gap-3 md:gap-4 lg:gap-5">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center lg:flex-col lg:items-end gap-3 md:gap-4 lg:gap-5">
             <p className="text-sm md:text-base text-gray-600 font-normal leading-relaxed max-w-md lg:text-right font-sans">
               Explore highlight engineering systems delivered across enterprise platforms, AI assistants, and predictive workflows.
             </p>
 
-            {/* Action Button: View all work linking directly to the dedicated Projects page */}
+            {/* Action Button: View all work - width fits text only */}
             <a
               href="/projects"
               onClick={(e) => {
                 e.preventDefault();
                 handleCardClick();
               }}
-              className="px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs md:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
+              className="w-fit inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs md:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer group active:scale-95 shrink-0"
             >
               <span>View all 11 projects</span>
               <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
@@ -106,9 +106,9 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] opacity-75 group-hover:opacity-100 transition-opacity" />
 
               <div className="space-y-4">
-                {/* Meta Bar: Icon, Category & Project Number */}
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2.5">
+                {/* Meta Bar: Icon on Left, Category below on mobile, side-by-side on sm+ */}
+                <div className="flex items-start sm:items-center justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2.5">
                     <div className="w-9 h-9 rounded-xl bg-purple-50/80 border border-purple-100/90 flex items-center justify-center shrink-0 shadow-2xs">
                       {renderIcon(project.iconName)}
                     </div>

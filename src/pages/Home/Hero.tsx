@@ -45,14 +45,15 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
         <div className="absolute -bottom-16 -right-16 w-[350px] md:w-[550px] lg:w-[750px] h-[300px] md:h-[450px] lg:h-[550px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* Left-side electric blue ambient glow from logo */}
-        <div className="absolute -bottom-10 left-10 w-[300px] md:w-[450px] lg:w-[600px] h-[220px] md:h-[300px] lg:h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
+        <div className="absolute -bottom-10 left-10 w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[300px] lg:h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* =========================================================================
-            BACKGROUND TYPOGRAPHY: "Codevia" at bottom-left inside the rounded box
+            BACKGROUND TYPOGRAPHY: "Codevia" positioned at the bottom-left inside the box
+            Hidden on mobile (< 640px), displayed on tablet and desktop (sm: and above)
            ========================================================================= */}
-        <div className="absolute bottom-[-10px] md:bottom-[-25px] lg:bottom-[-35px] left-3 md:left-10 lg:left-14 select-none pointer-events-none z-0">
+        <div className="hidden sm:block absolute bottom-[-16px] md:bottom-[-20px] lg:bottom-[-30px] left-6 sm:left-8 lg:left-14 select-none pointer-events-none z-0">
           <span
-            className="text-[90px] sm:text-[140px] md:text-[200px] lg:text-[260px] xl:text-[300px] font-black tracking-tight leading-none block select-none font-sans"
+            className="text-[120px] md:text-[180px] lg:text-[240px] xl:text-[290px] font-black tracking-tight leading-none block select-none font-sans whitespace-nowrap"
             style={{
               background:
                 'linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 236, 255, 0.6) 50%, rgba(199, 210, 254, 0.2) 100%)',

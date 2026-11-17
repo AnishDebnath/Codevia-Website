@@ -7,8 +7,13 @@ interface ServicesProps {
 
 // ponytail: exactly 3 cards fit cleanly within section width on desktop, with generous margin/padding so card shadows are never clipped or hidden
 export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
-  // Start with index 1 (Mobile App Development) highlighted, matching the showcase
-  const [currentIndex, setCurrentIndex] = useState<number>(1);
+  // Start with index 0 on mobile (Website Design) or index 1 on desktop (centered showcase)
+  const [currentIndex, setCurrentIndex] = useState<number>(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      return 0;
+    }
+    return 1;
+  });
   const [windowWidth, setWindowWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 1200
   );
@@ -255,7 +260,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                 <div
                   key={service.number}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-full max-w-[320px] sm:max-w-none sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 bg-white rounded-[24px] sm:rounded-[32px] md:rounded-[36px] p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${isHighlighted
+                  className={`w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 bg-white rounded-[24px] sm:rounded-[32px] md:rounded-[36px] p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${isHighlighted
                     ? 'relative z-20 border-purple-200/90 shadow-[0_20px_45px_-10px_rgba(124,58,237,0.22),0_8px_20px_-4px_rgba(253,73,24,0.08)] -translate-y-1.5 ring-1 ring-purple-100'
                     : 'relative z-10 hover:z-20 border-gray-100 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_35px_-8px_rgba(0,0,0,0.1)] hover:border-gray-200'
                     }`}
@@ -286,9 +291,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                   </div>
 
                   {/* Title */}
-                  <div className="relative z-10 mt-4 sm:mt-5 md:mt-6 text-left max-w-full">
+                  <div className="relative z-10 mt-5 sm:mt-6 md:mt-7 text-left max-w-full">
                     <h3
-                      className={`text-xl sm:text-2xl md:text-[27px] lg:text-[30px] font-bold tracking-tight leading-[1.18] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
+                      className={`text-2xl sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[34px] font-bold tracking-tight leading-[1.16] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]'
                         : 'text-[#000534]'
                         }`}
@@ -300,6 +305,22 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
               );
             })}
           </div>
+        </div>
+
+        {/* Mobile Slide Indicators */}
+        <div className="flex sm:hidden items-center justify-center gap-2 -mt-4 mb-2">
+          {services.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                currentIndex === idx
+                  ? 'w-7 bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]'
+                  : 'w-2 bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to service ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

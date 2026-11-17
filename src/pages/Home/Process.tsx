@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { MoveHorizontal } from 'lucide-react';
 
-// ponytail: proper sizing, strictly contained within div boundaries, zero horizontal overflow on desktop
+// ponytail: proper sizing, strictly contained within div boundaries, drag to see full timeline on mobile/tablet
 interface Milestone {
   week: number;
   category: string;
@@ -11,6 +12,38 @@ interface Milestone {
 }
 
 export const Process: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeftPos = useRef(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    isDown.current = true;
+    setIsDragging(true);
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeftPos.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    isDown.current = false;
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    isDown.current = false;
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDown.current || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeftPos.current - walk;
+  };
+
   const milestones: Milestone[] = [
     {
       week: 1,
@@ -109,8 +142,17 @@ export const Process: React.FC = () => {
           </div>
         </div>
 
-        {/* Timeline Showcase Card Container: Fully contained with no overflow on desktop */}
-        <div className="bg-white rounded-3xl border border-gray-200/90 shadow-[0_6px_25px_rgba(0,0,0,0.03)] p-5 sm:p-6 lg:p-8 overflow-x-auto scrollbar-none">
+        {/* Timeline Showcase Card Container: Drag to see full process */}
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className={`bg-white rounded-3xl border border-gray-200/90 shadow-[0_6px_25px_rgba(0,0,0,0.03)] p-5 sm:p-6 lg:p-8 overflow-x-auto scrollbar-none select-none touch-pan-x transition-colors ${
+            isDragging ? 'cursor-grabbing' : 'cursor-grab'
+          }`}
+        >
           <div className="min-w-[820px] lg:min-w-0 w-full relative py-2 px-2 sm:px-3">
             {/* Top Cards Row */}
             <div className="grid grid-cols-8 gap-2.5 sm:gap-3 items-end h-[110px]">
@@ -244,6 +286,12 @@ export const Process: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Drag to explore hint text: After timeline card, centered, clean text without a div container */}
+        <p className="flex items-center justify-center gap-1.5 text-xs text-gray-500 font-medium font-sans mt-3.5 sm:mt-4 text-center select-none">
+          <MoveHorizontal className="w-3.5 h-3.5 text-gray-400" />
+          <span>Drag to see full process</span>
+        </p>
       </div>
     </section>
   );

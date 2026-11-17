@@ -67,9 +67,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] opacity-75 group-hover:opacity-100 transition-opacity" />
 
       <div className="space-y-6">
-        {/* Top Meta Bar: Category Badge with logo dot indicator + Project Index Number */}
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5">
+        {/* Top Meta Bar: Icon on Left, Category below it on mobile, side-by-side on sm+ */}
+        <div className="flex items-start sm:items-center justify-between gap-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2.5">
             <div className="w-10 h-10 rounded-xl bg-purple-50/80 border border-purple-100/90 flex items-center justify-center shrink-0 shadow-2xs">
               {renderIcon()}
             </div>

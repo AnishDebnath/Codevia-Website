@@ -38,15 +38,15 @@ export const Statistics: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4-Column Statistics Row with Hairline Dividers & Logo Color Gradients */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+        {/* Statistics Grid: 2x2 format on mobile/tablet, 4 columns on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
           {stats.map((stat, i) => (
             <div
               key={i}
               className="group border-t border-gray-200/90 hover:border-purple-300/80 pt-3 md:pt-4 lg:pt-5 transition-colors duration-300"
             >
               {/* Stat Value matching Hero font design & logo signature gradient */}
-              <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] tabular-nums font-sans leading-none py-1">
+              <div className="text-3xl min-[380px]:text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] tabular-nums font-sans leading-none py-1">
                 {stat.value}
               </div>
 
