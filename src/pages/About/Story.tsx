@@ -27,7 +27,7 @@ export const Story: React.FC = () => {
             </div>
 
             {/* Heading with brand gradient accent */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-gray-950 font-sans leading-[1.2]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#000534] font-sans leading-[1.2]">
               Technology should{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 adapt to you.
@@ -78,7 +78,7 @@ export const Story: React.FC = () => {
             </div>
 
             {/* Heading with brand gradient accent */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-gray-950 font-sans leading-[1.2]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#000534] font-sans leading-[1.2]">
               We build{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 business advantage.

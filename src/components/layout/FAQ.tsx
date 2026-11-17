@@ -82,7 +82,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
             </div>
 
             {/* Section Heading matching website style */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.14] font-sans">
               Frequently asked{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 questions.

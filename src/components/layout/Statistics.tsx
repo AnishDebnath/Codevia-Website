@@ -30,7 +30,7 @@ export const Statistics: React.FC = () => {
       <div className="w-full max-w-6xl mx-auto px-6">
         {/* Editorial Statement styled with Hero typography and logo signature gradient */}
         <div className="mb-8 sm:mb-10 max-w-xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-gray-950 leading-[1.2] font-sans">
+          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-[#000534] leading-[1.2] font-sans">
             A trusted creative partner for{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
               teams building what comes next.

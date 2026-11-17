@@ -55,7 +55,7 @@ export const codeviaProjects: ProjectDetail[] = [
       'Responsive, accessible digital experience',
       'High-conversion enquiry & intake pathways',
     ],
-    technologies: ['Web Design', 'Responsive UI', 'Content Architecture', 'Forms & Contact Workflows', 'TypeScript', 'Tailwind CSS'],
+    technologies: ['Web Design', 'Responsive UI', 'Content Architecture', 'Forms & Contact Workflows', 'PHP'],
     engineeringFocus: 'Structured information architecture, trust-centered UI design, and frictionless client intake pathways.',
     gradientFrame: 'from-[#EEF2FF] via-[#F3E8FF] to-[#FCE7F3] border border-indigo-100/70',
     accentColor: '#0127F2',

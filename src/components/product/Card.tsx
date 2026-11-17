@@ -124,7 +124,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
           <>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-32 bg-gradient-to-r from-purple-400/20 via-indigo-400/20 to-violet-400/25 blur-2xl pointer-events-none rounded-full" />
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans relative z-10">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-purple-600 inline-block" />
                 Fuzzt
               </span>
@@ -139,7 +139,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
               </span>
             </div>
             <div className="text-center py-1 sm:py-2 space-y-1 relative z-10">
-              <h4 className="text-xs sm:text-[15px] lg:text-base font-bold text-gray-950 tracking-tight leading-tight">
+              <h4 className="text-xs sm:text-[15px] lg:text-base font-bold text-[#000534] tracking-tight leading-tight">
                 Design &amp; development
                 <br />
                 for everyone
@@ -195,7 +195,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans relative z-10">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-indigo-600 inline-block" />
                 Niko
               </span>
@@ -212,7 +212,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
             <div className="text-center py-1 sm:py-2 space-y-1 relative z-10">
               <div className="w-24 h-24 rounded-full bg-purple-300/30 blur-xl absolute top-3 left-6 pointer-events-none" />
               <div className="w-24 h-24 rounded-full bg-indigo-300/25 blur-xl absolute top-4 right-6 pointer-events-none" />
-              <h4 className="text-xs sm:text-[15px] lg:text-base font-bold text-gray-950 tracking-tight leading-tight relative z-10">
+              <h4 className="text-xs sm:text-[15px] lg:text-base font-bold text-[#000534] tracking-tight leading-tight relative z-10">
                 Software Developer
                 <br />
                 Web &amp; Mobile Applications
@@ -299,7 +299,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-purple-600 inline-block" />
                 Starflow
               </span>
@@ -314,7 +314,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
             </div>
             <div className="grid grid-cols-12 gap-2 items-center py-1.5">
               <div className="col-span-7 space-y-1 text-left">
-                <h4 className="text-[11px] sm:text-sm font-bold text-gray-950 tracking-tight leading-tight">
+                <h4 className="text-[11px] sm:text-sm font-bold text-[#000534] tracking-tight leading-tight">
                   We help startups create a professional presence online
                 </h4>
                 <p className="text-[6.5px] sm:text-[7.5px] text-gray-500 line-clamp-2 leading-relaxed">
@@ -348,7 +348,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-rose-500 inline-block" />
                 Aura Atelier
               </span>
@@ -364,12 +364,12 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
             <div className="grid grid-cols-2 gap-2 py-1.5 items-center">
               <div className="bg-[#FAF9F6] p-2 rounded-lg border border-gray-100 space-y-1">
                 <span className="text-[6.5px] font-bold text-rose-600 uppercase tracking-wider">New Drop</span>
-                <div className="text-[10px] sm:text-xs font-bold text-gray-950">Minimalist Series IV</div>
+                <div className="text-[10px] sm:text-xs font-bold text-[#000534]">Minimalist Series IV</div>
                 <div className="text-[8px] text-gray-600 font-medium">$280.00</div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-2 rounded-lg border border-purple-100 space-y-1">
                 <span className="text-[6.5px] font-bold text-purple-600 uppercase tracking-wider">Curated</span>
-                <div className="text-[10px] sm:text-xs font-bold text-gray-950">Edition Monograph</div>
+                <div className="text-[10px] sm:text-xs font-bold text-[#000534]">Edition Monograph</div>
                 <div className="text-[8px] text-gray-600 font-medium">$165.00</div>
               </div>
             </div>
@@ -384,7 +384,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse" />
                 Pulse Health
               </span>
@@ -417,7 +417,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-blue-600 inline-block" />
                 Kora Pay
               </span>
@@ -428,7 +428,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
                 <span className="text-[7px] text-gray-500">Gross Settlement Volume</span>
                 <span className="text-[7px] text-emerald-600 font-semibold">+18.4% today</span>
               </div>
-              <div className="text-sm sm:text-base font-extrabold text-gray-950 tracking-tight font-mono">
+              <div className="text-sm sm:text-base font-extrabold text-[#000534] tracking-tight font-mono">
                 $1,482,920.00
               </div>
             </div>
@@ -444,7 +444,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans">
-              <span className="font-serif tracking-widest uppercase font-bold text-gray-950">
+              <span className="font-serif tracking-widest uppercase font-bold text-[#000534]">
                 Solstice Atelier
               </span>
               <span className="text-[7.5px] uppercase tracking-wider text-gray-400">Nordic 2026</span>
@@ -469,7 +469,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
         return (
           <>
             <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-gray-100 text-[8px] sm:text-[10px] text-gray-500 font-sans">
-              <span className="font-bold text-gray-950 tracking-tight flex items-center gap-1.5">
+              <span className="font-bold text-[#000534] tracking-tight flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-violet-600 inline-block" />
                 Nova Acoustic
               </span>
@@ -512,7 +512,7 @@ export const Card: React.FC<CardProps> = ({ project, onClick }) => {
 
       {/* Bottom Row: Title and Category Badge */}
       <div className="pt-3.5 sm:pt-4 pb-1 px-1.5 flex items-center justify-between">
-        <h3 className="text-xl sm:text-[22px] font-bold text-gray-950 tracking-tight font-sans group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0127F2] group-hover:to-[#6E0CF8] transition-all duration-300">
+        <h3 className="text-xl sm:text-[22px] font-bold text-[#000534] tracking-tight font-sans group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0127F2] group-hover:to-[#6E0CF8] transition-all duration-300">
           {project.title}
         </h3>
         <span className="px-3.5 py-1 rounded-full bg-[#F4F5F8] border border-gray-200/60 group-hover:bg-purple-100 group-hover:text-purple-800 group-hover:border-purple-200 text-gray-700 text-xs sm:text-[13px] font-medium transition-colors">

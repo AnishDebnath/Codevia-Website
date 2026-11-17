@@ -86,7 +86,7 @@ export const Process: React.FC = () => {
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">How We Work</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-gray-950 leading-[1.14] font-sans sm:whitespace-nowrap">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#000534] leading-[1.14] font-sans sm:whitespace-nowrap">
               From first idea{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 to real impact.
@@ -131,7 +131,7 @@ export const Process: React.FC = () => {
                       <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider block font-sans">
                         {milestone.category}
                       </span>
-                      <h4 className="text-sm font-bold text-gray-950 font-sans tracking-tight leading-snug">
+                      <h4 className="text-sm font-bold text-[#000534] font-sans tracking-tight leading-snug">
                         {milestone.title}
                       </h4>
                       <div className="flex items-center gap-1.5 pt-0.5">
@@ -218,7 +218,7 @@ export const Process: React.FC = () => {
                       </span>
                       <h4
                         className={`text-sm font-bold font-sans tracking-tight leading-snug ${
-                          isFinal ? 'text-white' : 'text-gray-950'
+                          isFinal ? 'text-white' : 'text-[#000534]'
                         }`}
                       >
                         {milestone.title}

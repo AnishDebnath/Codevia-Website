@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Heading with website brand gradient accent */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-950 font-sans leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#000534] font-sans leading-[1.12]">
             Building digital{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
               experiences

@@ -89,7 +89,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Title & Tagline with signature logo gradient */}
         <div className="space-y-2">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-950 tracking-tight font-sans leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0127F2] group-hover:to-[#6E0CF8] transition-all">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#000534] tracking-tight font-sans leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0127F2] group-hover:to-[#6E0CF8] transition-all">
             {project.title}
           </h3>
           <p className="text-xs sm:text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-sans tracking-wide">

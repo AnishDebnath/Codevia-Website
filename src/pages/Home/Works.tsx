@@ -63,7 +63,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
               <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Featured Projects</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.14] font-sans">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.14] font-sans">
               Good work gets{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 remembered.
@@ -127,7 +127,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
 
                 {/* Title & Tagline */}
                 <div className="space-y-1">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-950 tracking-tight font-sans leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0127F2] group-hover:to-[#6E0CF8] transition-all">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#000534] tracking-tight font-sans leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0127F2] group-hover:to-[#6E0CF8] transition-all">
                     {project.title}
                   </h3>
                   <p className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] font-sans tracking-wide">

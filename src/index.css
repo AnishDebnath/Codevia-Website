@@ -7,6 +7,18 @@
     background-color: #FAFAFA;
     overflow-x: hidden;
   }
+
+  /* ponytail: site-wide bold typography standard color #000534, preserving transparent gradient texts */
+  b,
+  strong,
+  .font-bold:not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-purple-"]):not([class*="text-indigo-"]):not([class*="text-amber-"]):not([class*="text-emerald-"]):not([class*="text-gray-400"]):not([class*="text-gray-500"]),
+  .font-extrabold:not([class*="text-transparent"]):not([class*="text-white"]),
+  h1:not([class*="text-transparent"]):not([class*="text-white"]),
+  h2:not([class*="text-transparent"]):not([class*="text-white"]),
+  h3:not([class*="text-transparent"]):not([class*="text-white"]),
+  h4:not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-gray-400"]) {
+    color: #000534;
+  }
 }
 
 /* Glassmorphism and glow effects */

@@ -53,7 +53,7 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
         {/* Foreground Content Stack shifted upwards to match layout */}
         <div className="relative z-10 flex flex-col items-center max-w-3xl px-6 space-y-6 sm:space-y-8 -translate-y-6 sm:-translate-y-10 lg:-translate-y-14">
           {/* Top Title: "Let's Crafting" */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight text-gray-950 leading-none font-sans">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight text-[#000534] leading-none font-sans">
             Let’s Crafting
           </h2>
 

@@ -26,7 +26,7 @@ export const Form: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Column: Project Enquiry Form (height matches right side boxes) */}
           <div className="lg:col-span-8 bg-white rounded-[26px] sm:rounded-[32px] p-6 sm:p-9 lg:p-11 border border-purple-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-col justify-between h-full">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 font-sans tracking-tight mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#000534] font-sans tracking-tight mb-6 sm:mb-8">
               Tell us about it.
             </h2>
 
@@ -35,7 +35,7 @@ export const Form: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-950 font-sans">Your message has been sent successfully.</h3>
+                <h3 className="text-2xl font-bold text-[#000534] font-sans">Your message has been sent successfully.</h3>
                 <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed font-sans">
                   We'll get back to you soon.
                 </p>
@@ -134,7 +134,7 @@ export const Form: React.FC = () => {
                 <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802] shadow-xs" />
                 START A PROJECT
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold leading-snug font-sans tracking-tight text-gray-950 relative z-10">
+              <h3 className="text-xl sm:text-2xl font-bold leading-snug font-sans tracking-tight text-[#000534] relative z-10">
                 Let's build
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
@@ -153,7 +153,7 @@ export const Form: React.FC = () => {
               </span>
               <a
                 href="mailto:codeviaaiofficial@gmail.com"
-                className="text-base sm:text-lg font-bold text-gray-950 hover:text-purple-600 transition-colors block break-all font-sans"
+                className="text-base sm:text-lg font-bold text-[#000534] hover:text-purple-600 transition-colors block break-all font-sans"
               >
                 codeviaaiofficial@gmail.com
               </a>
@@ -166,7 +166,7 @@ export const Form: React.FC = () => {
               </span>
               <a
                 href="tel:+919382322241"
-                className="text-base sm:text-lg font-bold text-gray-950 hover:text-purple-600 transition-colors block font-sans"
+                className="text-base sm:text-lg font-bold text-[#000534] hover:text-purple-600 transition-colors block font-sans"
               >
                 +91 93823 22241
               </a>

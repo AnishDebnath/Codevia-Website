@@ -134,7 +134,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           {/* Section Heading matching website info */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-950 leading-[1.15] font-sans">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.15] font-sans">
             Built together.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
               Trusted together.
@@ -234,7 +234,7 @@ export const Testimonials: React.FC = () => {
                         className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover ring-2 ring-white shadow-2xs"
                       />
                       <div>
-                        <h4 className="text-sm sm:text-[15px] font-bold text-gray-950 font-sans tracking-tight">
+                        <h4 className="text-sm sm:text-[15px] font-bold text-[#000534] font-sans tracking-tight">
                           {item.author}
                         </h4>
                         <p className="text-xs sm:text-[13px] text-gray-500 font-medium">
@@ -259,7 +259,7 @@ export const Testimonials: React.FC = () => {
               <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
             ))}
           </div>
-          <span className="font-bold text-gray-950">4.9/5</span>
+          <span className="font-bold text-[#000534]">4.9/5</span>
           <span className="text-gray-400">•</span>
           <span>from verified client reviews</span>
         </div>

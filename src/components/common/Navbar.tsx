@@ -206,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className={`px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap ${
                     isSelected
                       ? 'bg-[#1F232B] text-white shadow-xs'
-                      : 'text-gray-700 hover:text-gray-950 hover:bg-gray-100/80'
+                      : 'text-gray-700 hover:text-[#000534] hover:bg-gray-100/80'
                   }`}
                 >
                   {link.label}

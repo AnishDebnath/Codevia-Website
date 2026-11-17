@@ -151,7 +151,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
           {/* Right Heading with Inline Images sized to fill text size & Actions */}
           <div className="lg:col-span-9 space-y-6">
             <div className="space-y-3">
-              <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[42px] font-bold tracking-tight text-gray-950 leading-[1.24] font-sans">
+              <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[42px] font-bold tracking-tight text-[#000534] leading-[1.24] font-sans">
                 <span className="block">We transform ideas into digital products</span>
                 <span className="block mt-1 sm:mt-1.5">
                   &amp; experiences{' '}
@@ -290,7 +290,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                     <h3
                       className={`text-2xl sm:text-[27px] lg:text-[30px] font-bold tracking-tight leading-[1.18] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]'
-                        : 'text-gray-950'
+                        : 'text-[#000534]'
                         }`}
                     >
                       {service.title}

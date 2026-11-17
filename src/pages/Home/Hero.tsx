@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Heading, Tilted Bounding Box, and Action CTAs */}
             <div className="lg:col-span-7 flex flex-col items-start space-y-6 sm:space-y-8">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-bold tracking-tight text-gray-950 leading-none whitespace-nowrap">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-bold tracking-tight text-[#000534] leading-none whitespace-nowrap">
                 Building Better
               </h1>
 
@@ -178,9 +178,9 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-0.5 text-gray-950">
+                    <div className="flex items-center gap-0.5 text-[#000534]">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-gray-950 text-gray-950" />
+                        <Star key={i} className="w-3 h-3 fill-gray-950 text-[#000534]" />
                       ))}
                     </div>
                     <p className="text-[10px] font-bold tracking-wider text-gray-500 uppercase mt-0.5 font-sans">
