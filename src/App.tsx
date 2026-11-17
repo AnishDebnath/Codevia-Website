@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
 import { About } from './pages/About';
+import { WhatsAppButton } from './components/common';
 
 // ponytail: lightweight, clean router supporting clean path navigation without hashes
 export default function App() {
@@ -115,6 +116,7 @@ export default function App() {
       ) : (
         <Home onNavigate={navigate} />
       )}
+      <WhatsAppButton />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { MoveHorizontal } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // ponytail: proper sizing, strictly contained within div boundaries, drag to see full timeline on mobile/tablet
 interface Milestone {
@@ -100,22 +101,40 @@ export const Process: React.FC = () => {
       {/* Subtle geometric dot grid pattern for depth & texture */}
       <div className="absolute inset-0 bg-[radial-gradient(#C4B5FD_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
-      {/* Top-Right Glowing Coral/Pink Aura from logo */}
-      <div className="absolute -top-12 -right-12 w-[650px] h-[450px] bg-gradient-to-bl from-[#FD4918]/15 via-[#FF0485]/15 to-transparent blur-3xl pointer-events-none rounded-full" />
+      {/* Top-Right Glowing Coral/Pink Aura from logo (all-time breathing) */}
+      <motion.div
+        animate={{ scale: [1, 1.08, 1], opacity: [0.65, 0.95, 0.65] }}
+        transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
+        className="absolute -top-12 -right-12 w-[650px] h-[450px] bg-gradient-to-bl from-[#FD4918]/15 via-[#FF0485]/15 to-transparent blur-3xl pointer-events-none rounded-full"
+      />
 
-      {/* Bottom-Left Ambient Electric Blue/Violet Glow from logo */}
-      <div className="absolute -bottom-12 -left-12 w-[650px] h-[450px] bg-gradient-to-tr from-[#0127F2]/15 via-[#6E0CF8]/15 to-transparent blur-3xl pointer-events-none rounded-full" />
+      {/* Bottom-Left Ambient Electric Blue/Violet Glow from logo (all-time breathing) */}
+      <motion.div
+        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.9, 0.6] }}
+        transition={{ repeat: Infinity, duration: 7.5, ease: 'easeInOut', delay: 1 }}
+        className="absolute -bottom-12 -left-12 w-[650px] h-[450px] bg-gradient-to-tr from-[#0127F2]/15 via-[#6E0CF8]/15 to-transparent blur-3xl pointer-events-none rounded-full"
+      />
 
       {/* Center Soft Radial Bloom */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/20 to-pink-200/20 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20 relative z-10">
         {/* Top Header Section: Section Tag & Heading on Left, 8 Weeks Stat on Right */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10"
+        >
           {/* Left Side: Tag Line, Heading, Sub-heading */}
           <div className="space-y-3 md:space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
+              <motion.span
+                animate={{ scale: [1, 1.4, 1], opacity: [0.75, 1, 0.75] }}
+                transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+                className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]"
+              />
               <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">How We Work</span>
             </div>
 
@@ -140,10 +159,14 @@ export const Process: React.FC = () => {
               Kickoff to launch &amp; scale
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Timeline Showcase Card Container: Drag to see full process */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           ref={scrollRef}
           onMouseDown={handleMouseDown}
           onMouseLeave={handleMouseLeave}
@@ -285,11 +308,17 @@ export const Process: React.FC = () => {
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Drag to explore hint text: After timeline card, centered, clean text without a div container */}
+        {/* Drag to explore hint text: After timeline card, centered, with subtle all-time oscillating arrow */}
         <p className="flex items-center justify-center gap-1.5 text-xs text-gray-500 font-medium font-sans mt-3.5 sm:mt-4 text-center select-none">
-          <MoveHorizontal className="w-3.5 h-3.5 text-gray-400" />
+          <motion.span
+            animate={{ x: [-2.5, 2.5, -2.5] }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+            className="inline-flex"
+          >
+            <MoveHorizontal className="w-3.5 h-3.5 text-gray-400" />
+          </motion.span>
           <span>Drag to see full process</span>
         </p>
       </div>

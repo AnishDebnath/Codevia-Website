@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 // ponytail: imported directly from assets folder for bundled asset optimization
 import agencyModernPortfolio from '../../assets/images/agency_modern_portfolio_1794011098022.jpg';
 
@@ -41,11 +42,19 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
         {/* Full-width bottom logo-spectrum ambient gradient spreading across the whole hero box */}
         <div className="absolute inset-x-0 bottom-0 h-[280px] md:h-[420px] lg:h-[500px] bg-gradient-to-t from-purple-200/30 via-pink-100/20 to-transparent pointer-events-none rounded-b-[24px] md:rounded-b-[36px] lg:rounded-b-[44px]" />
 
-        {/* Right-side glowing golden-yellow/coral/magenta radiant aura from logo */}
-        <div className="absolute -bottom-16 -right-16 w-[350px] md:w-[550px] lg:w-[750px] h-[300px] md:h-[450px] lg:h-[550px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
+        {/* Right-side glowing golden-yellow/coral/magenta radiant aura from logo (all-time ambient breathing) */}
+        <motion.div
+          animate={{ scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
+          transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
+          className="absolute -bottom-16 -right-16 w-[350px] md:w-[550px] lg:w-[750px] h-[300px] md:h-[450px] lg:h-[550px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full"
+        />
 
-        {/* Left-side electric blue ambient glow from logo */}
-        <div className="absolute -bottom-10 left-10 w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[300px] lg:h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
+        {/* Left-side electric blue ambient glow from logo (all-time ambient breathing) */}
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.65, 0.95, 0.65] }}
+          transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut', delay: 1 }}
+          className="absolute -bottom-10 left-10 w-[300px] md:w-[450px] lg:w-[600px] h-[200px] md:h-[300px] lg:h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full"
+        />
 
         {/* =========================================================================
             BACKGROUND TYPOGRAPHY: "Codevia" positioned at the bottom-left inside the box
@@ -75,12 +84,22 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 lg:gap-10 xl:gap-14 items-start">
             {/* Left Column: Heading, Tilted Bounding Box, and Action CTAs */}
             <div className="md:col-span-7 flex flex-col items-start space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8">
-              <h1 className="text-3xl sm:text-5xl md:text-[44px] lg:text-6xl xl:text-[84px] font-bold tracking-tight text-[#000534] leading-tight md:leading-none sm:whitespace-nowrap">
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+                className="text-3xl sm:text-5xl md:text-[44px] lg:text-6xl xl:text-[84px] font-bold tracking-tight text-[#000534] leading-tight md:leading-none sm:whitespace-nowrap"
+              >
                 Building Better
-              </h1>
+              </motion.h1>
 
               {/* Tilted Bounding Box around "Products" styled with logo gradient */}
-              <div className="relative inline-block transform -rotate-[2deg] origin-top-left">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92, y: 16 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.15, ease: 'easeOut' }}
+                className="relative inline-block transform -rotate-[2deg] origin-top-left"
+              >
                 {/* Outer Electric Blue Selection Wireframe Box */}
                 <div className="relative p-1.5 md:p-2 border-[1.5px] border-[#0127F2] rounded-sm">
                   {/* 4 Corner Square Handles */}
@@ -96,8 +115,12 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                     </span>
                   </div>
 
-                  {/* FLOATING CREATIVE TAG & MOUSE ARROW */}
-                  <div className="absolute -bottom-1 -right-1 z-30 pointer-events-none animate-float">
+                  {/* FLOATING CREATIVE TAG & MOUSE ARROW (All-time floating animation) */}
+                  <motion.div
+                    animate={{ y: [0, -6, 0], rotate: [0, 1.5, 0] }}
+                    transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
+                    className="absolute -bottom-1 -right-1 z-30 pointer-events-none"
+                  >
                     <div className="relative">
                       {/* Brand Purple Cursor Arrow pointing directly at bottom-right handle */}
                       <svg
@@ -112,17 +135,27 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                         Creative
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Subtitle Value Proposition */}
-              <p className="text-sm md:text-sm lg:text-base xl:text-lg text-gray-600 leading-relaxed max-w-md lg:max-w-prose pt-1 font-normal">
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.25, ease: 'easeOut' }}
+                className="text-sm md:text-sm lg:text-base xl:text-lg text-gray-600 leading-relaxed max-w-md lg:max-w-prose pt-1 font-normal"
+              >
                 We transform ambitious ideas into beautiful, scalable and high-performing digital products that help businesses grow.
-              </p>
+              </motion.p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pt-1">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.35, ease: 'easeOut' }}
+                className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pt-1"
+              >
                 <a
                   href="/contact"
                   onClick={(e) => {
@@ -150,13 +183,18 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </span>
                 </a>
-              </div>
+              </motion.div>
             </div>
 
             {/* Right Column: Clean Reviews with Maintained Generous Space Above Media Card */}
             <div className="md:col-span-5 flex flex-col items-start md:items-end justify-between space-y-4 md:space-y-4 lg:space-y-8 xl:space-y-12 w-full">
               {/* Clean Reviews Stack & Statement */}
-              <div className="max-w-xs text-left md:text-right">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.55, delay: 0.3, ease: 'easeOut' }}
+                className="max-w-xs text-left md:text-right"
+              >
                 <div className="flex items-center md:justify-end gap-3 mb-2 md:mb-2.5">
                   <div className="flex -space-x-2">
                     <img
@@ -191,17 +229,23 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                 <p className="text-xs md:text-xs lg:text-[13px] text-gray-600 leading-relaxed font-normal">
                   We craft bold, strategy-driven designs that help businesses stand out and connect with their audiences.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Responsive Modern Website Development Agency Image with Reduced Proportional Sizing */}
-              <div className="w-full max-w-[320px] sm:max-w-[340px] md:w-[260px] md:max-w-[260px] lg:w-[330px] lg:max-w-[330px] xl:w-[380px] xl:max-w-[380px] aspect-[16/10] rounded-2xl md:rounded-3xl border border-gray-200/90 overflow-hidden shadow-xl bg-white relative group z-20">
+              <motion.div
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.65, delay: 0.4, ease: 'easeOut' }}
+                whileHover={{ y: -4 }}
+                className="w-full max-w-[320px] sm:max-w-[340px] md:w-[260px] md:max-w-[260px] lg:w-[330px] lg:max-w-[330px] xl:w-[380px] xl:max-w-[380px] aspect-[16/10] rounded-2xl md:rounded-3xl border border-gray-200/90 overflow-hidden shadow-xl bg-white relative group z-20"
+              >
                 <img
                   src={agencyModernPortfolio}
                   alt="Modern minimalist website development agency portfolio"
                   className="w-full h-full object-cover rounded-2xl md:rounded-3xl transform group-hover:scale-103 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 rounded-2xl md:rounded-3xl ring-1 ring-inset ring-black/5 pointer-events-none" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

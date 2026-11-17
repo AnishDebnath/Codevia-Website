@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
 import { ProjectDetail } from '../../data/projectsData';
 
@@ -18,12 +19,19 @@ export const Works: React.FC<WorksProps> = ({ projects, onNavigateContact }) => 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Projects Grid: 2 columns on tablet and desktop, 1 on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8 lg:gap-9">
-          {projects.map((project) => (
-            <ProjectCard
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
-              project={project}
-              onNavigateContact={onNavigateContact}
-            />
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: 'easeOut' }}
+            >
+              <ProjectCard
+                project={project}
+                onNavigateContact={onNavigateContact}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

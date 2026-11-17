@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Code2, Smartphone, PenTool, Sparkles, Lightbulb, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface ServicesProps {
   onNavigateContact?: () => void;
@@ -139,16 +140,30 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
 
   return (
     <section id="services" className="py-10 md:py-16 lg:py-20 relative select-none">
-      {/* Background ambient lighting matching theme */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] lg:w-[850px] h-[250px] md:h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
+      {/* Background ambient lighting matching theme (all-time breathing motion) */}
+      <motion.div
+        animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.85, 0.55] }}
+        transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] lg:w-[850px] h-[250px] md:h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10"
+      />
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Top Header Section matching design */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start mb-8 md:mb-10 lg:mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start mb-8 md:mb-10 lg:mb-12"
+        >
           {/* Left Pill Badge */}
           <div className="md:col-span-4 lg:col-span-3">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
+              <motion.span
+                animate={{ scale: [1, 1.4, 1], opacity: [0.75, 1, 0.75] }}
+                transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+                className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]"
+              />
               <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide">Our Services</span>
             </div>
           </div>
@@ -238,10 +253,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Carousel / Slider Container: Responsive Cards */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           className="relative overflow-hidden pt-4 md:pt-6 pb-12 md:pb-16 px-2 md:px-4 -mx-2 md:-mx-4 select-none"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
@@ -305,7 +324,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
         {/* Mobile Slide Indicators */}
         <div className="flex sm:hidden items-center justify-center gap-2 -mt-4 mb-2">

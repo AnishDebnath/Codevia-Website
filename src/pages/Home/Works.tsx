@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Code, Search, Bot, BarChart3, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { codeviaProjects, ProjectDetail } from '../../data/projectsData';
 
 interface WorksProps {
@@ -49,17 +50,35 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
 
   return (
     <section id="works" className="py-10 md:py-16 lg:py-20 relative select-none">
-      {/* Background ambient lighting matching theme */}
-      <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[200px] md:h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-[280px] md:w-[550px] h-[180px] md:h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />
+      {/* Background ambient lighting with all-time breathing motion */}
+      <motion.div
+        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.9, 0.6] }}
+        transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
+        className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[200px] md:h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.85, 0.55] }}
+        transition={{ repeat: Infinity, duration: 7.5, ease: 'easeInOut', delay: 1 }}
+        className="absolute bottom-1/4 right-1/4 w-[280px] md:w-[550px] h-[180px] md:h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10"
+      />
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Top Header Section: Section Tag & Heading on Left, Sub-heading & Button on Right */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-14"
+        >
           {/* Left Side: Tag Line + Section Heading */}
           <div className="space-y-3 md:space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
+              <motion.span
+                animate={{ scale: [1, 1.4, 1], opacity: [0.75, 1, 0.75] }}
+                transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+                className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]"
+              />
               <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">Featured Projects</span>
             </div>
 
@@ -92,13 +111,18 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
               </span>
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* 2x2 Clean Compact Showcase Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 lg:gap-8">
-          {featuredProjects.map((project) => (
-            <div
+          {featuredProjects.map((project, index) => (
+            <motion.div
               key={project.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+              whileHover={{ y: -4 }}
               onClick={handleCardClick}
               className="group relative rounded-[26px] sm:rounded-[30px] bg-white border border-gray-200/90 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_40px_rgba(110,12,248,0.1)] hover:border-purple-300 transition-all duration-300 overflow-hidden p-6 sm:p-7 flex flex-col justify-between cursor-pointer"
             >
@@ -169,7 +193,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

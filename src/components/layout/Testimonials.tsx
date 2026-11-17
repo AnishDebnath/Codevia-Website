@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface TestimonialItem {
   id: string;
@@ -121,15 +122,29 @@ export const Testimonials: React.FC = () => {
       id="testimonials"
       className="py-10 md:py-16 lg:py-20 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
     >
-      {/* Background ambient lighting matching Hero palette */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[350px] md:w-[750px] h-[220px] md:h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/25 to-pink-200/20 blur-[140px] pointer-events-none rounded-full -z-10" />
+      {/* Background ambient lighting with all-time breathing motion */}
+      <motion.div
+        animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.85, 0.55] }}
+        transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[350px] md:w-[750px] h-[220px] md:h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/25 to-pink-200/20 blur-[140px] pointer-events-none rounded-full -z-10"
+      />
 
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Centered Section Header matching previous sections font style */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 md:space-y-4 mb-8 md:mb-12 lg:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="text-center max-w-3xl mx-auto space-y-3 md:space-y-4 mb-8 md:mb-12 lg:mb-16"
+        >
           {/* Section Tag */}
           <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
+            <motion.span
+              animate={{ scale: [1, 1.4, 1], opacity: [0.75, 1, 0.75] }}
+              transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+              className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]"
+            />
             <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">Client Stories</span>
           </div>
 
@@ -161,11 +176,15 @@ export const Testimonials: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Horizontal Carousel Track with Screen Edge Overflow & Subtle Fades */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
         className="relative w-full overflow-hidden pt-6 pb-14 sm:pt-8 sm:pb-16 [--card-w:320px] sm:[--card-w:380px] lg:[--card-w:420px]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -249,7 +268,7 @@ export const Testimonials: React.FC = () => {
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom Rating Pill */}
       <div className="mt-2 sm:mt-4 flex items-center justify-center">
