@@ -11,7 +11,7 @@ interface WorksProps {
 // ponytail: Responsive Grid for PDF projects, styled to seamlessly match Codevia aesthetic
 export const Works: React.FC<WorksProps> = ({ projects, onNavigateContact }) => {
   return (
-    <section className="pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-20 relative select-none">
+    <section className="pt-2 sm:pt-4 pb-12 sm:pb-16 lg:pb-20 relative">
       {/* Background ambient lighting matching theme */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />

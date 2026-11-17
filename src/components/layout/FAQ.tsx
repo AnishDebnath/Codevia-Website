@@ -68,7 +68,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
   };
 
   return (
-    <section id="faq" className="py-10 md:py-16 lg:py-20 relative select-none">
+    <section id="faq" className="py-10 md:py-16 lg:py-20 relative">
       {/* Background ambient lighting with all-time breathing motion */}
       <motion.div
         animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.9, 0.6] }}

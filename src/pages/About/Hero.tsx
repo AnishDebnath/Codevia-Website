@@ -1,17 +1,17 @@
 import React from 'react';
 import { ArrowRight, Star } from 'lucide-react';
-// ponytail: imported directly from assets folder for bundled asset optimization
+// ponytail: imported directly from local assets for high-speed bundled delivery
 import aboutWorkspace from '../../assets/images/about_workspace.jpg';
 
 export const Hero: React.FC = () => {
   const avatars = [
-    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&h=160&fit=crop&crop=faces',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces',
-    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&fit=crop&crop=faces',
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&h=160&fit=crop&crop=faces&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces&q=80',
+    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&h=160&fit=crop&crop=faces&q=80',
   ];
 
   return (
-    <section className="pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12 lg:pb-14 w-full relative select-none">
+    <section className="pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12 lg:pb-14 w-full relative">
       {/* Background ambient lighting matching website color theme */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[140px] pointer-events-none rounded-full -z-10" />
 
@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/10] rounded-[24px] sm:rounded-[36px] overflow-hidden border border-purple-100/80 shadow-[0_16px_45px_rgba(0,0,0,0.06)] bg-gray-100 group">
           <img
             src={aboutWorkspace}
-            alt="Codevia creative workspace desk"
+            alt="Codevia modern technology studio and digital workspace"
             className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500"
           />
         </div>

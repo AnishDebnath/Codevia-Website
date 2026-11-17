@@ -18,7 +18,7 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
   };
 
   return (
-    <section id="cta" className="pt-6 pb-4 sm:pt-10 md:pt-16 lg:pt-20 sm:pb-5 md:pb-6 lg:pb-8 w-full flex justify-center select-none">
+    <section id="cta" className="pt-6 pb-4 sm:pt-10 md:pt-16 lg:pt-20 sm:pb-5 md:pb-6 lg:pb-8 w-full flex justify-center">
       {/* Contained Hero-like Box Container with background based on website color theme */}
       <motion.div
         initial={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -45,9 +45,9 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
         />
 
         {/* Background 3D Typography: Centered "Codevia" along the bottom */}
-        <div className="absolute -bottom-2 md:-bottom-8 lg:-bottom-10 left-1/2 -translate-x-1/2 select-none pointer-events-none z-0">
+        <div className="absolute -bottom-2 md:-bottom-8 lg:-bottom-10 left-1/2 -translate-x-1/2 pointer-events-none z-0">
           <span
-            className="text-[70px] sm:text-[110px] md:text-[160px] lg:text-[210px] xl:text-[240px] font-black tracking-tight leading-none block select-none font-sans text-center whitespace-nowrap opacity-90"
+            className="text-[70px] sm:text-[110px] md:text-[160px] lg:text-[210px] xl:text-[240px] font-black tracking-tight leading-none block font-sans text-center whitespace-nowrap opacity-90"
             style={{
               background:
                 'linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 236, 255, 0.6) 50%, rgba(199, 210, 254, 0.2) 100%)',
@@ -105,7 +105,7 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-10 sm:w-16 h-3 bg-blue-500/20 blur-md rounded-full pointer-events-none" />
 
                 {/* Glowing "Impactful" Tag */}
-                <div className="relative bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#C001F6] text-white text-[9px] sm:text-xs md:text-sm font-bold px-2 py-0.5 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full shadow-[0_6px_20px_rgba(1,39,242,0.45)] border-[1.5px] border-white/80 ring-2 ring-blue-300/40 tracking-wide select-none whitespace-nowrap">
+                <div className="relative bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#C001F6] text-white text-[9px] sm:text-xs md:text-sm font-bold px-2 py-0.5 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full shadow-[0_6px_20px_rgba(1,39,242,0.45)] border-[1.5px] border-white/80 ring-2 ring-blue-300/40 tracking-wide whitespace-nowrap">
                   Impactful
                 </div>
                 {/* Electric Blue Cursor pointing up-right directly at Visual Impact */}
@@ -135,7 +135,7 @@ export const CTA: React.FC<CTAProps> = ({ onNavigateContact }) => {
                   <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                 </svg>
                 {/* Glowing "Creative" Tag in Logo Blue-Purple-Pink */}
-                <div className="relative bg-gradient-to-r from-[#6E0CF8] via-[#C001F6] to-[#FF0485] text-white text-[9px] sm:text-xs md:text-sm font-bold px-2 py-0.5 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full shadow-[0_6px_20px_rgba(110,12,248,0.45)] border-[1.5px] border-white/80 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
+                <div className="relative bg-gradient-to-r from-[#6E0CF8] via-[#C001F6] to-[#FF0485] text-white text-[9px] sm:text-xs md:text-sm font-bold px-2 py-0.5 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full shadow-[0_6px_20px_rgba(110,12,248,0.45)] border-[1.5px] border-white/80 ring-2 ring-purple-300/40 tracking-wide whitespace-nowrap">
                   Creative
                 </div>
               </div>

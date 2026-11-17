@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Star, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-// ponytail: imported directly from assets folder for bundled asset optimization
-import agencyModernPortfolio from '../../assets/images/agency_modern_portfolio_1794011098022.jpg';
+// ponytail: imported directly from local assets for high-speed bundled delivery
+import agencyModernPortfolio from '../../assets/images/agency_modern_portfolio.jpg';
 
 interface HeroProps {
   onNavigateContact?: () => void;
@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
   };
 
   return (
-    <section className="pt-2 sm:pt-4 pb-8 sm:pb-12 lg:pb-14 w-full flex justify-center select-none">
+    <section className="pt-2 sm:pt-4 pb-8 sm:pb-12 lg:pb-14 w-full flex justify-center">
       {/* Contained Hero Box Container with background based on website color theme */}
       <div
         className="relative rounded-[24px] md:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-8 md:py-10 lg:py-12 xl:py-16 overflow-hidden min-h-[500px] md:min-h-[520px] lg:min-h-[620px] xl:min-h-[700px] flex flex-col justify-between w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-6rem)] xl:w-[min(95vw,1440px)]"
@@ -131,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                       </svg>
 
                       {/* Glowing "Creative" Pill Tag anchored beside the cursor */}
-                      <div className="absolute top-2.5 left-3 md:top-3 md:left-4 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] text-white text-[10px] md:text-xs font-semibold px-2.5 py-0.5 md:px-3.5 md:py-1 rounded-full shadow-[0_4px_16px_rgba(110,12,248,0.45)] border border-white/70 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
+                      <div className="absolute top-2.5 left-3 md:top-3 md:left-4 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] text-white text-[10px] md:text-xs font-semibold px-2.5 py-0.5 md:px-3.5 md:py-1 rounded-full shadow-[0_4px_16px_rgba(110,12,248,0.45)] border border-white/70 ring-2 ring-purple-300/40 tracking-wide whitespace-nowrap">
                         Creative
                       </div>
                     </div>
@@ -198,18 +198,18 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                 <div className="flex items-center md:justify-end gap-3 mb-2 md:mb-2.5">
                   <div className="flex -space-x-2">
                     <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces"
-                      alt="Reviewer avatar"
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&q=80"
+                      alt="Verified client review"
                       className="w-7 h-7 md:w-7 md:h-7 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
-                      alt="Reviewer avatar"
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80"
+                      alt="Verified client review"
                       className="w-7 h-7 md:w-7 md:h-7 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
-                      alt="Reviewer avatar"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=faces&q=80"
+                      alt="Verified client review"
                       className="w-7 h-7 md:w-7 md:h-7 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                   </div>
@@ -231,7 +231,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                 </p>
               </motion.div>
 
-              {/* Responsive Modern Website Development Agency Image with Reduced Proportional Sizing */}
+              {/* Responsive Modern Digital Product & Engineering Showcase Image */}
               <motion.div
                 initial={{ opacity: 0, y: 30, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -241,7 +241,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
               >
                 <img
                   src={agencyModernPortfolio}
-                  alt="Modern minimalist website development agency portfolio"
+                  alt="Modern digital product engineering and enterprise analytics platform"
                   className="w-full h-full object-cover rounded-2xl md:rounded-3xl transform group-hover:scale-103 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 rounded-2xl md:rounded-3xl ring-1 ring-inset ring-black/5 pointer-events-none" />

@@ -1,12 +1,12 @@
 import React from 'react';
-// ponytail: cropped directly from design showcase and bundled as local assets
+// ponytail: imported directly from local assets for high-speed bundled delivery
 import collaborateImg from '../../assets/images/about_collaborate.jpg';
-import valuesImg from '../../assets/images/about_values.jpg';
+import valuesImg from '../../assets/images/about_values.png';
 
 // ponytail: Two alternating feature showcase sections for Company and Values with brand gradient theme
 export const Story: React.FC = () => {
   return (
-    <section className="relative w-full py-12 sm:py-16 lg:py-20 select-none">
+    <section className="relative w-full py-12 sm:py-16 lg:py-20">
       {/* Background ambient lighting matching theme */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-blue-100/15 via-purple-100/20 to-pink-100/15 blur-[130px] pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-purple-100/15 via-pink-100/15 to-amber-100/15 blur-[130px] pointer-events-none -z-10" />
@@ -44,7 +44,7 @@ export const Story: React.FC = () => {
           <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden border border-purple-100/80 shadow-[0_14px_40px_rgba(0,0,0,0.06)] bg-gray-100 aspect-[4/3] sm:aspect-[14/10] group">
             <img
               src={collaborateImg}
-              alt="Codevia team and technology collaborating"
+              alt="Collaborative digital product UX design and architecture planning"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             />
             {/* Subtle light vignette overlay */}
@@ -58,7 +58,7 @@ export const Story: React.FC = () => {
           <div className="order-2 lg:order-1 relative rounded-[24px] sm:rounded-[32px] overflow-hidden border border-purple-100/80 shadow-[0_14px_40px_rgba(0,0,0,0.06)] bg-gray-100 aspect-[4/3] sm:aspect-[14/10] group">
             <img
               src={valuesImg}
-              alt="Codevia engineer and designer focused on product excellence"
+              alt="Measurable business advantage analytics, digital strategy, and software metrics"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             />
             {/* Subtle light vignette overlay */}

@@ -182,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="w-full relative z-50 py-3.5 md:py-4 lg:py-5 select-none">
+    <header className="w-full relative z-50 py-3.5 md:py-4 lg:py-5">
       <div className="w-full max-w-screen-xl mx-auto px-6 sm:px-8 md:px-8 lg:px-12 xl:px-20 flex items-center justify-between">
         {/* Brand Lockup: Logo */}
         <a

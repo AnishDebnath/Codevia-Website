@@ -139,7 +139,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
   };
 
   return (
-    <section id="services" className="py-10 md:py-16 lg:py-20 relative select-none">
+    <section id="services" className="py-10 md:py-16 lg:py-20 relative">
       {/* Background ambient lighting matching theme (all-time breathing motion) */}
       <motion.div
         animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.85, 0.55] }}
@@ -178,20 +178,20 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                   {/* Overlapping inline circular images scaled with em units to properly fill the text size */}
                   <span className="inline-flex items-center -space-x-[0.38em] align-middle mx-[0.2em] transform -translate-y-[0.08em]">
                     <img
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&h=160&fit=crop&crop=faces"
-                      alt="Creative design specialist"
+                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=160&h=160&fit=crop&crop=faces&q=80"
+                      alt="UI/UX Product Designer"
                       referrerPolicy="no-referrer"
                       className="w-[1.12em] h-[1.12em] rounded-full border-2 border-white object-cover shadow-sm ring-1 ring-black/5 shrink-0"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces"
-                      alt="Product UI designer"
+                      src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=160&h=160&fit=crop&crop=faces&q=80"
+                      alt="Full-Stack Web Architect"
                       referrerPolicy="no-referrer"
                       className="w-[1.12em] h-[1.12em] rounded-full border-2 border-white object-cover shadow-sm ring-1 ring-black/5 shrink-0"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&h=160&fit=crop&crop=faces"
-                      alt="Web engineering lead"
+                      src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=160&h=160&fit=crop&crop=faces&q=80"
+                      alt="AI & Systems Lead"
                       referrerPolicy="no-referrer"
                       className="w-[1.12em] h-[1.12em] rounded-full border-2 border-white object-cover shadow-sm ring-1 ring-black/5 shrink-0"
                     />
@@ -261,7 +261,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
-          className="relative overflow-hidden pt-4 md:pt-6 pb-12 md:pb-16 px-2 md:px-4 -mx-2 md:-mx-4 select-none"
+          className="relative overflow-hidden pt-4 md:pt-6 pb-12 md:pb-16 px-2 md:px-4 -mx-2 md:-mx-4"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >

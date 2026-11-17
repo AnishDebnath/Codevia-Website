@@ -51,35 +51,35 @@ export const Process: React.FC = () => {
       category: 'Discover',
       title: 'Kickoff & Research',
       position: 'top',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=faces&q=80',
     },
     {
       week: 2,
       category: 'Define',
       title: 'Roadmap & Scope',
       position: 'bottom',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&q=80',
     },
     {
       week: 3,
       category: 'Design',
       title: 'UI/UX Prototypes',
       position: 'top',
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=faces&q=80',
     },
     {
       week: 5,
       category: 'Build',
       title: 'Engineering & Code',
       position: 'bottom',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=faces&q=80',
     },
     {
       week: 7,
       category: 'Build',
       title: 'QA & Final Review',
       position: 'top',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=faces&q=80',
     },
     {
       week: 8,
@@ -87,7 +87,7 @@ export const Process: React.FC = () => {
       title: 'Launch & Scale',
       position: 'bottom',
       isFinal: true,
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=faces&q=80',
     },
   ];
 
@@ -96,7 +96,7 @@ export const Process: React.FC = () => {
   return (
     <section
       id="process"
-      className="w-full bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] py-12 sm:py-16 lg:py-20 relative select-none border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)] overflow-hidden"
+      className="w-full bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] py-12 sm:py-16 lg:py-20 relative border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)] overflow-hidden"
     >
       {/* Subtle geometric dot grid pattern for depth & texture */}
       <div className="absolute inset-0 bg-[radial-gradient(#C4B5FD_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
@@ -172,7 +172,7 @@ export const Process: React.FC = () => {
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className={`bg-white rounded-3xl border border-gray-200/90 shadow-[0_6px_25px_rgba(0,0,0,0.03)] p-5 sm:p-6 lg:p-8 overflow-x-auto scrollbar-none select-none touch-pan-x transition-colors ${
+          className={`bg-white rounded-3xl border border-gray-200/90 shadow-[0_6px_25px_rgba(0,0,0,0.03)] p-5 sm:p-6 lg:p-8 overflow-x-auto scrollbar-none touch-pan-x transition-colors ${
             isDragging ? 'cursor-grabbing' : 'cursor-grab'
           }`}
         >
@@ -311,7 +311,7 @@ export const Process: React.FC = () => {
         </motion.div>
 
         {/* Drag to explore hint text: After timeline card, centered, with subtle all-time oscillating arrow */}
-        <p className="flex items-center justify-center gap-1.5 text-xs text-gray-500 font-medium font-sans mt-3.5 sm:mt-4 text-center select-none">
+        <p className="flex items-center justify-center gap-1.5 text-xs text-gray-500 font-medium font-sans mt-3.5 sm:mt-4 text-center">
           <motion.span
             animate={{ x: [-2.5, 2.5, -2.5] }}
             transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}

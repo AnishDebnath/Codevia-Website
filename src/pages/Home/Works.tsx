@@ -49,7 +49,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
   };
 
   return (
-    <section id="works" className="py-10 md:py-16 lg:py-20 relative select-none">
+    <section id="works" className="py-10 md:py-16 lg:py-20 relative">
       {/* Background ambient lighting with all-time breathing motion */}
       <motion.div
         animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.9, 0.6] }}
@@ -144,7 +144,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
                     </div>
                   </div>
 
-                  <span className="text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-mono select-none">
+                  <span className="text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-mono">
                     {project.number}
                   </span>
                 </div>

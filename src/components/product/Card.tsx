@@ -1,5 +1,5 @@
 import React from 'react';
-// ponytail: bundled asset imported for high-performance zero-lag rendering
+// ponytail: imported directly from local assets for high-speed bundled delivery
 import agencyModernPortfolio from '../../assets/images/agency_modern_portfolio_1794011098022.jpg';
 
 export interface ProjectItem {

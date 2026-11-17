@@ -32,7 +32,7 @@ export const Testimonials: React.FC = () => {
       author: 'Verified Client',
       role: 'Law Firm Partner',
       company: 'Legal Services',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces',
+      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=160&h=160&fit=crop&crop=faces&q=80',
       rating: 5,
     },
     {
@@ -120,7 +120,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-10 md:py-16 lg:py-20 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
+      className="py-10 md:py-16 lg:py-20 relative overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
     >
       {/* Background ambient lighting with all-time breathing motion */}
       <motion.div
@@ -226,7 +226,7 @@ export const Testimonials: React.FC = () => {
                   <div>
                     {/* Top Row: Quotation mark on Left, 5 Stars on Right */}
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-3xl sm:text-4xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802] leading-none select-none">
+                      <span className="text-3xl sm:text-4xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802] leading-none">
                         “
                       </span>
                       <div className="flex items-center gap-1 text-amber-500">

@@ -23,7 +23,7 @@ export const Statistics: React.FC = () => {
   ];
 
   return (
-    <section id="stats" className="relative w-full py-8 md:py-12 lg:py-14 select-none">
+    <section id="stats" className="relative w-full py-8 md:py-12 lg:py-14">
       {/* Subtle ambient glow in background with all-time breathing motion */}
       <motion.div
         animate={{ scale: [1, 1.12, 1], opacity: [0.55, 0.85, 0.55] }}
