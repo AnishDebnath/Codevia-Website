@@ -48,22 +48,22 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
   };
 
   return (
-    <section id="works" className="py-12 sm:py-16 lg:py-20 relative select-none">
+    <section id="works" className="py-10 md:py-16 lg:py-20 relative select-none">
       {/* Background ambient lighting matching theme */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-[550px] h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[200px] md:h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/15 blur-[130px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-[280px] md:w-[550px] h-[180px] md:h-[300px] bg-gradient-to-l from-amber-100/20 via-pink-100/15 to-purple-100/20 blur-[120px] pointer-events-none rounded-full -z-10" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Top Header Section: Section Tag & Heading on Left, Sub-heading & Button on Right */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10 sm:mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 md:gap-8 mb-8 md:mb-12 lg:mb-14">
           {/* Left Side: Tag Line + Section Heading */}
-          <div className="space-y-4 max-w-xl">
+          <div className="space-y-3 md:space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Featured Projects</span>
+              <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">Featured Projects</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.14] font-sans">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans">
               Good work gets{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 remembered.
@@ -72,8 +72,8 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
           </div>
 
           {/* Right Side: Sub-heading + Button */}
-          <div className="flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-end gap-4 sm:gap-5">
-            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-md lg:text-right font-sans">
+          <div className="flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-end gap-3 md:gap-4 lg:gap-5">
+            <p className="text-sm md:text-base text-gray-600 font-normal leading-relaxed max-w-md lg:text-right font-sans">
               Explore highlight engineering systems delivered across enterprise platforms, AI assistants, and predictive workflows.
             </p>
 
@@ -84,7 +84,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
                 e.preventDefault();
                 handleCardClick();
               }}
-              className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
+              className="px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs md:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95 shrink-0"
             >
               <span>View all 11 projects</span>
               <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
@@ -95,7 +95,7 @@ export const Works: React.FC<WorksProps> = ({ onNavigateProjects }) => {
         </div>
 
         {/* 2x2 Clean Compact Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 lg:gap-8">
           {featuredProjects.map((project) => (
             <div
               key={project.id}

@@ -22,15 +22,15 @@ export const Statistics: React.FC = () => {
   ];
 
   return (
-    <section id="stats" className="relative w-full py-10 sm:py-12 lg:py-14 select-none">
+    <section id="stats" className="relative w-full py-8 md:py-12 lg:py-14 select-none">
       {/* Subtle ambient glow in background matching the logo spectrum lighting */}
-      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[220px] bg-gradient-to-r from-blue-200/20 via-purple-200/20 to-pink-200/20 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[300px] md:w-[600px] h-[160px] md:h-[220px] bg-gradient-to-r from-blue-200/20 via-purple-200/20 to-pink-200/20 blur-3xl pointer-events-none -z-10" />
 
-      {/* Content Container aligned with Hero and Navbar */}
-      <div className="w-full max-w-6xl mx-auto px-6">
+      {/* Content Container aligned with standard responsive edge padding */}
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Editorial Statement styled with Hero typography and logo signature gradient */}
-        <div className="mb-8 sm:mb-10 max-w-xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-[#000534] leading-[1.2] font-sans">
+        <div className="mb-6 md:mb-8 lg:mb-10 max-w-2xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-bold tracking-tight text-[#000534] leading-[1.2] font-sans">
             A trusted creative partner for{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
               teams building what comes next.
@@ -39,19 +39,19 @@ export const Statistics: React.FC = () => {
         </div>
 
         {/* 4-Column Statistics Row with Hairline Dividers & Logo Color Gradients */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="group border-t border-gray-200/90 hover:border-purple-300/80 pt-4 sm:pt-5 transition-colors duration-300"
+              className="group border-t border-gray-200/90 hover:border-purple-300/80 pt-3 md:pt-4 lg:pt-5 transition-colors duration-300"
             >
               {/* Stat Value matching Hero font design & logo signature gradient */}
-              <div className="text-5xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] tabular-nums font-sans leading-none py-1">
+              <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] tabular-nums font-sans leading-none py-1">
                 {stat.value}
               </div>
 
               {/* Stat Label matching Hero body typography */}
-              <p className="mt-3 text-xs sm:text-sm text-gray-600 font-medium font-sans leading-snug">
+              <p className="mt-2 md:mt-3 text-xs md:text-sm text-gray-600 font-medium font-sans leading-snug">
                 {stat.label}
               </p>
             </div>

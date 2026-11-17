@@ -119,22 +119,22 @@ export const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-12 sm:py-16 lg:py-20 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
+      className="py-10 md:py-16 lg:py-20 relative select-none overflow-hidden bg-gradient-to-br from-[#F0F5FF]/80 via-[#F8F2FF]/80 to-[#FFF5F2]/80 border-y border-purple-200/50 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(255,255,255,0.9)]"
     >
       {/* Background ambient lighting matching Hero palette */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[750px] h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/25 to-pink-200/20 blur-[140px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[350px] md:w-[750px] h-[220px] md:h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/25 to-pink-200/20 blur-[140px] pointer-events-none rounded-full -z-10" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Centered Section Header matching previous sections font style */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-3 md:space-y-4 mb-8 md:mb-12 lg:mb-16">
           {/* Section Tag */}
           <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
             <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-            <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Client Stories</span>
+            <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">Client Stories</span>
           </div>
 
           {/* Section Heading matching website info */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.15] font-sans">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.15] font-sans">
             Built together.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
               Trusted together.
@@ -145,7 +145,7 @@ export const Testimonials: React.FC = () => {
           <div className="flex items-center justify-center gap-3 pt-2">
             <button
               onClick={onUserPrev}
-              className="w-10 h-10 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+              className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
               aria-label="Previous testimonial"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -155,7 +155,7 @@ export const Testimonials: React.FC = () => {
             </span>
             <button
               onClick={onUserNext}
-              className="w-10 h-10 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+              className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200/90 bg-white hover:border-purple-300 text-gray-700 hover:text-purple-600 flex items-center justify-center transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
               aria-label="Next testimonial"
             >
               <ArrowRight className="w-4 h-4" />

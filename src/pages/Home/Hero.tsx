@@ -36,24 +36,23 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
     <section className="pt-2 sm:pt-4 pb-8 sm:pb-12 lg:pb-14 w-full flex justify-center select-none">
       {/* Contained Hero Box Container with background based on website color theme */}
       <div
-        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-8 sm:py-12 lg:py-16 overflow-hidden min-h-[640px] sm:min-h-[720px] lg:min-h-[780px] flex flex-col justify-between"
-        style={{ width: 'min(95vw, 1440px)' }}
+        className="relative rounded-[24px] md:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.05)] py-8 md:py-12 lg:py-16 overflow-hidden min-h-[580px] md:min-h-[680px] lg:min-h-[760px] xl:min-h-[780px] flex flex-col justify-between w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-6rem)] xl:w-[min(95vw,1440px)]"
       >
         {/* Full-width bottom logo-spectrum ambient gradient spreading across the whole hero box */}
-        <div className="absolute inset-x-0 bottom-0 h-[420px] sm:h-[500px] bg-gradient-to-t from-purple-200/30 via-pink-100/20 to-transparent pointer-events-none rounded-b-[28px] sm:rounded-b-[36px] lg:rounded-b-[44px]" />
+        <div className="absolute inset-x-0 bottom-0 h-[280px] md:h-[420px] lg:h-[500px] bg-gradient-to-t from-purple-200/30 via-pink-100/20 to-transparent pointer-events-none rounded-b-[24px] md:rounded-b-[36px] lg:rounded-b-[44px]" />
 
         {/* Right-side glowing golden-yellow/coral/magenta radiant aura from logo */}
-        <div className="absolute -bottom-16 -right-16 w-[750px] h-[550px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
+        <div className="absolute -bottom-16 -right-16 w-[350px] md:w-[550px] lg:w-[750px] h-[300px] md:h-[450px] lg:h-[550px] bg-gradient-to-tl from-[#FFC802]/15 via-[#FD4918]/20 via-[#FF0485]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* Left-side electric blue ambient glow from logo */}
-        <div className="absolute -bottom-10 left-10 w-[600px] h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
+        <div className="absolute -bottom-10 left-10 w-[300px] md:w-[450px] lg:w-[600px] h-[220px] md:h-[300px] lg:h-[380px] bg-gradient-to-tr from-[#0127F2]/20 via-[#6E0CF8]/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
         {/* =========================================================================
             BACKGROUND TYPOGRAPHY: "Codevia" at bottom-left inside the rounded box
            ========================================================================= */}
-        <div className="absolute bottom-[-15px] sm:bottom-[-25px] lg:bottom-[-35px] left-4 sm:left-10 lg:left-14 select-none pointer-events-none z-0">
+        <div className="absolute bottom-[-10px] md:bottom-[-25px] lg:bottom-[-35px] left-3 md:left-10 lg:left-14 select-none pointer-events-none z-0">
           <span
-            className="text-[140px] sm:text-[200px] md:text-[250px] lg:text-[300px] font-black tracking-tight leading-none block select-none font-sans"
+            className="text-[90px] sm:text-[140px] md:text-[200px] lg:text-[260px] xl:text-[300px] font-black tracking-tight leading-none block select-none font-sans"
             style={{
               background:
                 'linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 236, 255, 0.6) 50%, rgba(199, 210, 254, 0.2) 100%)',
@@ -70,29 +69,28 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
 
         {/* =========================================================================
             CENTERED FOREGROUND CONTENT LAYER:
-            Exact same width & padding as Navbar (max-w-6xl mx-auto px-6)
            ========================================================================= */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 xl:gap-14 items-start">
             {/* Left Column: Heading, Tilted Bounding Box, and Action CTAs */}
-            <div className="lg:col-span-7 flex flex-col items-start space-y-6 sm:space-y-8">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-bold tracking-tight text-[#000534] leading-none whitespace-nowrap">
+            <div className="lg:col-span-7 flex flex-col items-start space-y-5 md:space-y-6 lg:space-y-8">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px] font-bold tracking-tight text-[#000534] leading-tight md:leading-none sm:whitespace-nowrap">
                 Building Better
               </h1>
 
               {/* Tilted Bounding Box around "Products" styled with logo gradient */}
               <div className="relative inline-block transform -rotate-[2deg] origin-top-left">
                 {/* Outer Electric Blue Selection Wireframe Box */}
-                <div className="relative p-2 border-[1.5px] border-[#0127F2] rounded-sm">
+                <div className="relative p-1.5 md:p-2 border-[1.5px] border-[#0127F2] rounded-sm">
                   {/* 4 Corner Square Handles */}
-                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -top-1.5 -left-1.5 shadow-xs" />
-                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -top-1.5 -right-1.5 shadow-xs" />
-                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -bottom-1.5 -left-1.5 shadow-xs" />
-                  <div className="w-2.5 h-2.5 bg-[#0127F2] border border-white absolute -bottom-1.5 -right-1.5 shadow-xs" />
+                  <div className="w-2 md:w-2.5 h-2 md:h-2.5 bg-[#0127F2] border border-white absolute -top-1 md:-top-1.5 -left-1 md:-left-1.5 shadow-xs" />
+                  <div className="w-2 md:w-2.5 h-2 md:h-2.5 bg-[#0127F2] border border-white absolute -top-1 md:-top-1.5 -right-1 md:-right-1.5 shadow-xs" />
+                  <div className="w-2 md:w-2.5 h-2 md:h-2.5 bg-[#0127F2] border border-white absolute -bottom-1 md:-bottom-1.5 -left-1 md:-left-1.5 shadow-xs" />
+                  <div className="w-2 md:w-2.5 h-2 md:h-2.5 bg-[#0127F2] border border-white absolute -bottom-1 md:-bottom-1.5 -right-1 md:-right-1.5 shadow-xs" />
 
                   {/* Inner 3D Clay / Frosted Card */}
-                  <div className="bg-white/95 backdrop-blur-md rounded-[28px] px-8 py-3.5 sm:px-12 sm:py-5 shadow-[0_16px_36px_rgba(0,0,0,0.06),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.03)] border border-white/80">
-                    <span className="text-6xl sm:text-7xl lg:text-[86px] xl:text-[92px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] block leading-none py-1">
+                  <div className="bg-white/95 backdrop-blur-md rounded-[20px] md:rounded-[28px] px-5 py-2.5 sm:px-8 sm:py-3.5 md:px-12 md:py-4 lg:py-5 shadow-[0_16px_36px_rgba(0,0,0,0.06),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.03)] border border-white/80">
+                    <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[92px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] block leading-none py-1">
                       {selectedWord}
                     </span>
                   </div>
@@ -102,14 +100,14 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                     <div className="relative">
                       {/* Brand Purple Cursor Arrow pointing directly at bottom-right handle */}
                       <svg
-                        className="w-5 h-5 sm:w-6 sm:h-6 fill-[#6E0CF8] drop-shadow-[0_2px_8px_rgba(110,12,248,0.55)] transform -translate-x-1 -translate-y-1"
+                        className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 fill-[#6E0CF8] drop-shadow-[0_2px_8px_rgba(110,12,248,0.55)] transform -translate-x-1 -translate-y-1"
                         viewBox="0 0 24 24"
                       >
                         <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                       </svg>
 
-                      {/* Glowing "Creative" Pill Tag anchored beside the cursor (No yellow) */}
-                      <div className="absolute top-3 left-4 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] text-white text-xs font-semibold px-3.5 py-1 rounded-full shadow-[0_4px_16px_rgba(110,12,248,0.45)] border border-white/70 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
+                      {/* Glowing "Creative" Pill Tag anchored beside the cursor */}
+                      <div className="absolute top-2.5 left-3 md:top-3 md:left-4 bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] to-[#FF0485] text-white text-[10px] md:text-xs font-semibold px-2.5 py-0.5 md:px-3.5 md:py-1 rounded-full shadow-[0_4px_16px_rgba(110,12,248,0.45)] border border-white/70 ring-2 ring-purple-300/40 tracking-wide select-none whitespace-nowrap">
                         Creative
                       </div>
                     </div>
@@ -118,19 +116,19 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
               </div>
 
               {/* Subtitle Value Proposition */}
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg pt-1 font-normal">
+              <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed max-w-prose pt-1 font-normal">
                 We transform ambitious ideas into beautiful, scalable and high-performing digital products that help businesses grow.
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5">
+              <div className="flex flex-wrap items-center gap-3 md:gap-3.5 pt-1">
                 <a
                   href="/contact"
                   onClick={(e) => {
                     e.preventDefault();
                     handleStartProject();
                   }}
-                  className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
+                  className="px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs md:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
                 >
                   <span>Start a Project</span>
                   <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
@@ -144,7 +142,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
                     e.preventDefault();
                     handleExploreWork();
                   }}
-                  className="px-7 py-3.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs sm:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
+                  className="px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-white hover:bg-gray-50 border border-gray-200/90 text-gray-800 text-xs md:text-sm font-semibold rounded-full shadow-2xs hover:shadow-sm transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
                 >
                   <span>Explore Selected Work</span>
                   <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-200 transition-colors">
@@ -155,53 +153,53 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateContact, onNavigateProject
             </div>
 
             {/* Right Column: Clean Reviews with Maintained Generous Space Above Media Card */}
-            <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-between space-y-12 sm:space-y-16 lg:space-y-20">
+            <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-between space-y-8 md:space-y-12 lg:space-y-16 xl:space-y-20 w-full">
               {/* Clean Reviews Stack & Statement */}
               <div className="max-w-xs text-left">
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-2.5 md:mb-3">
                   <div className="flex -space-x-2">
                     <img
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces"
                       alt="Reviewer avatar"
-                      className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-xs"
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                     <img
                       src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
                       alt="Reviewer avatar"
-                      className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-xs"
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
                       alt="Reviewer avatar"
-                      className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-xs"
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white object-cover shadow-xs"
                     />
                   </div>
 
                   <div>
                     <div className="flex items-center gap-0.5 text-[#000534]">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-gray-950 text-[#000534]" />
+                        <Star key={i} className="w-3 h-3 md:w-3.5 md:h-3.5 fill-gray-950 text-[#000534]" />
                       ))}
                     </div>
-                    <p className="text-[10px] font-bold tracking-wider text-gray-500 uppercase mt-0.5 font-sans">
+                    <p className="text-[9px] md:text-[10px] font-bold tracking-wider text-gray-500 uppercase mt-0.5 font-sans">
                       BASED ON REVIEWS
                     </p>
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal">
+                <p className="text-xs md:text-[13px] text-gray-600 leading-relaxed font-normal">
                   We craft bold, strategy-driven designs that help businesses stand out and connect with their audiences.
                 </p>
               </div>
 
-              {/* Simple and Modern Website Development Agency Image */}
-              <div className="w-full sm:w-[420px] aspect-[16/10] rounded-3xl border border-gray-200/90 overflow-hidden shadow-xl bg-white relative group z-20">
+              {/* Responsive Modern Website Development Agency Image with Aspect Ratio */}
+              <div className="w-full sm:w-[360px] md:w-[400px] lg:w-[420px] aspect-[16/10] rounded-2xl md:rounded-3xl border border-gray-200/90 overflow-hidden shadow-xl bg-white relative group z-20">
                 <img
                   src={agencyModernPortfolio}
                   alt="Modern minimalist website development agency portfolio"
-                  className="w-full h-full object-cover rounded-3xl transform group-hover:scale-103 transition-transform duration-700"
+                  className="w-full h-full object-cover rounded-2xl md:rounded-3xl transform group-hover:scale-103 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-black/5 pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl md:rounded-3xl ring-1 ring-inset ring-black/5 pointer-events-none" />
               </div>
             </div>
           </div>

@@ -135,17 +135,16 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="w-full flex justify-center pt-2 sm:pt-3 lg:pt-4 pb-4 sm:pb-6 lg:pb-8 select-none">
       {/* Outer Background Container following vw property & matching other section div border radius */}
       <div
-        className="relative rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.04)] overflow-hidden"
-        style={{ width: 'min(95vw, 1440px)' }}
+        className="relative rounded-[24px] md:rounded-[36px] lg:rounded-[44px] border border-purple-200/60 bg-gradient-to-br from-[#F0F5FF] via-[#F8F2FF] to-[#FFF5F2] shadow-[0_4px_35px_rgba(110,12,248,0.04)] overflow-hidden w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-6rem)] xl:w-[min(95vw,1440px)]"
       >
         {/* Subtle bottom ambient gradient matching logo spectrum */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-amber-100/25 via-pink-100/20 via-blue-100/15 to-transparent pointer-events-none" />
 
-        {/* Top Area: Content placed at other section width (max-w-6xl) */}
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 pt-12 sm:pt-16 pb-12 sm:pb-16 relative z-10">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-10 lg:gap-12">
+        {/* Top Area: Content placed at standard responsive container width */}
+        <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20 pt-10 md:pt-14 lg:pt-16 pb-10 md:pb-14 lg:pb-16 relative z-10">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-10 lg:gap-12">
             {/* Column 1: Brand Logo & Statement */}
-            <div className="max-w-xs space-y-4 shrink-0">
+            <div className="max-w-xs space-y-3 md:space-y-4 shrink-0">
               <a
                 href="#"
                 onClick={(e) => {
@@ -162,11 +161,11 @@ export const Footer: React.FC<FooterProps> = ({
                 <img
                   src={logoImg}
                   alt="Codevia"
-                  className="h-11 sm:h-12 md:h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                  className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
                 />
               </a>
 
-              <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed font-sans">
+              <p className="text-gray-600 text-xs sm:text-sm md:text-[15px] leading-relaxed font-sans">
                 We transform ambitious ideas into beautiful, scalable and high-performing digital products that help businesses grow.
               </p>
             </div>

@@ -67,22 +67,22 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
   };
 
   return (
-    <section id="faq" className="py-12 sm:py-16 lg:py-20 relative select-none">
+    <section id="faq" className="py-10 md:py-16 lg:py-20 relative select-none">
       {/* Background ambient lighting matching theme */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute top-1/3 left-1/4 w-[300px] md:w-[600px] h-[200px] md:h-[350px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-14 items-start">
           {/* Left Column: Section Tag, Heading, Supporting Description, and Button */}
-          <div className="lg:col-span-5 flex flex-col items-start space-y-4 sm:space-y-5 lg:sticky lg:top-28">
+          <div className="lg:col-span-5 flex flex-col items-start space-y-3.5 md:space-y-4 sm:space-y-5 lg:sticky lg:top-28">
             {/* Section Tag */}
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">Common Questions</span>
+              <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">Common Questions</span>
             </div>
 
             {/* Section Heading matching website style */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.14] font-sans">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans">
               Frequently asked{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 questions.
@@ -90,7 +90,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
             </h2>
 
             {/* Sub-heading supporting text */}
-            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-sm pt-0.5 font-sans">
+            <p className="text-sm md:text-base text-gray-600 font-normal leading-relaxed max-w-prose pt-0.5 font-sans">
               Everything you need to know about how Codevia designs, builds, and scales digital products.
             </p>
 
@@ -102,7 +102,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
                   e.preventDefault();
                   handleContactClick();
                 }}
-                className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group inline-flex"
+                className="px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs md:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95 group inline-flex"
               >
                 <span>Still have questions?</span>
                 <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
@@ -113,7 +113,7 @@ export const FAQ: React.FC<FAQProps> = ({ onNavigateContact }) => {
           </div>
 
           {/* Right Column: Accordion Questions & Answers */}
-          <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
+          <div className="lg:col-span-7 space-y-3 md:space-y-3.5 sm:space-y-4">
             {faqData.map((item, idx) => {
               const isOpen = openIndex === idx;
 

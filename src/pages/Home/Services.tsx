@@ -133,25 +133,25 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
   };
 
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-20 relative select-none">
+    <section id="services" className="py-10 md:py-16 lg:py-20 relative select-none">
       {/* Background ambient lighting matching theme */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] lg:w-[850px] h-[250px] md:h-[400px] bg-gradient-to-r from-blue-100/20 via-purple-100/25 to-pink-100/20 blur-[130px] pointer-events-none rounded-full -z-10" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20">
         {/* Top Header Section matching design */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start mb-8 md:mb-10 lg:mb-12">
           {/* Left Pill Badge */}
           <div className="lg:col-span-3">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Our Services</span>
+              <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide">Our Services</span>
             </div>
           </div>
 
           {/* Right Heading with Inline Images sized to fill text size & Actions */}
-          <div className="lg:col-span-9 space-y-6">
-            <div className="space-y-3">
-              <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[42px] font-bold tracking-tight text-[#000534] leading-[1.24] font-sans">
+          <div className="lg:col-span-9 space-y-4 md:space-y-6">
+            <div className="space-y-2 md:space-y-3">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] font-bold tracking-tight text-[#000534] leading-[1.2] md:leading-[1.24] font-sans">
                 <span className="block">We transform ideas into digital products</span>
                 <span className="block mt-1 sm:mt-1.5">
                   &amp; experiences{' '}
@@ -183,7 +183,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                 </span>
               </h2>
 
-              <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-3xl font-sans">
+              <p className="text-sm md:text-base lg:text-base text-gray-600 font-normal leading-relaxed max-w-prose font-sans">
                 We combine strategy, design and technology to build scalable digital products, web applications and intelligent solutions that help businesses grow.
               </p>
             </div>
@@ -197,7 +197,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                   e.preventDefault();
                   handleStartProject();
                 }}
-                className="px-7 py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs sm:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
+                className="px-5 py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-[#1F232B] hover:bg-black text-white text-xs md:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer group active:scale-95"
               >
                 <span>Start a Project</span>
                 <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-colors">
@@ -206,7 +206,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
               </a>
 
               {/* Arrow Keys Navigation Controls that Move the Highlighted Card */}
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2 md:gap-2.5">
                 <span className="text-xs font-semibold text-gray-500 tabular-nums mr-1">
                   0{currentIndex + 1} / 0{services.length}
                 </span>
@@ -214,7 +214,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                 <button
                   onClick={handlePrev}
                   disabled={currentIndex === 0}
-                  className="w-10 h-10 rounded-full border border-gray-200/90 bg-white hover:bg-gray-50 disabled:opacity-35 disabled:cursor-not-allowed active:scale-95 shadow-2xs flex items-center justify-center text-gray-700 hover:text-black transition-all cursor-pointer"
+                  className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200/90 bg-white hover:bg-gray-50 disabled:opacity-35 disabled:cursor-not-allowed active:scale-95 shadow-2xs flex items-center justify-center text-gray-700 hover:text-black transition-all cursor-pointer"
                   aria-label="Previous card"
                   title="Previous service (Left Arrow key)"
                 >
@@ -224,7 +224,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                 <button
                   onClick={handleNext}
                   disabled={currentIndex === services.length - 1}
-                  className="w-10 h-10 rounded-full border border-gray-200/90 bg-white hover:bg-gray-50 disabled:opacity-35 disabled:cursor-not-allowed active:scale-95 shadow-2xs flex items-center justify-center text-gray-700 hover:text-black transition-all cursor-pointer"
+                  className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200/90 bg-white hover:bg-gray-50 disabled:opacity-35 disabled:cursor-not-allowed active:scale-95 shadow-2xs flex items-center justify-center text-gray-700 hover:text-black transition-all cursor-pointer"
                   aria-label="Next card"
                   title="Next service (Right Arrow key)"
                 >
@@ -235,14 +235,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
           </div>
         </div>
 
-        {/* Carousel / Slider Container: 3 Cards Displayed Cleanly on Desktop, Generous Padding for Unclipped Shadows */}
+        {/* Carousel / Slider Container: Responsive Cards */}
         <div
-          className="relative overflow-hidden pt-6 pb-16 px-4 -mx-4 select-none"
+          className="relative overflow-hidden pt-4 md:pt-6 pb-12 md:pb-16 px-2 md:px-4 -mx-2 md:-mx-4 select-none"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
           <div
-            className="flex items-stretch gap-4 sm:gap-6 transition-transform duration-500 ease-out"
+            className="flex items-stretch gap-4 md:gap-6 transition-transform duration-500 ease-out"
             style={{
               transform: `translateX(${getTranslateX()})`,
             }}
@@ -255,14 +255,14 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                 <div
                   key={service.number}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-full max-w-[340px] sm:max-w-none sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${isHighlighted
+                  className={`w-full max-w-[320px] sm:max-w-none sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] aspect-square shrink-0 bg-white rounded-[24px] sm:rounded-[32px] md:rounded-[36px] p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col overflow-hidden cursor-pointer transition-all duration-300 border ${isHighlighted
                     ? 'relative z-20 border-purple-200/90 shadow-[0_20px_45px_-10px_rgba(124,58,237,0.22),0_8px_20px_-4px_rgba(253,73,24,0.08)] -translate-y-1.5 ring-1 ring-purple-100'
                     : 'relative z-10 hover:z-20 border-gray-100 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_35px_-8px_rgba(0,0,0,0.1)] hover:border-gray-200'
                     }`}
                 >
-                  {/* Background Giant Watermark Numeral: Perfectly Contained Within Div */}
+                  {/* Background Giant Watermark Numeral */}
                   <div
-                    className={`absolute bottom-1 right-3 text-[100px] sm:text-[115px] lg:text-[125px] font-bold select-none tracking-tighter leading-none pointer-events-none font-sans transition-colors duration-300 ${isHighlighted ? 'text-purple-100/70' : 'text-gray-100/90'
+                    className={`absolute bottom-1 right-2 md:right-3 text-[80px] sm:text-[100px] md:text-[115px] lg:text-[125px] font-bold select-none tracking-tighter leading-none pointer-events-none font-sans transition-colors duration-300 ${isHighlighted ? 'text-purple-100/70' : 'text-gray-100/90'
                       }`}
                   >
                     {service.number}
@@ -271,24 +271,24 @@ export const Services: React.FC<ServicesProps> = ({ onNavigateContact }) => {
                   {/* Top Row: Soft Clay Icon Box on Left, Multi-line Descriptors on Right */}
                   <div className="flex items-start justify-between relative z-10 w-full">
                     <div
-                      className={`w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 ${isHighlighted
+                      className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 ${isHighlighted
                         ? 'bg-gradient-to-br from-[#0127F2] via-[#FF0485] to-[#FFC802] text-white shadow-lg shadow-purple-500/25 border border-purple-400/40'
                         : 'bg-gradient-to-b from-gray-50 to-gray-200/80 text-gray-700 border border-gray-200/50 shadow-[0_4px_14px_rgba(0,0,0,0.05),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                         }`}
                     >
-                      <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
+                      <Icon className="w-5 h-5 md:w-5.5 md:h-5.5" />
                     </div>
 
-                    <div className="text-right text-xs sm:text-[12.5px] font-semibold text-gray-800 leading-tight shrink-0 ml-2">
+                    <div className="text-right text-[11px] sm:text-xs md:text-[12.5px] font-semibold text-gray-800 leading-tight shrink-0 ml-2">
                       <div>{service.descLine1}</div>
                       <div>{service.descLine2}</div>
                     </div>
                   </div>
 
-                  {/* Title: Positioned Directly Under Top-Left Icon, Fully Contained with No Clipping */}
-                  <div className="relative z-10 mt-5 sm:mt-6 text-left max-w-full">
+                  {/* Title */}
+                  <div className="relative z-10 mt-4 sm:mt-5 md:mt-6 text-left max-w-full">
                     <h3
-                      className={`text-2xl sm:text-[27px] lg:text-[30px] font-bold tracking-tight leading-[1.18] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
+                      className={`text-xl sm:text-2xl md:text-[27px] lg:text-[30px] font-bold tracking-tight leading-[1.18] whitespace-pre-line font-sans break-words transition-all duration-300 py-0.5 ${isHighlighted
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]'
                         : 'text-[#000534]'
                         }`}

@@ -76,34 +76,34 @@ export const Process: React.FC = () => {
       {/* Center Soft Radial Bloom */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[380px] bg-gradient-to-r from-blue-200/20 via-purple-200/20 to-pink-200/20 blur-[140px] pointer-events-none rounded-full" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12 xl:px-20 relative z-10">
         {/* Top Header Section: Section Tag & Heading on Left, 8 Weeks Stat on Right */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 md:mb-10">
           {/* Left Side: Tag Line, Heading, Sub-heading */}
-          <div className="space-y-4 max-w-2xl">
+          <div className="space-y-3 md:space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border border-purple-200/90 bg-white shadow-xs">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#0127F2] via-[#FF0485] to-[#FFC802]" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide font-sans">How We Work</span>
+              <span className="text-xs md:text-sm font-semibold text-gray-800 tracking-wide font-sans">How We Work</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#000534] leading-[1.14] font-sans sm:whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#000534] leading-[1.18] md:leading-[1.14] font-sans sm:whitespace-nowrap">
               From first idea{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802]">
                 to real impact.
               </span>
             </h2>
 
-            <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed max-w-md font-sans">
+            <p className="text-sm md:text-base text-gray-600 font-normal leading-relaxed max-w-prose font-sans">
               A transparent, milestone-driven roadmap from first discovery to launch and ongoing scale — so nothing is a surprise.
             </p>
           </div>
 
           {/* Right Side: Big 8 Weeks Stat matching Statistics.tsx typography */}
           <div className="flex flex-col lg:items-end space-y-1">
-            <div className="text-5xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-sans leading-none tabular-nums py-1">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0127F2] via-[#6E0CF8] via-[#FF0485] via-[#FD4918] to-[#FFC802] font-sans leading-none tabular-nums py-1">
               8 weeks
             </div>
-            <p className="text-xs sm:text-sm text-gray-600 font-medium font-sans">
+            <p className="text-xs md:text-sm text-gray-600 font-medium font-sans">
               Kickoff to launch &amp; scale
             </p>
           </div>
